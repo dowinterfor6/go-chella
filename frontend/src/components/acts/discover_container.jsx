@@ -1,6 +1,7 @@
 import { createGroup } from '../../actions/group_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/discover.css';
 import React from 'react';
@@ -41,7 +42,8 @@ class DiscoverPage extends React.Component {
         <li className='discovery-index-item' key={idx}>
           <h3>{this.state[key].name}</h3>
           <h4>Date: {this.parseDate(this.state[key].date).date} Time: {this.parseDate(this.state[key].date).time}</h4>
-          <img src={this.state[key].url} alt={this.state[key].name}/>
+          <Link to={`/acts/${this.state[key]._id}`} act={this.state[key]}><img src={this.state[key].url} alt={this.state[key].name} /></Link>
+          <a href={``}></a>
         </li>
       ))
     )

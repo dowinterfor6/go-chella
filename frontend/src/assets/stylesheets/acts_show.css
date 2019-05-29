@@ -1,0 +1,17 @@
+.acts-show-container {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.acts-show-container > h2 {
+    text-align: center;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.acts-show-container > img {
+    margin-top: 35px;
+}
