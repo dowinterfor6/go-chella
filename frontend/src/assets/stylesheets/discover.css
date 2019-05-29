@@ -1,0 +1,85 @@
+.discovery-container {
+  width: 100%;
+  height: calc(100vh - 175px);
+  box-sizing: border-box;
+  padding: 100px;
+  padding-top: 0;
+  padding-bottom: 76px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.discovery-header {
+  height: 80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.discovery-header button {
+  height: 35px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 2.5px;
+  border: 1px solid rgb(160, 160, 160);
+}
+
+.discovery-header button:hover {
+  background-color: rgb(207, 207, 207);
+  border: 1px solid rgb(114, 114, 114);
+}
+
+.act-list {
+  height: 80%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 324px);
+  grid-template-rows: repeat(auto-fit, 220px);
+  grid-gap: 10px;
+  justify-content: center;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+/* width */
+.act-list::-webkit-scrollbar {
+  position: relative;
+  width: 10px;
+  background: transparent;
+}
+
+/* Track */
+.act-list::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+/* Handle */
+.act-list::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background: rgb(165, 165, 165); 
+  border-radius: 5px;
+}
+
+.act-list::-webkit-scrollbar-thumb:hover {
+  background: rgb(95, 95, 95);
+}
+
+.discovery-index-item {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 10px;
+  min-height: 220px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.discovery-index-item img {
+  height: 150px;
+  width: auto;
+}

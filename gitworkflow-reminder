@@ -1,0 +1,22 @@
+// Before changes //
+Create new branch:      git checkout -b branch-name
+// During changes //
+Add new changes:        git add .
+Double check status:    git status
+Commit to branch:       git commit -m 'Commit message'
+// After changes //
+Switch to master:       git checkout master
+Pull from master:       git pull origin master
+Switch to branch:       git checkout branch-name
+Merge any changes:      git merge master
+Push branch to github:  git push origin branch-name
+Check branch:           git branch
+Switch to master:       git checkout master
+// Go to github for approval //
+Github "Compare & pull request
+Make pull request
+(Resolve conflicts)
+Merge pull request
+Delete branch
+// After approved //
+Pull again from master: git pull origin master
