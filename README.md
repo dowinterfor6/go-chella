@@ -1,10 +1,10 @@
-# Bro-chella
+# Go-chella (formerly Bro-chella)
 A social planning application for the Coachella event. 
 
 [Live Demo!](https://brochella.herokuapp.com)
 
 ## Background and Overview
-Bro-chella is an application that allows users to create groups based on acts from Coachella. Within a group,users can join through invites and plan the details of their activities, such as whereabouts and location meetup. Lastly, users can also discover related acts either through their group discover page.
+Go-chella is an application that allows users to create groups based on acts from Coachella. Within a group,users can join through invites and plan the details of their activities, such as whereabouts and location meetup. Lastly, users can also discover related acts either through their group discover page.
 
 Users are greeted with a login modal upon attempted sign in:
 ![login](https://github.com/dowinterfor6/brochella/blob/master/docs/gifs/signup-error.gif)
@@ -18,7 +18,7 @@ Groups are displayed alongside a map that shows the location of the events that 
 A temporary discover page that shows all the available acts and basic details: 
 ![discover](https://github.com/dowinterfor6/brochella/blob/master/docs/images/discover.png)
 
-## Building Bro-chella involved:
+## Building Go-chella involved:
 - Building and implementing a thorough database schema with backend routes to store users, event-groups, and acts
 - Full CRUD functionality, allowing users to create, update, and delete groups with their friends
 - Allow users to interact with a planning module when on the group show page
