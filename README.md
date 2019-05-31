@@ -7,10 +7,10 @@ A social planning application for the Coachella event.
 Bro-chella is an application that allows users to create groups based on acts from Coachella. Within a group,users can join through invites and plan the details of their activities, such as whereabouts and location meetup. Lastly, users can also discover related acts either through their group discover page.
 
 Users are greeted with a login modal upon attempted sign in:
-![login](https://github.com/dowinterfor6/brochella/blob/master/docs/images/login.png)
+![login](https://github.com/dowinterfor6/brochella/blob/master/docs/gifs/signup-error.gif)
 
 The dashboard is the first thing that shows up after signing in, showing a list of all the groups the user is in:
-![dashboard](https://github.com/dowinterfor6/brochella/blob/master/docs/images/dashboard.png)
+![dashboard](https://github.com/dowinterfor6/brochella/blob/master/docs/gifs/dashboard-animation.gif)
 
 Groups are displayed alongside a map that shows the location of the events that the group will be attending:
 ![show](https://github.com/dowinterfor6/brochella/blob/master/docs/images/show.png)
