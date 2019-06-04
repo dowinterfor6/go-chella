@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class GroupIndexDisplay extends React.Component {
   constructor(props) {
@@ -117,4 +118,4 @@ class GroupIndexDisplay extends React.Component {
   }
 }
 
-export default GroupIndexDisplay;
+export default withRouter(GroupIndexDisplay);
