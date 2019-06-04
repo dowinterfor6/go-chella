@@ -51,6 +51,7 @@ class DiscoverPage extends React.Component {
     let dates = [];
     let stages = [];
     Object.keys(this.state).forEach((item) => {
+
       if(this.state[item].date) {
         if(!dates.includes(this.parseDate(this.state[item].date).date)) {
           dates.push(this.parseDate(this.state[item].date).date)
@@ -64,17 +65,28 @@ class DiscoverPage extends React.Component {
       }
     })
 
+    let datesDropdown = (
+      dates.sort().map((date, id) => (
+        <option key={id} value={date} >{date}</option>
+      ))
+    )
+
+    let stagesDropdown = (
+      stages.sort().map((stage, id) => (
+        <option key={id} value={stage}>{stage}</option>
+      ))
+    )
+
     let filter = (
       <div className="filter-menu">
         <label>Date:
           <select style={{ marginLeft: 5 }}>
+            {datesDropdown}
           </select>
         </label>
         <label>Stage:
           <select style={{ marginLeft: 5 }}>
-            <option value="Kevin">Kevin</option>
-            <option value="Kevi">Kevi</option>
-            <option value="Kev">Kev</option>
+            {stagesDropdown}
           </select>
         </label>
       </div>
