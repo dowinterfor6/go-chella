@@ -48,6 +48,26 @@ class DiscoverPage extends React.Component {
       ))
     )
 
+    let filter = (
+      <div className="filter-menu">
+        <label>Date:
+          <select>
+            <option value="Kevin">Kevin</option>
+            <option value="Kevi">Kevi</option>
+            <option value="Kev">Kev</option>
+          </select>
+        </label>
+
+        <label>Stage:
+          <select>
+            <option value="Kevin">Kevin</option>
+            <option value="Kevi">Kevi</option>
+            <option value="Kev">Kev</option>
+          </select>
+        </label>
+      </div>
+    );
+
     return (
       <div className='discovery-container'>
         <div className="discovery-header">
@@ -58,6 +78,9 @@ class DiscoverPage extends React.Component {
           }>
             Create a Group
           </button>
+          <div>
+            {filter}
+          </div>
         </div>
         
         <ul className="act-list">
