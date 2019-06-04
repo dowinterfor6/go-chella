@@ -19,7 +19,7 @@ class GroupIndex extends React.Component {
 
   componentDidMount() {
     document.title = 'Dashboard';
-    
+
     let getUserGroups = this.props.fetchUserGroups(this.props.currentUser.id);
     getUserGroups.then((userGroups) => {
       let promiseArr = [];
@@ -91,7 +91,7 @@ class GroupIndex extends React.Component {
   handleDisplay(e) {
     let clickedGroupId = e.currentTarget.classList[1];
     if (this.state.activePanel !== clickedGroupId) {
-      this.setState({ activePanel: clickedGroupId });
+      this.setState({ activePanel: this.state.groups[clickedGroupId] });
     };
   }
 
@@ -117,7 +117,7 @@ class GroupIndex extends React.Component {
     if (this.state.activePanel) {
       display = <GroupIndexDisplay
       activeGroup={this.state.activePanel}
-      acts={this.state.groups[this.state.activePanel].acts}
+      acts={this.state.activePanel.acts}
       />
     } else {
       display = <GroupIndexDisplay
