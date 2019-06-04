@@ -32,7 +32,7 @@ class MainPage extends React.Component {
       <div className='main-landing'>
         <div className='landing-page-container'>
           <section className="why-brochella">
-            <h2>Why Bro-chella?</h2>
+            <h2>Why Go-chella?</h2>
             <p>
               Ever feel like it's a massive hassle getting all your bros together
               for events like Coachella? Sent out too many texts for an unorganized
