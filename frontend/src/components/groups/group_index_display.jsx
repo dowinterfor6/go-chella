@@ -1,6 +1,5 @@
 import React from 'react';
-import merge from 'lodash/merge';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class GroupIndexDisplay extends React.Component {
   constructor(props) {
@@ -26,36 +25,19 @@ class GroupIndexDisplay extends React.Component {
   }
   
   componentWillReceiveProps(nextProps) {
-    if (nextProps.activeGroup) {
-      clearInterval(this.interval);
-      this.props.deleteActs().then(
-        () => {
-          let acts = nextProps.activeGroup.acts;
-          if (acts.length > 0) {
-            let newActs = {};
-            acts.map((actId) => (
-              this.props.fetchAct(actId).then(
-                (res) => {
-                  let prevActs = newActs;
-                  newActs = merge({}, prevActs, { [Date.parse(res.act.data.date)]: res.act.data })
-                  if (Object.keys(newActs).length === acts.length) {
-                    this.setState({
-                      activeGroup: nextProps.activeGroup,
-                      acts: newActs,
-                      backgroundUrl: 0
-                    });
-                    this.interval = setInterval(() => {
-                      this.setState({ backgroundUrl: this.state.backgroundUrl + 1 })
-                    }, 5000);
-                    document.getElementsByClassName('in-focus-header')[0].classList.add('fadeIn');
-                    document.getElementsByClassName('act-list-container')[0].classList.add('fadeIn');
-                  };
-                }
-              )
-            ));
-          };
-        }
-      )
+    this.setState({
+      acts: nextProps.acts,
+      activeGroup: nextProps.activeGroup,
+      backgroundUrl: 0
+    });
+    this.setBackgroundUrl(nextProps.acts[0]);
+    clearInterval(this.interval);
+    if (nextProps.acts.length > 1) {
+      this.interval = setInterval(() => {
+        this.setState({ backgroundUrl: this.state.backgroundUrl + 1 })
+      }, 5000);
+      document.getElementsByClassName('in-focus-header')[0].classList.add('fadeIn');
+      document.getElementsByClassName('act-list-container')[0].classList.add('fadeIn');
     }
   }
 
@@ -65,18 +47,17 @@ class GroupIndexDisplay extends React.Component {
     }
   }
 
-  setBackgroundUrl(actId) {
+  setBackgroundUrl(url) {
     let displayElement = document.getElementsByClassName('in-focus-display')[0];
     if (displayElement) {
-      if (actId) {
+      if (url) {
         displayElement.classList.add('fadeIn');
         displayElement.setAttribute('style',
-          `background: url('${this.state.acts[actId].url}');
+          `background: url('${url}');
           background-position: center;
           background-size: cover;
           background-repeat: no-repeat;`
         );
-        this.currentActId = actId;
       };
     } 
   }
@@ -127,10 +108,8 @@ class GroupIndexDisplay extends React.Component {
     }
 
     if (Object.keys(this.state.acts).length > 0) {
-      let actId = Object.keys(this.state.acts).sort()[this.state.backgroundUrl % Object.keys(this.state.acts).length];
-      if (actId !== this.currentActId) {
-        this.setBackgroundUrl(actId);
-      }
+      let url = this.state.acts[this.state.backgroundUrl % this.state.acts.length].url;
+      this.setBackgroundUrl(url);
     };
 
     return (
