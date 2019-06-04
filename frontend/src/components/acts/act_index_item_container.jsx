@@ -36,7 +36,12 @@ class ActIndexItem extends React.Component {
                 <h2>This is the page for <strong>{this.props.act.name}!</strong></h2>
                 <img src={this.props.act.url} alt="act-photo"/>
                 <span>
-                    <div>{this.parseDate(this.props.act.date).date}</div>
+                    <div className="acts-desc">
+                        You can see {this.props.act.name} perform LIVE at Go-Chella on {(this.parseDate(this.props.act.date).date).split('-')[1] 
+                        + '/' + (this.parseDate(this.props.act.date).date).split('-')[2]}.
+                        <br />
+                        Show starts at {this.parseDate(this.props.act.date).time} on the {this.props.act.stage} Stage.
+                    </div>
                 </span>
             </div>
         )

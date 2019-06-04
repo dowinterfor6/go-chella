@@ -15,3 +15,9 @@ strong {
 .acts-show-container > img {
     margin-top: 35px;
 }
+
+.acts-desc  {
+    margin-top: 35px;
+    text-align: center;
+    font-size: 18px;
+}
