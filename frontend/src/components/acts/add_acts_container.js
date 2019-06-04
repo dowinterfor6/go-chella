@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchGroup, updateGroup } from '../../actions/group_actions';
 import { fetchAct } from '../../actions/act_actions';
+import { fetchUserGroups } from '../../actions/user_actions';
 import { closeModal } from '../../actions/modal_actions';
 import '../../assets/stylesheets/modal.css';
 
@@ -12,6 +13,15 @@ class AddActsForm extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchUserGroups(this.props.currentUser.id)
+            .then((res) => {
+                Object.values(res.groups).map((groupId) => (
+                    this.props.fetchGroup(groupId)
+                        .then((res) => {
+                            this.setState({ [groupId]: res.group.data })
+                        })
+                ))
+            });
         this.setState({ act: this.props.act });
     }
 
@@ -36,8 +46,9 @@ class AddActsForm extends React.Component {
 
                 <h1 className="delete-header">Add This Act</h1>
 
+                <h3>Choose a group to add this act to below:</h3>
+
                 <select>
-                    
                 </select>
 
             </div>
@@ -48,6 +59,7 @@ class AddActsForm extends React.Component {
 const mstp = (state, ownProps) => {
     return {
         act: state.act,
+        currentUser: state.session.user,
         formType: 'Add Act'
     };
 };
@@ -56,6 +68,8 @@ const mdtp = (dispatch) => {
     return {
         fetchAct: id => dispatch(fetchAct(id)),
         upateGroup: group => dispatch(updateGroup(group)),
+        fetchUserGroups: userId => dispatch(fetchUserGroups(userId)),
+        fetchGroup: groupId => dispatch(fetchGroup(groupId)),
         closeModal: () => dispatch(closeModal())
     };
 };
