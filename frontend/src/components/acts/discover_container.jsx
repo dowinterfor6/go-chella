@@ -48,18 +48,30 @@ class DiscoverPage extends React.Component {
       ))
     )
 
+    let dates = [];
+    let stages = [];
+    Object.keys(this.state).forEach((item) => {
+      if(this.state[item].date) {
+        if(!dates.includes(this.parseDate(this.state[item].date).date)) {
+          dates.push(this.parseDate(this.state[item].date).date)
+        }
+      }
+
+      if(this.state[item].stage) {
+        if(!stages.includes(this.state[item].stage)) {
+          stages.push(this.state[item].stage);
+        }
+      }
+    })
+
     let filter = (
       <div className="filter-menu">
         <label>Date:
-          <select>
-            <option value="Kevin">Kevin</option>
-            <option value="Kevi">Kevi</option>
-            <option value="Kev">Kev</option>
+          <select style={{ marginLeft: 5 }}>
           </select>
         </label>
-
         <label>Stage:
-          <select>
+          <select style={{ marginLeft: 5 }}>
             <option value="Kevin">Kevin</option>
             <option value="Kevi">Kevi</option>
             <option value="Kev">Kev</option>
@@ -78,11 +90,12 @@ class DiscoverPage extends React.Component {
           }>
             Create a Group
           </button>
-          <div>
-            {filter}
-          </div>
         </div>
         
+        <div>
+          {filter}
+        </div>
+
         <ul className="act-list">
           {acts}
         </ul>
