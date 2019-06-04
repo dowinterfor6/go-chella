@@ -56,7 +56,7 @@ class GroupIndex extends React.Component {
 
         res.forEach(
           async (resolve) => {
-            currentGroup = resolve.group.data;
+            currentGroup = resolve.data;
             groups[currentGroup.id] = currentGroup;
 
             // Owner
@@ -119,6 +119,7 @@ class GroupIndex extends React.Component {
     if (this.state.loading) {
       return <Loading />
     };
+    console.log(this.state);
     let groups = [];
 
     // TODO: Temporary
