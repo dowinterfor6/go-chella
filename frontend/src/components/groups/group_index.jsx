@@ -2,7 +2,7 @@ import React from 'react';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/group_index.css';
 import Loading from '../loading/loading';
-import GroupIndexDisplayContainer from './group_index_display_container';
+import GroupIndexDisplay from './group_index_display';
 
 class GroupIndex extends React.Component {
   constructor(props) {
@@ -18,28 +18,8 @@ class GroupIndex extends React.Component {
   }
 
   componentDidMount() {
-    // SET FRONTEND STATE
     document.title = 'Dashboard';
-
-    // Old Code
-    // this.props.fetchUserGroups(this.props.currentUser.id)
-    //   .then(
-    //     (res) => {
-    //       Object.values(res.groups).map((groupId) => (
-    //         this.props.fetchGroup(groupId).then(
-    //           (res) => {
-    //             this.setState({ [groupId]: res.group.data })
-    //           }
-    //         )
-    //       ));
-    //       // Emulate long loading screen
-    //       // window.setTimeout(() => (this.setState({ loading: false })), 10000); 
-    //       this.setState({ loading: false });
-    //     }
-    //   )
-
-    // New Code
-    // Need API for fetch user
+    
     let getUserGroups = this.props.fetchUserGroups(this.props.currentUser.id);
     getUserGroups.then((userGroups) => {
       let promiseArr = [];
@@ -119,32 +99,37 @@ class GroupIndex extends React.Component {
     if (this.state.loading) {
       return <Loading />
     };
-    console.log(this.state);
-    let groups = [];
 
-    // TODO: Temporary
-    // if (Object.values(this.state).length > 2) {
-    //   groups = Object.keys(this.state).map((group_id) => {
-    //     if (group_id !== 'loading' && group_id !=='activePanel') {
-    //       return (
-    //         <li 
-    //           key={group_id} 
-    //           className={`group-index-item ${group_id}`}
-    //           onClick={this.handleDisplay}
-    //         > 
-    //           {this.state[group_id].name}
-    //         </li>
-    //       )
-    //     }
-    //     return undefined;
-    //   });
-    // } 
+    let groups = [];
+    groups = Object.keys(this.state.groups).map((groupId) => {
+      return (
+        <li
+          key={groupId}
+          className={`group-index-item ${groupId}`}
+          onClick={this.handleDisplay}
+        >
+          {this.state.groups[groupId].name}
+        </li>
+      )
+    });
+
+    let display;
+    if (this.state.activePanel) {
+      display = <GroupIndexDisplay
+      activeGroup={this.state.activePanel}
+      acts={this.state.groups[this.state.activePanel].acts}
+      />
+    } else {
+      display = <GroupIndexDisplay
+        activeGroup={this.state.activePanel}
+      />
+    };
 
     return (
       <div className='group-index-container'>
-        <GroupIndexDisplayContainer activeGroup={this.state[this.state.activePanel]}/>
+        { display }
         <ul className='group-index-viewer'> 
-          { groups.reverse() }
+          { groups }
         </ul>
       </div>
     )
