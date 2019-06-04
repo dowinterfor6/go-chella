@@ -15,3 +15,33 @@ strong {
 .acts-show-container > img {
     margin-top: 35px;
 }
+
+.acts-desc  {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.add-act {
+    height: 35px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgb(160, 160, 160)
+}
+
+.add-act-modal {
+    width: 500px;
+    height: 450px;
+    box-sizing: border-box;
+    padding: 50px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid rgb(160, 160, 160);
+}

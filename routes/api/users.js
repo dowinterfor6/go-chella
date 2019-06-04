@@ -120,7 +120,8 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
     id: req.user.id,
     username: req.user.username,
     email: req.user.email,
-    groups: req.user.groups
+    groups: req.user.groups,
+    date: req.user.date
   });
 });
 
@@ -136,5 +137,19 @@ router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
     .then((users) => res.json(users))
     .catch((err) => res.status(400).json({ nousersfound: 'No users found.' }))
 });
+
+router.get('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
+  User.findById(req.params.id)
+    .then((user) => {
+      res.json({
+        id: user._id,
+        name: user.username,
+        email: user.email,
+        groups: user.groups,
+        date: user.date
+      })
+    })
+    .catch((err) => res.status(404).json({ nouserfound: "That user does not exist."}))
+})
 
 module.exports = router;
