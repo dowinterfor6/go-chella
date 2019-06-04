@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { openModal } from '../../actions/modal_actions';
 import { fetchAct } from '../../actions/act_actions';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/acts_show.css';
@@ -43,6 +44,7 @@ class ActIndexItem extends React.Component {
                         Show starts at {this.parseDate(this.props.act.date).time} on the {this.props.act.stage} Stage.
                     </div>
                 </span>
+                <button className="add-act" onClick={() => this.props.openModal('Add Act')}>Add Act</button>
             </div>
         )
 
@@ -60,7 +62,8 @@ const mstp = (state, ownProps) => {
 
 const mdtp = dispatch => {
     return {
-        fetchAct: id => dispatch(fetchAct(id))
+        fetchAct: id => dispatch(fetchAct(id)),
+        openModal: modal => dispatch(openModal(modal))
     };
 };
 
