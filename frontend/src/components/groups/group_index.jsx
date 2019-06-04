@@ -101,12 +101,9 @@ class GroupIndex extends React.Component {
 
             let ownerResult = await ownerPromise(currentGroup.owner, currentGroup.id);
             groups[ownerResult.id].owner = ownerResult.data;
-            
           }
         );
-        console.log(groups);
-        // Groups contain acts[ids], members[ids], ownerId
-        // console.log(groups);
+        this.setState({groups: groups, loading: false})
       });
     });
   }
