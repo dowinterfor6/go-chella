@@ -5,11 +5,12 @@ import { fetchAct } from '../../actions/act_actions';
 import { fetchUserGroups } from '../../actions/user_actions';
 import { closeModal } from '../../actions/modal_actions';
 import '../../assets/stylesheets/modal.css';
+import '../../assets/stylesheets/acts_show.css'
 
 class AddActsForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.act;
+        this.state = {}
     }
 
     componentDidMount() {
@@ -22,7 +23,7 @@ class AddActsForm extends React.Component {
                         })
                 ))
             });
-        this.setState({ act: this.props.act });
+        // this.setState({ act: this.props.act });
     }
 
     componentWillUnmount() {
@@ -40,6 +41,14 @@ class AddActsForm extends React.Component {
     }
 
     render() {
+
+        if(!this.state.groups) {
+            return null;
+        }
+
+        let groups = this.state.groups.map((groupId) => {
+            return this.state[groupId].name;
+        });
     
         return (
             <div className="add-act-modal">
@@ -48,8 +57,9 @@ class AddActsForm extends React.Component {
 
                 <h3>Choose a group to add this act to below:</h3>
 
-                <select>
-                </select>
+                <li>{groups}</li>
+                {/* <select>
+                </select> */}
 
             </div>
         )

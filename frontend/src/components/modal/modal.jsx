@@ -41,6 +41,7 @@ class Modal extends React.Component {
         break;
       case 'invite':
         component = <InviteLinkContainer />
+        break;
       case 'Add Act':
         component = <AddActsContainer />
         break;
