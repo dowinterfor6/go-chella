@@ -49,20 +49,22 @@ class DiscoverPage extends React.Component {
     )
 
     return (
-      <div className='discovery-container'>
-        <div className="discovery-header">
-          <h1>Browse Coachella events!</h1>
-          <button onClick={() => {
-            this.props.openModal(this.props.formType)
-          }
-          }>
-            Create a Group
-          </button>
+      <div className="discovery-wrapper">
+        <div className='discovery-container'>
+          <div className="discovery-header">
+            <h1>Browse Coachella events!</h1>
+            <button onClick={() => {
+              this.props.openModal(this.props.formType)
+            }
+            }>
+              Create a Group
+            </button>
+          </div>
+          
+          <ul className="act-list">
+            {acts}
+          </ul>
         </div>
-        
-        <ul className="act-list">
-          {acts}
-        </ul>
       </div>
     );
   }

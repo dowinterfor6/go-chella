@@ -1,4 +1,55 @@
-.landing-page-container {
+/* -------Parllax-------- */
+
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+  height: 800px;
+}
+
+.parallax-container h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.parallax-container .parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.parallax-container .parallax img {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 200%;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+/* ---------------------- */
+
+/* .main-landing img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  opacity: 0.8;
+} */
+
+/* .landing-page-container {
   height: calc(100vh - 175px);
   width: 100%;
   box-sizing: border-box;
@@ -11,11 +62,25 @@
   align-items: center;
 }
 
-.why-brochella,
-.what-brochella,
-.beyond-brochella {
+.landing-page-container header {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 45px;
+  margin-top: 250px;
+  margin-bottom: 200px;
+} */
+
+.main-landing section {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDnjU59BpeZA72vhC9i-Bba7AoHU418Vaa6-IZLbcupXmcZfBMw');
+  background-size: cover;
   width: 100%;
+  height: 100%;
+  padding: 200px 0px 200px 0px;
+}
+
+.main-landing section h2, .main-landing section p {
   line-height: 2em;
+  padding: 0px 100px 0px 100px;
 }
 
 .background-cover,
@@ -47,26 +112,18 @@
   );
 }
 
-.background-splash img {
+.background-splash {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
 }
 
-.background-splash {
-  position: absolute;
-  top: 175px;
-  left: 0;
-  height: 600px;
-  width: 100vw;
-  z-index: -10;
-  box-sizing: border-box;
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
-
-.background-splash img:nth-of-type(1) {
+/* .background-splash img:nth-of-type(1) {
   grid-area: 1/2/1/span 2;
 }
 
@@ -108,4 +165,4 @@
 
 .hidden {
   display: none;
-}
+} */
