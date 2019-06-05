@@ -10,6 +10,7 @@ const groupsReducer = (state={}, action) => {
   let currentGroup;
   switch (action.type) {
     case RECEIVE_ACT:
+      console.log(action);
       currentGroup = state[action.currentGroupId];
       if (!currentGroup.actsInfo) {
         currentGroup.actsInfo = {[action.act.data._id]: action.act.data}
