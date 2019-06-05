@@ -25,20 +25,23 @@ class GroupIndexDisplay extends React.Component {
   }
   
   componentWillReceiveProps(nextProps) {
+    if (nextProps.acts) {
+      let firstActUrl = nextProps.acts[Object.keys(nextProps.acts)[0]].url;
+      this.setBackgroundUrl(firstActUrl);
+      clearInterval(this.interval);
+      if (Object.keys(nextProps.acts).length > 1) {
+        this.interval = setInterval(() => {
+          this.setState({ backgroundUrl: this.state.backgroundUrl + 1 })
+        }, 5000);
+        document.getElementsByClassName('in-focus-header')[0].classList.add('fadeIn');
+        document.getElementsByClassName('act-list-container')[0].classList.add('fadeIn');
+      }
+    }
     this.setState({
-      acts: nextProps.acts,
+      acts: nextProps.acts || {},
       activeGroup: nextProps.activeGroup,
       backgroundUrl: 0
     });
-    this.setBackgroundUrl(nextProps.acts[0]);
-    clearInterval(this.interval);
-    if (nextProps.acts.length > 1) {
-      this.interval = setInterval(() => {
-        this.setState({ backgroundUrl: this.state.backgroundUrl + 1 })
-      }, 5000);
-      document.getElementsByClassName('in-focus-header')[0].classList.add('fadeIn');
-      document.getElementsByClassName('act-list-container')[0].classList.add('fadeIn');
-    }
   }
 
   handleNavigation(e) {
@@ -108,7 +111,8 @@ class GroupIndexDisplay extends React.Component {
     }
 
     if (Object.keys(this.state.acts).length > 0) {
-      let url = this.state.acts[this.state.backgroundUrl % this.state.acts.length].url;
+      let key = this.state.backgroundUrl % Object.keys(this.state.acts).length;
+      let url = this.state.acts[Object.keys(this.state.acts)[key]].url;
       this.setBackgroundUrl(url);
     };
 

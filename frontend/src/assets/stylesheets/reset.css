@@ -60,9 +60,6 @@ a {
 }
 
 #root {
-	/* background-image: url('http://i.imgur.com/kCUfqi1.jpg'); */
-	/* background-attachment: fixed; */
-	/* background-size: 100% 100%; */
 	height: 100vh;
 	width: 100vw;
 	position: absolute;

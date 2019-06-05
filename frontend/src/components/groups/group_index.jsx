@@ -25,7 +25,7 @@ class GroupIndex extends React.Component {
       let promiseArr = [];
       let promise;
       let groups = {};
-      userGroups.groups.forEach((id) => {
+      userGroups.data.groups.forEach((id) => {
         promise = this.props.fetchGroup(id);
         promiseArr.push(promise);
       });
@@ -36,11 +36,11 @@ class GroupIndex extends React.Component {
 
         res.forEach(
           async (resolve) => {
-            currentGroup = resolve.data;
+            currentGroup = resolve.group.data;
             groups[currentGroup.id] = currentGroup;
 
             // Owner
-            let ownerPromise = (ownerId, currentGroupId) => this.props.fetchUser(ownerId).then((res) => {
+            let ownerPromise = (ownerId, currentGroupId) => this.props.fetchOwner(ownerId, currentGroupId).then((res) => {
               return {
                 data: res.data,
                 id: currentGroupId
@@ -52,13 +52,13 @@ class GroupIndex extends React.Component {
             currentGroup.members = [];
             members.forEach(
               async (memberId) => {
-                let memberPromise = (memberId, currentGroup) => this.props.fetchUser(memberId).then((res) => {
+                let memberPromise = (memberId, currentGroupId) => this.props.fetchUser(memberId, currentGroupId).then((res) => {
                   return {
                     data: res.data,
                     group: currentGroup
                   };
                 });
-                let memberResult = await memberPromise(memberId, currentGroup);
+                let memberResult = await memberPromise(memberId, currentGroup.id);
                 memberResult.group.members.push(memberResult.data);
               }
             );
@@ -68,13 +68,13 @@ class GroupIndex extends React.Component {
             currentGroup.acts = [];
             acts.forEach(
               async (actId) => {
-                let actPromise = (actId, currentGroup) => this.props.fetchAct(actId).then((res) => {
+                let actPromise = (actId, currentGroupId) => this.props.fetchAct(actId, currentGroupId).then((res) => {
                   return {
                     data: res.data,
                     group: currentGroup
                   };
                 });
-                let actResult = await actPromise(actId, currentGroup);
+                let actResult = await actPromise(actId, currentGroup.id);
                 actResult.group.acts.push(actResult.data);
               }
             );
@@ -83,9 +83,23 @@ class GroupIndex extends React.Component {
             groups[ownerResult.id].owner = ownerResult.data;
           }
         );
-        this.setState({groups: groups, loading: false})
+        // this.setState({groups: groups, loading: false})
       });
     });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (Object.keys(nextProps.groups).every((key) => (
+      typeof nextProps.groups[key].owner === 'object' &&
+      nextProps.groups[key].actsInfo && 
+      Object.keys(nextProps.groups[key].actsInfo).length 
+        === nextProps.groups[key].acts.length &&
+      nextProps.groups[key].memberInfo &&
+      Object.keys(nextProps.groups[key].memberInfo).length
+      === nextProps.groups[key].members.length
+    ))) {
+      this.setState({ groups: nextProps.groups, loading: false })
+    };
   }
 
   handleDisplay(e) {
@@ -99,7 +113,6 @@ class GroupIndex extends React.Component {
     if (this.state.loading) {
       return <Loading />
     };
-
     let groups = [];
     groups = Object.keys(this.state.groups).map((groupId) => {
       return (
@@ -117,7 +130,7 @@ class GroupIndex extends React.Component {
     if (this.state.activePanel) {
       display = <GroupIndexDisplay
       activeGroup={this.state.activePanel}
-      acts={this.state.activePanel.acts}
+      acts={this.state.activePanel.actsInfo}
       />
     } else {
       display = <GroupIndexDisplay

@@ -1,13 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/navbar.css';
 import ModalContainer from '../modal/modal_container';
+import { withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.getLinks = this.getLinks.bind(this);
+    this.handleNavigation = this.handleNavigation.bind(this);
+  }
+
+  handleNavigation(e) {
+    let path = '/' + e.currentTarget.innerHTML.toLowerCase();
+    if (this.props.location.pathname !== path) {
+      this.props.history.push(path);
+    };
   }
 
   getLinks() {
@@ -17,16 +25,15 @@ class NavBar extends React.Component {
           <h1><img src="https://fontmeme.com/permalink/190605/2ddc6672710ed3d9c8ab1e12df94955c.png" alt="" /></h1>
           <ul className='nav-bar-items-after-login'>
             <li className='hvr-underline-from-center' >
-              <Link to={'/dashboard'}>Dashboard</Link>
+              <a onClick={this.handleNavigation}>Dashboard</a>
             </li>
             <li className='hvr-underline-from-center' >
-              <Link to={'/discover'}>Discover</Link>
+              <a onClick={this.handleNavigation}>Discover</a>
             </li>
             <li className='hvr-underline-from-center' >
-              <Link to={'/profile'}>Profile</Link>
+              <a onClick={this.handleNavigation}>Profile</a>
             </li>
             <li className='hvr-underline-from-center' >
-              {/* <Link to={'/'} onClick={this.props.logout}>Logout</Link> */}
               <a onClick={() => this.props.openModal('logout')}>Logout</a>
             </li>
           </ul>
@@ -67,4 +74,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

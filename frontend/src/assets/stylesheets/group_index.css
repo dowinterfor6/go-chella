@@ -1,6 +1,5 @@
 .group-index-container {
   width: 100vw;
-  /* height: calc(100vh - 175px); */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -121,13 +120,12 @@
 
 /* Handle */
 .group-index-viewer::-webkit-scrollbar-thumb {
-  cursor: pointer;
-  background: rgb(165, 165, 165); 
+  background: #A773C3;
   border-radius: 5px;
 }
 
 .group-index-viewer::-webkit-scrollbar-thumb:hover {
-  background: rgb(95, 95, 95);
+  background: #854777;
 }
 
 .group-index-item {
@@ -140,8 +138,8 @@
   box-sizing: border-box;
   font-size: 20px;
   cursor: pointer;
-  background-color: rgba(205, 205, 205, 0.25);
-
+  background-color: #dec9e9;
+  
   font-family: 'Raleway', sans-serif;
   text-align: center;
   display: flex;
@@ -151,7 +149,7 @@
 }
 
 .group-index-item:hover {
-  background-color: rgb(205, 205, 205, 0.1);
+  background-color: #dad0ea;
 }
 
 .group-index-item:first-of-type {
@@ -193,6 +191,7 @@
 .in-focus-acts {
   height: 100%;
   width: 100%;
+  background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,7 +204,7 @@
   box-sizing: border-box;
   font-size: 32px;
   font-weight: 700;
-  color: #7289DA;
+  color: #f9cfdf;
   -webkit-text-stroke: 0.75px rgb(0, 0, 0);
   text-align: center;
   display: flex;
