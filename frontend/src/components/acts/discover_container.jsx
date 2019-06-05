@@ -12,7 +12,12 @@ class DiscoverPage extends React.Component {
     super(props);
 
     this.state = {
+      selectedDate: 'All Dates',
+      selectedStage: 'All Stages'
     }
+
+    this.handleDate = this.handleDate.bind(this);
+    this.handleStage = this.handleStage.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +29,14 @@ class DiscoverPage extends React.Component {
         ))
       }
     )
+  }
+
+  handleDate(e) {
+    this.setState({ selectedDate: e.target.value })
+  }
+
+  handleStage(e) {
+    this.setState({ selectedStage: e.target.value })
   }
 
   parseDate(date) {
@@ -38,7 +51,7 @@ class DiscoverPage extends React.Component {
 
   render() {
     let acts = (
-      Object.keys(this.state).sort().map((key, idx) => (
+      Object.keys(this.state).slice(2).sort().map((key, idx) => (
         <li className='discovery-index-item' key={idx}>
           <h3>{this.state[key].name}</h3>
           <h4>Date: {this.parseDate(this.state[key].date).date} Time: {this.parseDate(this.state[key].date).time}</h4>
@@ -80,12 +93,14 @@ class DiscoverPage extends React.Component {
     let filter = (
       <div className="filter-menu">
         <label>Date:
-          <select style={{ marginLeft: 5 }}>
+          <select style={{ marginLeft: 5 }} value={this.state.selectedDate} onChange={this.handleDate}>
+            <option value="All Dates">All Dates</option>
             {datesDropdown}
           </select>
         </label>
         <label>Stage:
-          <select style={{ marginLeft: 5 }}>
+          <select style={{ marginLeft: 5 }} value={this.state.selectedStage} onChange={this.handleStage}>
+          <option value="All Stages" >All Stages</option>
             {stagesDropdown}
           </select>
         </label>
@@ -107,6 +122,7 @@ class DiscoverPage extends React.Component {
         <div>
           {filter}
         </div>
+
 
         <ul className="act-list">
           {acts}
