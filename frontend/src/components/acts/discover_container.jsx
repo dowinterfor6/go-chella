@@ -1,6 +1,7 @@
 import { createGroup } from '../../actions/group_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+import FilteredActs from './filtered_acts_container';
 import { Link } from 'react-router-dom';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/discover.css';
@@ -32,7 +33,7 @@ class DiscoverPage extends React.Component {
   }
 
   handleDate(e) {
-    this.setState({ selectedDate: e.target.value })
+    this.setState({ selectedDate: e.target.value });
   }
 
   handleStage(e) {
@@ -50,6 +51,7 @@ class DiscoverPage extends React.Component {
   }
 
   render() {
+
     let acts = (
       Object.keys(this.state).slice(2).sort().map((key, idx) => (
         <li className='discovery-index-item' key={idx}>
@@ -106,9 +108,34 @@ class DiscoverPage extends React.Component {
         </label>
       </div>
     );
+    
+    if(this.state.selectedDate === 'All Dates' && this.state.selectedStage === 'All Stages') {
+      return (
+        
+        <div className='discovery-container'>
+          <div className="discovery-header">
+            <h1>Browse Coachella events!</h1>
+            <button onClick={() => {
+              this.props.openModal(this.props.formType)
+            }
+            }>
+              Create a Group
+            </button>
+          </div>
+          
+          <div>
+            {filter}
+          </div>
 
-    return (
-      <div className='discovery-container'>
+            
+          <ul className="act-list">
+            {acts}
+          </ul>
+        </div>
+      );
+    } else {
+      return (
+        <div className='discovery-container'>
         <div className="discovery-header">
           <h1>Browse Coachella events!</h1>
           <button onClick={() => {
@@ -123,12 +150,13 @@ class DiscoverPage extends React.Component {
           {filter}
         </div>
 
-
+          
         <ul className="act-list">
-          {acts}
+          <FilteredActs date={this.state.selectedDate} stage={this.state.selectedStage} />
         </ul>
       </div>
-    );
+      );
+    }
   }
 
 }
