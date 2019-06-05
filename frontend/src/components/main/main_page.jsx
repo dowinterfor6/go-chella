@@ -35,29 +35,13 @@ class MainPage extends React.Component {
     return (
       <div className='main-landing'>
         <div className="parallax-container">
-          <h1>PLAN AN EXCEPTIONAL EXPERIENCE, EVERYTIME.</h1>
           <div className="parallax"><img src="http://www.lagunabeachmagazine.com/wp-content/uploads/2019/03/Coachella-3.jpg" alt="" /></div>
+          <h1>PLAN AN EXCEPTIONAL EXPERIENCE, EVERYTIME.</h1>
         </div>
 
         {/* <div className='landing-page-container'> */}
           <section className="why-brochella">
-            <h2>Why Go-chella?</h2>
-            <p>
-              Ever feel like it's a massive hassle getting all your bros together
-              for events like Coachella? Sent out too many texts for an unorganized
-              group trip to this coveted music festival? Lost track of who's coming 
-              from where, who's hitching a ride with who, and who's bringing the beer?
-            </p>
-          </section>
-          
-          <div className="parallax-container">
-          {/* <div className="parallax"><img src="https://www.ticketclub.com/blog/wp-content/uploads/2019/01/coachella-large-image-2000x1000.jpg" alt="" /></div> */}
-          {/* <div className="parallax"><img src="https://www.gannett-cdn.com/presto/2019/04/12/PPAS/818d1dcf-dc84-4130-8737-5ef6cd6c31a1-ArtInstallationFirstDrop002.JPG?crop=2999,1691,x0,y0&width=3200&height=1680&fit=bounds" alt="" /></div> */}
-          <div className="parallax"><img src="https://i.pinimg.com/originals/67/a9/a7/67a9a7ee5a6be4378d463609cbd8b8ee.jpg" alt="" /></div>
-          </div>
-
-          <section className="what-brochella">
-            <h2>What is Bro-chella?</h2>
+            {/* <h2>What is Go-chella?</h2> */}
             <p>
               Bro-chella is a platform for organizing your own custom groups
               and itinerary for events like Coachella. With an minimalistic and clean
@@ -67,12 +51,26 @@ class MainPage extends React.Component {
               that the group is planning to attend, as well as the associated details.
             </p>
           </section>
+          
+          <div className="parallax-container">
+          <div className="parallax"><img src="https://i.pinimg.com/originals/67/a9/a7/67a9a7ee5a6be4378d463609cbd8b8ee.jpg" alt="" /></div>
+          <h1>WE HANDLE THE STRESS, SO YOUR EVENT IS A SUCCESS.</h1>
+          </div>
+
+          <section className="what-brochella">
+            {/* <h2>Why Go-chella?</h2> */}
+            <p>
+              Ever feel like it's a massive hassle getting all your bros together
+              for events like Coachella? Sent out too many texts for an unorganized
+              group trip to this coveted music festival? Lost track of who's coming 
+              from where, who's hitching a ride with who, and who's bringing the beer?
+            </p>
+          </section>
 
           <div className="parallax-container">
           <div className="parallax"><img src="https://peopledotcom.files.wordpress.com/2019/04/coachella-2.jpg" alt="" /></div>
+          <h1>EVERY DETAIL MATTERS.</h1>
           </div>
-
-
           <section className="beyond-brochella">
             <h2>Beyond Bro-chella</h2>
             <p>
