@@ -24,7 +24,7 @@ class ActIndexItem extends React.Component {
         let timeArr = dateArr[1].split('Z');
         newTime = timeArr[0].split('.')[0];
         return { date: newDate, time: newTime }
-      }
+    }
 
     render() {
 
