@@ -54,7 +54,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <nav className="nav-bar-container">
-        <h1>Bro-chella</h1>
+        <h1><img src="https://fontmeme.com/permalink/190605/2ddc6672710ed3d9c8ab1e12df94955c.png" alt="" /></h1>
         { this.getLinks() }
         <ModalContainer />
       </nav>

@@ -2,7 +2,7 @@
   height: 100px;
   width: 100vw;
   margin: 50px auto;
-  margin-bottom: 25px;
+  margin-bottom: 75px;
   padding: 10px 10%;
   box-sizing: border-box;
   /* border-top: 1px solid black;
@@ -15,7 +15,7 @@
 
 .nav-bar-container h1 {
   box-sizing: border-box;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 48px;
@@ -43,7 +43,7 @@
 .nav-bar-items-after-login {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .group-index-name {
