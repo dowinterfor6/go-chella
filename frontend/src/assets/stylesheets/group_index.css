@@ -140,8 +140,9 @@
   box-sizing: border-box;
   font-size: 20px;
   cursor: pointer;
-  background-color: rgba(205, 205, 205, 0.25);
-
+  /* background-color: rgba(205, 205, 205, 0.25); */
+  background-color: #dec9e9;
+  
   font-family: 'Raleway', sans-serif;
   text-align: center;
   display: flex;
@@ -151,7 +152,8 @@
 }
 
 .group-index-item:hover {
-  background-color: rgb(205, 205, 205, 0.1);
+  background-color: #dad0ea;
+  /* background-color: rgb(205, 205, 205, 0.1); */
 }
 
 .group-index-item:first-of-type {
