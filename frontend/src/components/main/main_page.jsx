@@ -30,7 +30,9 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className='main-landing'>
+          <img src="https://www.ticketclub.com/blog/wp-content/uploads/2019/01/coachella-large-image-2000x1000.jpg" alt="" />
         <div className='landing-page-container'>
+          <header>PLAN AN EXCEPTIONAL EXPERIENCE, EVERYTIME.</header>
           <section className="why-brochella">
             <h2>Why Go-chella?</h2>
             <p>
