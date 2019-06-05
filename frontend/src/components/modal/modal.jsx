@@ -9,11 +9,6 @@ import LogoutConfirmationContainer from '../nav/logout_confirmation_container';
 import InviteLinkContainer from '../groups/invite_link_container';
 import AddActsContainer from '../acts/add_acts_container';
 
-
-//reminder to:
-//import group_form, and
-//make 'Create Group' swtich case (for the discover page for now, and group show page for later)
-//make 'Edit Group' switch case (for the group show page)
 class Modal extends React.Component {
   render() {
     if (!this.props.modal) {

@@ -15,15 +15,11 @@ const validateLoginInput = require('../../validation/login');
 
 // Register route
 router.post('/register', (req, res) => {
-  // TODO: Once we get there lol
   const { errors, isValid } = validateRegisterInput(req.body);
 
   if (!isValid) {
     return res.status(400).json(errors);
   }
-
-  // TODO: TEMPORARY
-  // let errors = { username: "", password: ""};
 
   // Find by username instead of email
   User.findOne({ username: req.body.username })

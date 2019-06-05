@@ -35,7 +35,7 @@ class MainPage extends React.Component {
     return (
       <div className='main-landing'>
         <div className="parallax-container">
-          <div className="parallax"><img src="http://www.lagunabeachmagazine.com/wp-content/uploads/2019/03/Coachella-3.jpg" alt="" /></div>
+          <div className="parallax"><img src="https://www.lagunabeachmagazine.com/wp-content/uploads/2019/03/Coachella-3.jpg" alt="" /></div>
           <h1>PLAN AN EXCEPTIONAL EXPERIENCE, EVERYTIME.</h1>
         </div>
 

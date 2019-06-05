@@ -16,7 +16,6 @@ class GroupForm extends React.Component {
   }
 
   componentWillUnmount() {
-    //delete errors
     this.props.closeModal();
   }
 
@@ -59,7 +58,6 @@ const mapStateToProps = (state, ownProps) => {
   return {
     group: state.groups.data,
     formType: 'Edit Group',
-    //add key-value to show errors
   };
 };
 
@@ -68,7 +66,6 @@ const mapDispatchToProps = (dispatch) => {
     fetchGroup: (id) => dispatch(fetchGroup(id)),
     updateGroup: (group) => dispatch(updateGroup(group)),
     closeModal: () => dispatch(closeModal()),
-    //add deleteErrors for creating groups
   };
 };
 
