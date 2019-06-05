@@ -3,10 +3,11 @@
 .parallax-container {
   position: relative;
   overflow: hidden;
-  height: 800px;
+  height: 900px;
 }
 
 .parallax-container h1 {
+  font-size: 50px;
   position: absolute;
   top: 50%;
   left: 50%;
