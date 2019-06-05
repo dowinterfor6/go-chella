@@ -1,7 +1,12 @@
-.main-landing {
+.main-landing img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 100%;
   width: 100%;
-  position: absolute;
+  z-index: -2;
+  opacity: 0.8;
 }
 
 .landing-page-container {
@@ -21,8 +26,12 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bold;
   font-size: 45px;
-  padding-top: 375px;
-  padding-bottom: 475px;
+  margin-top: 250px;
+  margin-bottom: 200px;
+}
+
+.landing-page-container section {
+  /* font-size: 100px; */
 }
 
 .why-brochella,

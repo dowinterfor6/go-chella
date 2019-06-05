@@ -24,22 +24,22 @@ class GroupIndexDisplay extends React.Component {
     clearInterval(this.interval);
   }
   
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState({
-  //     acts: nextProps.acts,
-  //     activeGroup: nextProps.activeGroup,
-  //     backgroundUrl: 0
-  //   });
-  //   this.setBackgroundUrl(nextProps.acts[0]);
-  //   clearInterval(this.interval);
-  //   if (nextProps.acts.length > 1) {
-  //     this.interval = setInterval(() => {
-  //       this.setState({ backgroundUrl: this.state.backgroundUrl + 1 })
-  //     }, 5000);
-  //     document.getElementsByClassName('in-focus-header')[0].classList.add('fadeIn');
-  //     document.getElementsByClassName('act-list-container')[0].classList.add('fadeIn');
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      acts: nextProps.acts,
+      activeGroup: nextProps.activeGroup,
+      backgroundUrl: 0
+    });
+    // this.setBackgroundUrl(nextProps.acts[0]);
+    // clearInterval(this.interval);
+    // if (nextProps.acts.length > 1) {
+    //   this.interval = setInterval(() => {
+    //     this.setState({ backgroundUrl: this.state.backgroundUrl + 1 })
+    //   }, 5000);
+    //   document.getElementsByClassName('in-focus-header')[0].classList.add('fadeIn');
+    //   document.getElementsByClassName('act-list-container')[0].classList.add('fadeIn');
+    // }
+  }
 
   handleNavigation(e) {
     if (this.props.activeGroup) {
