@@ -5,10 +5,12 @@ const actsReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch (action.type) {
-    case RECEIVE_ACT:
-      return merge({}, state, { [action.act.data._id]: action.act.data});
+    // case RECEIVE_ACT:
+    //   console.log(state);
+    //   console.log(action);
+    //   let acts = state.groups[action.currentGroupId];
+    //   return merge({}, state, { [action.act.data._id]: action.act.data});
     case RECEIVE_ACTS:
-      // TODO: FINE TO BE ARRAY?
       return action.acts;
     case REMOVE_ACTS:
       return {};

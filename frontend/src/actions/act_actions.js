@@ -1,12 +1,14 @@
 import * as actsApiUtil from '../util/acts_api_util';
 
 export const RECEIVE_ACT = 'RECEIVE_ACT';
+// TODO: Check if other act actions are being used anywhere
 export const REMOVE_ACTS = 'REMOVE_ACTS';
 export const RECEIVE_ACTS = 'RECEIVE_ACTS';
 
-const receiveAct = (act) => ({
+const receiveAct = (act, currentGroupId) => ({
   type: RECEIVE_ACT,
-  act
+  act,
+  currentGroupId
 });
 
 const removeActs = () => ({
@@ -18,8 +20,8 @@ const receiveActs = (acts) => ({
   acts: acts.data
 })
 
-export const fetchAct = (actId) => (dispatch) => (
-  actsApiUtil.fetchAct(actId).then((act) => dispatch(receiveAct(act)))
+export const fetchAct = (actId, currentGroupId) => (dispatch) => (
+  actsApiUtil.fetchAct(actId).then((act) => dispatch(receiveAct(act, currentGroupId)))
 );
 
 export const deleteActs = (actId = '') => (dispatch) => (
