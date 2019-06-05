@@ -1,10 +1,12 @@
 .acts-show-container {
-    display: block;
+    display: flex;
     text-align: center;
     padding: 10px;
+    margin-left: 50px;
 }
 
 .acts-show-container > h2 {
+    position: absolute;
     text-align: center;
 }
 
@@ -13,7 +15,7 @@ strong {
 }
 
 .acts-show-container > img {
-    margin-top: 35px;
+    margin-top: 50px;
 }
 
 .acts-desc  {

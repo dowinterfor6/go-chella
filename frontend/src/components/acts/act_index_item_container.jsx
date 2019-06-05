@@ -34,7 +34,7 @@ class ActIndexItem extends React.Component {
 
         return (
             <div className="acts-show-container">
-                <h2>This is the page for <strong>{this.props.act.name}!</strong></h2>
+                <h2><strong>{this.props.act.name}</strong></h2>
                 <img src={this.props.act.url} alt="act"/>
                 <span>
                     <div className="acts-desc">
