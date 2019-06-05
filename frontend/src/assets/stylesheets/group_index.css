@@ -139,7 +139,6 @@
   box-sizing: border-box;
   font-size: 20px;
   cursor: pointer;
-  /* background-color: rgba(205, 205, 205, 0.25); */
   background-color: #dec9e9;
   
   font-family: 'Raleway', sans-serif;
@@ -152,7 +151,6 @@
 
 .group-index-item:hover {
   background-color: #dad0ea;
-  /* background-color: rgb(205, 205, 205, 0.1); */
 }
 
 .group-index-item:first-of-type {
@@ -194,6 +192,7 @@
 .in-focus-acts {
   height: 100%;
   width: 100%;
+  background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,7 +205,7 @@
   box-sizing: border-box;
   font-size: 32px;
   font-weight: 700;
-  color: #7289DA;
+  color: #f9cfdf;
   -webkit-text-stroke: 0.75px rgb(0, 0, 0);
   text-align: center;
   display: flex;
