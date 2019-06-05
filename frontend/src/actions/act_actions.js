@@ -1,7 +1,7 @@
 import * as actsApiUtil from '../util/acts_api_util';
 
 export const RECEIVE_ACT = 'RECEIVE_ACT';
-// TODO: Check if other act actions are being used anywhere
+// TODO: Check if this can be refactored
 export const REMOVE_ACTS = 'REMOVE_ACTS';
 export const RECEIVE_ACTS = 'RECEIVE_ACTS';
 
