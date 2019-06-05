@@ -1,6 +1,6 @@
 .group-index-container {
   width: 100vw;
-  height: calc(100vh - 175px);
+  /* height: calc(100vh - 175px); */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -98,6 +98,7 @@
 
 .group-index-viewer {
   width: 80%;
+  padding-top: 175px;
   box-sizing: border-box;
   margin: auto;
   display: flex;

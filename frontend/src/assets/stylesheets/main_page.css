@@ -73,13 +73,21 @@
 .why-brochella,
 .what-brochella,
 .beyond-brochella {
-  line-height: 2em;
-  margin: 100px;
+  /* line-height: 2em; */
+  /* padding: 100px 0px 100px 0px; */
 }
 
 .main-landing section {
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDnjU59BpeZA72vhC9i-Bba7AoHU418Vaa6-IZLbcupXmcZfBMw');
   background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0px 100px 0px;
+}
+
+.main-landing section h2, .main-landing section p {
+  line-height: 2em;
+  padding: 0px 100px 0px 100px;
 }
 
 .background-cover,
