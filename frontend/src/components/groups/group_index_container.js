@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import GroupIndex from './group_index';
-import { fetchUserGroups } from '../../actions/user_actions';
-// import { fetchGroup } from '../../actions/group_actions';
-import { fetchUser } from '../../util/user_api_util';
-import { fetchAct } from '../../util/acts_api_util';
-import { fetchGroup } from '../../util/group_api_util';
+import { fetchGroup } from '../../actions/group_actions';
+
+import { fetchUser, fetchUsersGroups } from '../../util/user_api_util';
+import { fetchAct } from '../../actions/act_actions';
+// import { fetchAct } from '../../util/acts_api_util';
 
 const mapStateToProps = (state) => {
   return {
@@ -17,11 +17,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
-    fetchUserGroups: (userId) => dispatch(fetchUserGroups(userId)),
-    // fetchGroup: (groupId) => dispatch(fetchGroup(groupId)),
-    fetchGroup: (groupId) => fetchGroup(groupId),
+    fetchGroup: (groupId) => dispatch(fetchGroup(groupId)),
+    fetchUserGroups: (userId) => fetchUsersGroups(userId),
+    fetchAct: (actId, currentGroupId) => dispatch(fetchAct(actId, currentGroupId)),
+
     fetchUser: (userId) => fetchUser(userId),
-    fetchAct: (actId) => fetchAct(actId)
+    // fetchAct: (actId) => fetchAct(actId)
   };
 };
 
