@@ -35,7 +35,7 @@ class MainPage extends React.Component {
     return (
       <div className='main-landing'>
         <div className="parallax-container">
-          <div className="parallax"><img src="https://www.lagunabeachmagazine.com/wp-content/uploads/2019/03/Coachella-3.jpg" alt="" /></div>
+          <div className="parallax"><img src="http://www.lagunabeachmagazine.com/wp-content/uploads/2019/03/Coachella-3.jpg" alt="" /></div>
           <h1>PLAN AN EXCEPTIONAL EXPERIENCE, EVERYTIME.</h1>
         </div>
 
@@ -68,14 +68,15 @@ class MainPage extends React.Component {
           <div className="parallax"><img src="https://peopledotcom.files.wordpress.com/2019/04/coachella-2.jpg" alt="" /></div>
           <h1>EVERY DETAIL MATTERS.</h1>
           </div>
-          <section className="beyond-brochella">
+          <section className="get-started">
             <p>
-
-              Developed by Andrew Chan, Karen Lai, and Kevin Brimmerman, Bro-chella is
-              a brief introduction to the MERN stack and the first real experience of a 
-              group full stack project for all of us. Working under a five day timeline 
-              with no prior experience with the MERN stack, this site was developed upon 
-              an idea that could potentially become a real app once fully completed.
+              So, what are you waiting for?
+              <br />
+              <a
+              onClick={() => this.props.openModal('login')}
+              >
+              Plan your fun seriously.
+              </a>
             </p>
           </section>
         {/* </div> */}
