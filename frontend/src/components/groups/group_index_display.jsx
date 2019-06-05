@@ -16,30 +16,30 @@ class GroupIndexDisplay extends React.Component {
     this.handleNavigation = this.handleNavigation.bind(this);
   }
 
-  componentDidMount() {
-    this.setBackgroundUrl();
-  }
+  // componentDidMount() {
+  //   this.setBackgroundUrl();
+  // }
 
   componentWillUnmount() {
     clearInterval(this.interval);
   }
   
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      acts: nextProps.acts,
-      activeGroup: nextProps.activeGroup,
-      backgroundUrl: 0
-    });
-    this.setBackgroundUrl(nextProps.acts[0]);
-    clearInterval(this.interval);
-    if (nextProps.acts.length > 1) {
-      this.interval = setInterval(() => {
-        this.setState({ backgroundUrl: this.state.backgroundUrl + 1 })
-      }, 5000);
-      document.getElementsByClassName('in-focus-header')[0].classList.add('fadeIn');
-      document.getElementsByClassName('act-list-container')[0].classList.add('fadeIn');
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({
+  //     acts: nextProps.acts,
+  //     activeGroup: nextProps.activeGroup,
+  //     backgroundUrl: 0
+  //   });
+  //   this.setBackgroundUrl(nextProps.acts[0]);
+  //   clearInterval(this.interval);
+  //   if (nextProps.acts.length > 1) {
+  //     this.interval = setInterval(() => {
+  //       this.setState({ backgroundUrl: this.state.backgroundUrl + 1 })
+  //     }, 5000);
+  //     document.getElementsByClassName('in-focus-header')[0].classList.add('fadeIn');
+  //     document.getElementsByClassName('act-list-container')[0].classList.add('fadeIn');
+  //   }
+  // }
 
   handleNavigation(e) {
     if (this.props.activeGroup) {
@@ -47,20 +47,20 @@ class GroupIndexDisplay extends React.Component {
     }
   }
 
-  setBackgroundUrl(url) {
-    let displayElement = document.getElementsByClassName('in-focus-display')[0];
-    if (displayElement) {
-      if (url) {
-        displayElement.classList.add('fadeIn');
-        displayElement.setAttribute('style',
-          `background: url('${url}');
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;`
-        );
-      };
-    } 
-  }
+  // setBackgroundUrl(url) {
+  //   let displayElement = document.getElementsByClassName('in-focus-display')[0];
+  //   if (displayElement) {
+  //     if (url) {
+  //       displayElement.classList.add('fadeIn');
+  //       displayElement.setAttribute('style',
+  //         `background: url('${url}');
+  //         background-position: center;
+  //         background-size: cover;
+  //         background-repeat: no-repeat;`
+  //       );
+  //     };
+  //   } 
+  // }
 
   render() {
     let display = (
@@ -107,10 +107,10 @@ class GroupIndexDisplay extends React.Component {
       )
     }
 
-    if (Object.keys(this.state.acts).length > 0) {
-      let url = this.state.acts[this.state.backgroundUrl % this.state.acts.length].url;
-      this.setBackgroundUrl(url);
-    };
+    // if (Object.keys(this.state.acts).length > 0) {
+    //   let url = this.state.acts[this.state.backgroundUrl % this.state.acts.length].url;
+    //   this.setBackgroundUrl(url);
+    // };
 
     return (
       display

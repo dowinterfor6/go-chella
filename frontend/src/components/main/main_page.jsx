@@ -10,22 +10,22 @@ class MainPage extends React.Component {
       loaded: false
     };
 
-    this.addLoadedImage = this.addLoadedImage.bind(this);
+    // this.addLoadedImage = this.addLoadedImage.bind(this);
   }
   
   componentDidMount() {
     document.title = 'Bro-chella';
   };
 
-  addLoadedImage() {
-    this.imgLoadCount++;
-    if (document.querySelectorAll('img').length === this.imgLoadCount) {
-      let component = document.getElementsByClassName('background-splash')[0];
-      component.classList.remove('hidden');
-      component.classList.add('fadeIn');
-      this.setState({loaded: true});
-    };
-  };
+  // addLoadedImage() {
+  //   this.imgLoadCount++;
+  //   if (document.querySelectorAll('img').length === this.imgLoadCount) {
+  //     let component = document.getElementsByClassName('background-splash')[0];
+  //     component.classList.remove('hidden');
+  //     component.classList.add('fadeIn');
+  //     this.setState({loaded: true});
+  //   };
+  // };
 
   render() {
     return (
@@ -68,7 +68,7 @@ class MainPage extends React.Component {
         <div className="background-vertical-cover">
           
         </div>
-        <div 
+        {/* <div 
           className="background-splash hidden" 
           onAnimationEnd={(e) => e.currentTarget.classList.remove('fadeIn')}
         >
@@ -82,7 +82,7 @@ class MainPage extends React.Component {
           <img onLoad={() => this.addLoadedImage()}src="https://images.pexels.com/photos/1799249/pexels-photo-1799249.jpeg" alt=""/>
           <img onLoad={() => this.addLoadedImage()}src="https://images.pexels.com/photos/354305/pexels-photo-354305.jpeg" alt=""/>
           <img onLoad={() => this.addLoadedImage()}src="https://images.pexels.com/photos/1684187/pexels-photo-1684187.jpeg" alt=""/>
-        </div>
+        </div> */}
       </div> 
     )
   }
