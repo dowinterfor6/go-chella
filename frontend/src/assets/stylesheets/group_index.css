@@ -121,13 +121,12 @@
 
 /* Handle */
 .group-index-viewer::-webkit-scrollbar-thumb {
-  cursor: pointer;
-  background: rgb(165, 165, 165); 
+  background: #A773C3;
   border-radius: 5px;
 }
 
 .group-index-viewer::-webkit-scrollbar-thumb:hover {
-  background: rgb(95, 95, 95);
+  background: #854777;
 }
 
 .group-index-item {
