@@ -80,8 +80,11 @@
 }
 
 .main-landing section h2, .main-landing section p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-align: center;
   line-height: 2em;
-  padding: 0px 100px 0px 100px;
+  padding: 0px 200px 0px 200px;
 }
 
 .background-cover,
