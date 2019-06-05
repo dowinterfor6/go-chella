@@ -170,3 +170,11 @@
 .hidden {
   display: none;
 } */
+
+body {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDnjU59BpeZA72vhC9i-Bba7AoHU418Vaa6-IZLbcupXmcZfBMw");
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
