@@ -109,7 +109,7 @@ class DiscoverPage extends React.Component {
       </div>
     );
     
-    if(this.state.selectedDate === 'All Dates' && this.state.selectedStage === 'All Stages') {
+  if(this.state.selectedDate === 'All Dates' && this.state.selectedStage === 'All Stages') {
         
     return (
       <div className="discovery-wrapper">
@@ -133,29 +133,29 @@ class DiscoverPage extends React.Component {
             {acts}
           </ul>
         </div>
+      </div>
       );
     } else {
       return (
         <div className='discovery-container'>
-        <div className="discovery-header">
-          <h1>Browse Coachella events!</h1>
-          <button onClick={() => {
-            this.props.openModal(this.props.formType)
-          }
-          }>
-            Create a Group
-          </button>
-        </div>
-        
-        <div>
-          {filter}
-        </div>
-
+          <div className="discovery-header">
+            <h1>Browse Coachella events!</h1>
+            <button onClick={() => {
+              this.props.openModal(this.props.formType)
+            }
+            }>
+              Create a Group
+            </button>
+          </div>
           
-        <ul className="act-list">
-          <FilteredActs date={this.state.selectedDate} stage={this.state.selectedStage} />
-        </ul>
-        </div>
+          <div>
+            {filter}
+          </div>
+
+            
+          <ul className="act-list">
+            <FilteredActs date={this.state.selectedDate} stage={this.state.selectedStage} />
+          </ul>
       </div>
       );
     }
