@@ -71,7 +71,7 @@ class MainPage extends React.Component {
           <section className="beyond-brochella">
             <p>
 
-              Developed by Andrew Chan, Karen Lai, and Kevin Brimmerman, Bro-chella is
+              Developed by Andrew Chan, Karen Lai, and Kevin Brimmerman, Go-chella is
               a brief introduction to the MERN stack and the first real experience of a 
               group full stack project for all of us. Working under a five day timeline 
               with no prior experience with the MERN stack, this site was developed upon 
