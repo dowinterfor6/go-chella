@@ -1,6 +1,9 @@
 import React from 'react';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/main_page.css';
+import M from 'materialize-css/dist/js/materialize.js';
+// import 'materialize-css/dist/css/materialize.css';
+
 
 class MainPage extends React.Component {
   constructor(props){
@@ -15,6 +18,7 @@ class MainPage extends React.Component {
   
   componentDidMount() {
     document.title = 'Bro-chella';
+    M.AutoInit();
   };
 
   // addLoadedImage() {
@@ -30,9 +34,13 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className='main-landing'>
-          <img src="https://www.ticketclub.com/blog/wp-content/uploads/2019/01/coachella-large-image-2000x1000.jpg" alt="" />
-        <div className='landing-page-container'>
-          <header>PLAN AN EXCEPTIONAL EXPERIENCE, EVERYTIME.</header>
+        <div className="parallax-container">
+          <h1>PLAN AN EXCEPTIONAL EXPERIENCE, EVERYTIME.</h1>
+          <div className="parallax"><img src="https://www.ticketclub.com/blog/wp-content/uploads/2019/01/coachella-large-image-2000x1000.jpg" alt="" /></div>
+        </div>
+
+
+        {/* <div className='landing-page-container'> */}
           <section className="why-brochella">
             <h2>Why Go-chella?</h2>
             <p>
@@ -42,6 +50,12 @@ class MainPage extends React.Component {
               from where, who's hitching a ride with who, and who's bringing the beer?
             </p>
           </section>
+
+          
+          <div className="parallax-container">
+            <div className="parallax"><img src="https://www.ticketclub.com/blog/wp-content/uploads/2019/01/coachella-large-image-2000x1000.jpg" alt="" /></div>
+          </div>
+
           <section className="what-brochella">
             <h2>What is Bro-chella?</h2>
             <p>
@@ -53,6 +67,12 @@ class MainPage extends React.Component {
               that the group is planning to attend, as well as the associated details.
             </p>
           </section>
+
+          <div className="parallax-container">
+            <div className="parallax"><img src="https://www.ticketclub.com/blog/wp-content/uploads/2019/01/coachella-large-image-2000x1000.jpg" alt="" /></div>
+          </div>
+
+
           <section className="beyond-brochella">
             <h2>Beyond Bro-chella</h2>
             <p>
@@ -63,7 +83,10 @@ class MainPage extends React.Component {
               an idea that could potentially become a real app once fully completed.
             </p>
           </section>
-        </div>
+        {/* </div> */}
+
+
+
         <div className="background-cover">
 
         </div>

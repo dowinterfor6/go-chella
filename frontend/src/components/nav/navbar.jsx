@@ -13,40 +13,46 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <ul className='nav-bar-items-after-login'>
-          <li className='hvr-underline-from-center' >
-            <Link to={'/dashboard'}>Dashboard</Link>
-          </li>
-          <li className='hvr-underline-from-center' >
-            <Link to={'/discover'}>Discover</Link>
-          </li>
-          <li className='hvr-underline-from-center' >
-            <Link to={'/profile'}>Profile</Link>
-          </li>
-          <li className='hvr-underline-from-center' >
-            {/* <Link to={'/'} onClick={this.props.logout}>Logout</Link> */}
-            <a onClick={() => this.props.openModal('logout')}>Logout</a>
-          </li>
-        </ul>
+        <div className="nav-logo-after-login">
+          <h1><img src="https://fontmeme.com/permalink/190605/2ddc6672710ed3d9c8ab1e12df94955c.png" alt="" /></h1>
+          <ul className='nav-bar-items-after-login'>
+            <li className='hvr-underline-from-center' >
+              <Link to={'/dashboard'}>Dashboard</Link>
+            </li>
+            <li className='hvr-underline-from-center' >
+              <Link to={'/discover'}>Discover</Link>
+            </li>
+            <li className='hvr-underline-from-center' >
+              <Link to={'/profile'}>Profile</Link>
+            </li>
+            <li className='hvr-underline-from-center' >
+              {/* <Link to={'/'} onClick={this.props.logout}>Logout</Link> */}
+              <a onClick={() => this.props.openModal('logout')}>Logout</a>
+            </li>
+          </ul>
+        </div>
       );
     } else {
       return (
-        <ul className='nav-bar-items-before-login'>
-          <li className='hvr-underline-from-center' >
-            <a
-              onClick={() => this.props.openModal('signup')}
-            >
-              Signup
-            </a>
-          </li>
-          <li className='hvr-underline-from-center' >
-            <a
-              onClick={() => this.props.openModal('login')}
-            >
-            Login
-            </a>
-          </li>
-        </ul>
+        <div className="nav-logo-before-login">
+          <h1><img src="https://fontmeme.com/permalink/190605/2ddc6672710ed3d9c8ab1e12df94955c.png" alt="" /></h1>
+          <ul className='nav-bar-items-before-login'>
+            <li className='hvr-underline-from-center' >
+              <a
+                onClick={() => this.props.openModal('signup')}
+              >
+                Signup
+              </a>
+            </li>
+            <li className='hvr-underline-from-center' >
+              <a
+                onClick={() => this.props.openModal('login')}
+              >
+              Login
+              </a>
+            </li>
+          </ul>
+        </div>
       );
     }
   }
@@ -54,7 +60,6 @@ class NavBar extends React.Component {
   render() {
     return (
       <nav className="nav-bar-container">
-        <h1><img src="https://fontmeme.com/permalink/190605/2ddc6672710ed3d9c8ab1e12df94955c.png" alt="" /></h1>
         { this.getLinks() }
         <ModalContainer />
       </nav>
