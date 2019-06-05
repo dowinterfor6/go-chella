@@ -36,7 +36,7 @@ class MainPage extends React.Component {
       <div className='main-landing'>
         <div className="parallax-container">
           <h1>PLAN AN EXCEPTIONAL EXPERIENCE, EVERYTIME.</h1>
-          <div className="parallax"><img src="https://www.ticketclub.com/blog/wp-content/uploads/2019/01/coachella-large-image-2000x1000.jpg" alt="" /></div>
+          <div className="parallax"><img src="http://www.lagunabeachmagazine.com/wp-content/uploads/2019/03/Coachella-3.jpg" alt="" /></div>
         </div>
 
         {/* <div className='landing-page-container'> */}
@@ -51,7 +51,9 @@ class MainPage extends React.Component {
           </section>
           
           <div className="parallax-container">
-          <div className="parallax"><img src="http://www.lagunabeachmagazine.com/wp-content/uploads/2019/03/Coachella-3.jpg" alt="" /></div>
+          {/* <div className="parallax"><img src="https://www.ticketclub.com/blog/wp-content/uploads/2019/01/coachella-large-image-2000x1000.jpg" alt="" /></div> */}
+          {/* <div className="parallax"><img src="https://www.gannett-cdn.com/presto/2019/04/12/PPAS/818d1dcf-dc84-4130-8737-5ef6cd6c31a1-ArtInstallationFirstDrop002.JPG?crop=2999,1691,x0,y0&width=3200&height=1680&fit=bounds" alt="" /></div> */}
+          <div className="parallax"><img src="https://i.pinimg.com/originals/67/a9/a7/67a9a7ee5a6be4378d463609cbd8b8ee.jpg" alt="" /></div>
           </div>
 
           <section className="what-brochella">
@@ -67,7 +69,7 @@ class MainPage extends React.Component {
           </section>
 
           <div className="parallax-container">
-          <div className="parallax"><img src="http://d279m997dpfwgl.cloudfront.net/wp/2019/04/0424_coachella.jpg?s=6" alt="" /></div>
+          <div className="parallax"><img src="https://peopledotcom.files.wordpress.com/2019/04/coachella-2.jpg" alt="" /></div>
           </div>
 
 
