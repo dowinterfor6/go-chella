@@ -83,9 +83,15 @@ class GroupIndex extends React.Component {
             groups[ownerResult.id].owner = ownerResult.data;
           }
         );
+        // console.log(this.props);
+        // console.log(groups);
         this.setState({groups: groups, loading: false})
       });
     });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
   }
 
   handleDisplay(e) {

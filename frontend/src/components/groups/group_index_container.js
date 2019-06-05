@@ -6,11 +6,10 @@ import { fetchGroup } from '../../actions/group_actions';
 import { fetchUsersGroups } from '../../util/user_api_util';
 import { fetchAct } from '../../actions/act_actions';
 import { fetchUser, fetchOwner } from '../../actions/user_actions';
-// import { fetchAct } from '../../util/acts_api_util';
 
 const mapStateToProps = (state) => {
   return {
-    posts: Object.keys(state.groups).map(id => state.groups[id]),
+    groups: state.groups,
     currentUser: state.session.user
   };
 };
@@ -23,8 +22,6 @@ const mapDispatchToProps = (dispatch) => {
     fetchAct: (actId, currentGroupId) => dispatch(fetchAct(actId, currentGroupId)),
     fetchUser: (userId, currentGroupId) => dispatch(fetchUser(userId, currentGroupId)),
     fetchOwner: (userId, currentGroupId) => dispatch(fetchOwner(userId, currentGroupId))
-    // fetchUser: (userId) => fetchUser(userId),
-    // fetchAct: (actId) => fetchAct(actId)
   };
 };
 
