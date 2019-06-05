@@ -14,6 +14,7 @@ class MainPage extends React.Component {
     };
 
     // this.addLoadedImage = this.addLoadedImage.bind(this);
+    this.topFunction = this.topFunction.bind(this);
   }
   
   componentDidMount() {
@@ -31,6 +32,11 @@ class MainPage extends React.Component {
   //   };
   // };
 
+topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
   render() {
     return (
       <div className='main-landing'>
@@ -39,7 +45,6 @@ class MainPage extends React.Component {
           <h1>PLAN AN EXCEPTIONAL EXPERIENCE, EVERYTIME.</h1>
         </div>
 
-        {/* <div className='landing-page-container'> */}
           <section className="why-brochella">
             <p>
               Ever feel like it's a massive hassle getting all your bros together
@@ -72,17 +77,14 @@ class MainPage extends React.Component {
             <p>
               So, what are you waiting for?
               <br />
-              <a
-              onClick={() => this.props.openModal('login')}
-              >
-              Plan your fun seriously.
-              </a>
+              <button onClick="topFunction()" 
+                      id="back-to-top" 
+                      title="Go to top">
+                      Plan your fun seriously.
+              </button>
             </p>
           </section>
-        {/* </div> */}
-
-
-
+      
         <div className="background-cover">
 
         </div>
