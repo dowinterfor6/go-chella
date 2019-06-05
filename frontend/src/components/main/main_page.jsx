@@ -1,6 +1,9 @@
 import React from 'react';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/main_page.css';
+import M from 'materialize-css/dist/js/materialize.js';
+// import 'materialize-css/dist/css/materialize.css';
+
 
 class MainPage extends React.Component {
   constructor(props){
@@ -10,27 +13,33 @@ class MainPage extends React.Component {
       loaded: false
     };
 
-    this.addLoadedImage = this.addLoadedImage.bind(this);
+    // this.addLoadedImage = this.addLoadedImage.bind(this);
   }
   
   componentDidMount() {
     document.title = 'Bro-chella';
+    M.AutoInit();
   };
 
-  addLoadedImage() {
-    this.imgLoadCount++;
-    if (document.querySelectorAll('img').length === this.imgLoadCount) {
-      let component = document.getElementsByClassName('background-splash')[0];
-      component.classList.remove('hidden');
-      component.classList.add('fadeIn');
-      this.setState({loaded: true});
-    };
-  };
+  // addLoadedImage() {
+  //   this.imgLoadCount++;
+  //   if (document.querySelectorAll('img').length === this.imgLoadCount) {
+  //     let component = document.getElementsByClassName('background-splash')[0];
+  //     component.classList.remove('hidden');
+  //     component.classList.add('fadeIn');
+  //     this.setState({loaded: true});
+  //   };
+  // };
 
   render() {
     return (
       <div className='main-landing'>
-        <div className='landing-page-container'>
+        <div className="parallax-container">
+          <h1>PLAN AN EXCEPTIONAL EXPERIENCE, EVERYTIME.</h1>
+          <div className="parallax"><img src="http://www.lagunabeachmagazine.com/wp-content/uploads/2019/03/Coachella-3.jpg" alt="" /></div>
+        </div>
+
+        {/* <div className='landing-page-container'> */}
           <section className="why-brochella">
             <h2>Why Go-chella?</h2>
             <p>
@@ -40,6 +49,13 @@ class MainPage extends React.Component {
               from where, who's hitching a ride with who, and who's bringing the beer?
             </p>
           </section>
+          
+          <div className="parallax-container">
+          {/* <div className="parallax"><img src="https://www.ticketclub.com/blog/wp-content/uploads/2019/01/coachella-large-image-2000x1000.jpg" alt="" /></div> */}
+          {/* <div className="parallax"><img src="https://www.gannett-cdn.com/presto/2019/04/12/PPAS/818d1dcf-dc84-4130-8737-5ef6cd6c31a1-ArtInstallationFirstDrop002.JPG?crop=2999,1691,x0,y0&width=3200&height=1680&fit=bounds" alt="" /></div> */}
+          <div className="parallax"><img src="https://i.pinimg.com/originals/67/a9/a7/67a9a7ee5a6be4378d463609cbd8b8ee.jpg" alt="" /></div>
+          </div>
+
           <section className="what-brochella">
             <h2>What is Bro-chella?</h2>
             <p>
@@ -51,6 +67,12 @@ class MainPage extends React.Component {
               that the group is planning to attend, as well as the associated details.
             </p>
           </section>
+
+          <div className="parallax-container">
+          <div className="parallax"><img src="https://peopledotcom.files.wordpress.com/2019/04/coachella-2.jpg" alt="" /></div>
+          </div>
+
+
           <section className="beyond-brochella">
             <h2>Beyond Bro-chella</h2>
             <p>
@@ -61,14 +83,17 @@ class MainPage extends React.Component {
               an idea that could potentially become a real app once fully completed.
             </p>
           </section>
-        </div>
+        {/* </div> */}
+
+
+
         <div className="background-cover">
 
         </div>
         <div className="background-vertical-cover">
           
         </div>
-        <div 
+        {/* <div 
           className="background-splash hidden" 
           onAnimationEnd={(e) => e.currentTarget.classList.remove('fadeIn')}
         >
@@ -82,7 +107,7 @@ class MainPage extends React.Component {
           <img onLoad={() => this.addLoadedImage()}src="https://images.pexels.com/photos/1799249/pexels-photo-1799249.jpeg" alt=""/>
           <img onLoad={() => this.addLoadedImage()}src="https://images.pexels.com/photos/354305/pexels-photo-354305.jpeg" alt=""/>
           <img onLoad={() => this.addLoadedImage()}src="https://images.pexels.com/photos/1684187/pexels-photo-1684187.jpeg" alt=""/>
-        </div>
+        </div> */}
       </div> 
     )
   }

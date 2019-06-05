@@ -110,8 +110,9 @@ class DiscoverPage extends React.Component {
     );
     
     if(this.state.selectedDate === 'All Dates' && this.state.selectedStage === 'All Stages') {
-      return (
         
+    return (
+      <div className="discovery-wrapper">
         <div className='discovery-container'>
           <div className="discovery-header">
             <h1>Browse Coachella events!</h1>
@@ -154,6 +155,7 @@ class DiscoverPage extends React.Component {
         <ul className="act-list">
           <FilteredActs date={this.state.selectedDate} stage={this.state.selectedStage} />
         </ul>
+        </div>
       </div>
       );
     }
