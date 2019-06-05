@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
-import { fetchAct } from '../../actions/act_actions';
+import { fetchDisplayAct } from '../../actions/act_actions';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/acts_show.css';
 
@@ -13,7 +13,10 @@ class ActIndexItem extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAct(this.props.id);
+        this.props.fetchDisplayAct(this.props.id)
+            .then((res) => (
+                this.setState({ act: res.act.data})
+            ))
     }
 
     parseDate(date) {
@@ -27,21 +30,20 @@ class ActIndexItem extends React.Component {
     }
 
     render() {
-
-        if(!this.props.act) {
+        if(!this.state.act) {
             return null;
         }
 
         return (
             <div className="acts-show-container">
-                <h2>This is the page for <strong>{this.props.act.name}!</strong></h2>
-                <img src={this.props.act.url} alt="act"/>
+                <h2><strong>{this.state.act.name}</strong></h2>
+                <img src={this.state.act.url} alt="act"/>
                 <span>
                     <div className="acts-desc">
-                        You can see {this.props.act.name} perform LIVE at Go-Chella on {(this.parseDate(this.props.act.date).date).split('-')[1] 
-                        + '/' + (this.parseDate(this.props.act.date).date).split('-')[2]}.
+                        You can see {this.state.act.name} perform LIVE at Go-Chella on {(this.parseDate(this.state.act.date).date).split('-')[1] 
+                        + '/' + (this.parseDate(this.state.act.date).date).split('-')[2]}.
                         <br />
-                        Show starts at {this.parseDate(this.props.act.date).time} on the {this.props.act.stage} Stage.
+                        Show starts at {this.parseDate(this.state.act.date).time} on the {this.state.act.stage} Stage.
                     </div>
                 </span>
                 <button className="add-act" onClick={() => this.props.openModal('Add Act')}>Add Act</button>
@@ -53,16 +55,14 @@ class ActIndexItem extends React.Component {
 
 const mstp = (state, ownProps) => {
     let id = ownProps.match.params.actId;
-    let act = state.acts[ownProps.match.params.actId];
     return {
-        act,
         id
     };
 };
 
 const mdtp = dispatch => {
     return {
-        fetchAct: id => dispatch(fetchAct(id)),
+        fetchDisplayAct: id => dispatch(fetchDisplayAct(id)),
         openModal: modal => dispatch(openModal(modal))
     };
 };
