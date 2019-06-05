@@ -138,26 +138,24 @@ class DiscoverPage extends React.Component {
     } else {
       return (
         <div className="discovery-wrapper">
-        <div className='discovery-container'>
-          <div className="discovery-header">
-            <h1>Browse Coachella events!</h1>
-            <button onClick={() => {
-              this.props.openModal(this.props.formType)
-            }
-            }>
-              Create a Group
-            </button>
-          </div>
-          
-          <div>
-            {filter}
-          </div>
-
+          <div className='discovery-container'>
+            <div className="discovery-header">
+              <h1>Browse Coachella events!</h1>
+              <button onClick={() => {
+                this.props.openModal(this.props.formType)
+              }
+              }>
+                Create a Group
+              </button>
+            </div>
             
+            <div>
+              {filter}
+            </div>
 
-          <FilteredActs date={this.state.selectedDate} stage={this.state.selectedStage} />
-      </div>
-      </div>
+            <FilteredActs date={this.state.selectedDate} stage={this.state.selectedStage} />
+          </div>
+        </div>
       );
     }
   }
