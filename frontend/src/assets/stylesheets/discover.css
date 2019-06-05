@@ -91,3 +91,15 @@
   height: 150px;
   width: auto;
 }
+
+.filtered-act-list {
+  height: 80%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 324px);
+  grid-template-rows: repeat(auto-fit, 220px);
+  grid-gap: 10px;
+  justify-content: center;
+  overflow: scroll;
+  overflow-x: hidden;
+}

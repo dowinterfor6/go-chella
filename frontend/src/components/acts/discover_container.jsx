@@ -137,6 +137,7 @@ class DiscoverPage extends React.Component {
       );
     } else {
       return (
+        <div className="discovery-wrapper">
         <div className='discovery-container'>
           <div className="discovery-header">
             <h1>Browse Coachella events!</h1>
@@ -153,9 +154,9 @@ class DiscoverPage extends React.Component {
           </div>
 
             
-          <ul className="act-list">
-            <FilteredActs date={this.state.selectedDate} stage={this.state.selectedStage} />
-          </ul>
+
+          <FilteredActs date={this.state.selectedDate} stage={this.state.selectedStage} />
+      </div>
       </div>
       );
     }

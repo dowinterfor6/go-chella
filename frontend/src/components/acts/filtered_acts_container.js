@@ -26,7 +26,6 @@ class FilteredActs extends React.Component {
                     this.setState({ [Date.parse(act.date)]: act })
                     ))
                 })
-                console.log('component mounted');
     }
 
     parseDate(date) {
