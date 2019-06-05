@@ -26,10 +26,10 @@ class GroupIndexDisplay extends React.Component {
   
   componentWillReceiveProps(nextProps) {
     if (nextProps.acts) {
-      // console.log(nextProps.activeGroup);
-      this.setBackgroundUrl(nextProps.acts);
+      let firstActUrl = nextProps.acts[Object.keys(nextProps.acts)[0]].url;
+      this.setBackgroundUrl(firstActUrl);
       clearInterval(this.interval);
-      if (nextProps.acts.length > 1) {
+      if (Object.keys(nextProps.acts).length > 1) {
         this.interval = setInterval(() => {
           this.setState({ backgroundUrl: this.state.backgroundUrl + 1 })
         }, 5000);
@@ -111,7 +111,8 @@ class GroupIndexDisplay extends React.Component {
     }
 
     if (Object.keys(this.state.acts).length > 0) {
-      let url = this.state.acts[this.state.backgroundUrl % this.state.acts.length].url;
+      let key = this.state.backgroundUrl % Object.keys(this.state.acts).length;
+      let url = this.state.acts[Object.keys(this.state.acts)[key]].url;
       this.setBackgroundUrl(url);
     };
 

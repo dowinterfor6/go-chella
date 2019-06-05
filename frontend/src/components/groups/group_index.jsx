@@ -130,7 +130,7 @@ class GroupIndex extends React.Component {
     if (this.state.activePanel) {
       display = <GroupIndexDisplay
       activeGroup={this.state.activePanel}
-      acts={this.state.activePanel.acts}
+      acts={this.state.activePanel.actsInfo}
       />
     } else {
       display = <GroupIndexDisplay
