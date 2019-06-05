@@ -40,7 +40,7 @@ class GroupIndex extends React.Component {
             groups[currentGroup.id] = currentGroup;
 
             // Owner
-            let ownerPromise = (ownerId, currentGroupId) => this.props.fetchUser(ownerId).then((res) => {
+            let ownerPromise = (ownerId, currentGroupId) => this.props.fetchUser(ownerId, currentGroupId).then((res) => {
               return {
                 data: res.data,
                 id: currentGroupId
@@ -52,13 +52,13 @@ class GroupIndex extends React.Component {
             currentGroup.members = [];
             members.forEach(
               async (memberId) => {
-                let memberPromise = (memberId, currentGroup) => this.props.fetchUser(memberId).then((res) => {
+                let memberPromise = (memberId, currentGroupId) => this.props.fetchUser(memberId, currentGroupId).then((res) => {
                   return {
                     data: res.data,
                     group: currentGroup
                   };
                 });
-                let memberResult = await memberPromise(memberId, currentGroup);
+                let memberResult = await memberPromise(memberId, currentGroup.id);
                 memberResult.group.members.push(memberResult.data);
               }
             );

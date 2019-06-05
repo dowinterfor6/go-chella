@@ -8,10 +8,10 @@ import users from './user_reducer';
 
 const rootReducer = combineReducers({
   session,
-  users,
+  // users,
   errors, 
   groups,
-  acts,
+  // acts,
   ui
 });
 
