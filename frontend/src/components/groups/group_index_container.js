@@ -5,7 +5,7 @@ import { fetchGroup } from '../../actions/group_actions';
 
 import { fetchUsersGroups } from '../../util/user_api_util';
 import { fetchAct } from '../../actions/act_actions';
-import { fetchUser } from '../../actions/user_actions';
+import { fetchUser, fetchOwner } from '../../actions/user_actions';
 // import { fetchAct } from '../../util/acts_api_util';
 
 const mapStateToProps = (state) => {
@@ -21,7 +21,8 @@ const mapDispatchToProps = (dispatch) => {
     fetchGroup: (groupId) => dispatch(fetchGroup(groupId)),
     fetchUserGroups: (userId) => fetchUsersGroups(userId),
     fetchAct: (actId, currentGroupId) => dispatch(fetchAct(actId, currentGroupId)),
-    fetchUser: (userId, currentGroupId) => dispatch(fetchUser(userId, currentGroupId))
+    fetchUser: (userId, currentGroupId) => dispatch(fetchUser(userId, currentGroupId)),
+    fetchOwner: (userId, currentGroupId) => dispatch(fetchOwner(userId, currentGroupId))
     // fetchUser: (userId) => fetchUser(userId),
     // fetchAct: (actId) => fetchAct(actId)
   };

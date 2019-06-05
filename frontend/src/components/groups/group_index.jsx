@@ -40,7 +40,7 @@ class GroupIndex extends React.Component {
             groups[currentGroup.id] = currentGroup;
 
             // Owner
-            let ownerPromise = (ownerId, currentGroupId) => this.props.fetchUser(ownerId, currentGroupId).then((res) => {
+            let ownerPromise = (ownerId, currentGroupId) => this.props.fetchOwner(ownerId, currentGroupId).then((res) => {
               return {
                 data: res.data,
                 id: currentGroupId
