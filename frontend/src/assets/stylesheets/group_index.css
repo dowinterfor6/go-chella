@@ -250,6 +250,17 @@
   font-size: 3em;
 }
 
+.loading-screen-beer-background {
+  position: absolute;
+  left: calc(50vw - 125px);
+  top: calc((100vh - 200px) / 2 + 50px);
+  width: 250px;
+  height: 250px;
+  background-image: radial-gradient(closest-side, rgba(255,255,255,1) 75%, rgba(255,255,255,0));
+  border-radius: 100%;
+  z-index: -1;
+}
+
 /* ANIMATIONS */
 @keyframes fadeIn {
   from {

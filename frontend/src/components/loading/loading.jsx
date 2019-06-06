@@ -10,6 +10,9 @@ const Loading = ({ percent }) => {
 
   return (
     <div className="loading-screen-beer">
+      <div className="loading-screen-beer-background">
+        
+      </div>
       <div className="beer-mug">
 
       </div>
