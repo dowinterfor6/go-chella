@@ -28,6 +28,30 @@ class FilteredActs extends React.Component {
                 })
     }
 
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if(prevState.date !== nextProps.date) {
+            return { date: nextProps.date };
+        } else {
+            return null;
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.date !== this.props.date) {
+            this.props.fetchActs()
+            .then((res) => {
+                return res.acts.filter((act) => {
+                    return this.parseDate(act.date).date === this.state.date;
+                })
+            }).then((acts) => {
+                acts.map((act) => (
+                    this.setState({ [Date.parse(act.date)]: act })
+                    ))
+                })
+        }
+        console.log(this.props)
+    }
+
     parseDate(date) {
         let newDate;
         let newTime;
