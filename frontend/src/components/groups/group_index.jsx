@@ -11,7 +11,9 @@ class GroupIndex extends React.Component {
       currentUser: this.props.currentUser,
       groups: {},
       loading: true,
-      activePanel: null
+      activePanel: null,
+      numObjToLoad: -Infinity,
+      objLoaded: -1
     };
 
     this.handleDisplay = this.handleDisplay.bind(this);
@@ -30,6 +32,17 @@ class GroupIndex extends React.Component {
         promiseArr.push(promise);
       });
       Promise.all(promiseArr).then((res) => {
+        let objToLoad = 0;
+        Object.keys(this.props.groups).forEach((groupId) => {
+          // Add owner
+          objToLoad++;
+          // Add acts
+          objToLoad += this.props.groups[groupId].acts.length;
+          // Add members
+          objToLoad += this.props.groups[groupId].members.length;
+        });
+        this.setState({ numObjToLoad: objToLoad, objLoaded: 0 });
+
         let currentGroup;
         let members;
         let acts;
@@ -89,6 +102,9 @@ class GroupIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (this.state.objLoaded >= 0) {
+      this.setState({ objLoaded: this.state.objLoaded + 1 })
+    }
     if (Object.keys(nextProps.groups).every((key) => (
       typeof nextProps.groups[key].owner === 'object' &&
       nextProps.groups[key].actsInfo && 
@@ -110,8 +126,9 @@ class GroupIndex extends React.Component {
   }
 
   render() {
+    let percent = 100 * this.state.objLoaded / this.state.numObjToLoad;
     if (this.state.loading) {
-      return <Loading />
+      return <Loading percent={percent}/>
     };
     let groups = [];
     groups = Object.keys(this.state.groups).map((groupId) => {
