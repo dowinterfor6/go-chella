@@ -2,25 +2,28 @@ import React from 'react';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/group_index.css';
 
-const Loading = () => (
-  <div className="loading-screen">
-    <div className="loader">
-      <div className="loader--dot">
+const Loading = ({ percent }) => {
+  let component = document.getElementsByClassName('filled-beer')[0];
+  if (component) {
+    component.setAttribute("style", `height: ${100 - percent}px`);
+  }
+
+  return (
+    <div className="loading-screen-beer">
+      <div className="beer-mug">
+
       </div>
-      <div className="loader--dot">
+      <div className="fill-cover">
+
       </div>
-      <div className="loader--dot">
+      <div className="filled-beer">
+
       </div>
-      <div className="loader--dot">
-      </div>
-      <div className="loader--dot">
-      </div>
-      <div className="loader--dot">
-      </div>
-      <div className="loader--text">
-      </div>
+      <h2 className="percent-loading">
+        {Math.round(percent)}%
+      </h2>
     </div>
-  </div>
-);
+  )
+};
 
 export default Loading;

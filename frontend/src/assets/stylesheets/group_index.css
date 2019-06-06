@@ -212,6 +212,44 @@
   justify-content: space-evenly;
 }
 
+/* CUSTOM LOADING SCREEN BEER */
+.beer-mug {
+  position: absolute;
+  left: calc(50vw - 50px);
+  top: calc((100vh - 200px) / 2 + 100px);
+  width: 100px;
+  height: 100px;
+  background: url('../../assets/images/beerf9bd06-white.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 9;
+}
+
+.filled-beer {
+  position: absolute;
+  left: calc(50vw - 50px);
+  top: calc((100vh - 200px) / 2 + 100px);
+  width: 100px;
+  height: 100px;
+  background-color: white;
+}
+
+.fill-cover {
+  position: absolute;
+  left: calc(50vw - 50px);
+  top: calc((100vh - 200px) / 2 + 100px);
+  width: 100px;
+  height: 100px;
+  background-color: #f9bd06;
+}
+
+.percent-loading {
+  margin: calc((100vh - 200px) / 2 + 50px) auto 0 auto;
+  width: fit-content;
+  font-size: 3em;
+}
+
 /* ANIMATIONS */
 @keyframes fadeIn {
   from {
