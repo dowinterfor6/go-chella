@@ -32,9 +32,9 @@ strong {
 }
 
 .discover-link {
-    margin-left: 10px;
+    margin-left: 8px;
     font-family: 'Raleway', sans-serif;
-    
+    text-decoration: underline;
 }
 
 .acts-show-container > img {
@@ -42,10 +42,10 @@ strong {
 }
 
 .acts-desc  {
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Raleway', sans-serif;
 }
 
