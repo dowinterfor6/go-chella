@@ -8,8 +8,8 @@ const handleCopy = (e) => {
 
 const InviteLink = (props) => {
   let groupNameParse = props.group.name.toLowerCase();
-  groupNameParse = groupNameParse.match(/[a-zA-Z]+/g).join('');
-  let inviteLink = 'https://brochella.herokuapp.com/' + groupNameParse + '_invite/' + props.group.id;
+  groupNameParse = groupNameParse.match(/[a-zA-Z]+/g).join('_');
+  let inviteLink = 'https://brochella.herokuapp.com/invite/' + groupNameParse + '/' + props.group.id;
 
   return (
     <div className="delete-form-modal"
