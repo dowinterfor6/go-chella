@@ -40,7 +40,9 @@ class MainPage extends React.Component {
         </div>
 
         <section className="why-brochella">
+          <img src="https://previews.123rf.com/images/rawpixel/rawpixel1507/rawpixel150707569/42792776-friends-summer-beach-party-festival-concept.jpg" alt="friends" />
           <p>
+          <h3>Gather Your Crew</h3>
             Ever feel like it's a massive hassle getting all your bros together
             for events like Coachella? Sent out too many texts for an unorganized
             group trip to a coveted music festival? Lost track of who's coming 

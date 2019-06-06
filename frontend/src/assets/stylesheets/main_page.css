@@ -104,3 +104,26 @@ body {
   width: 100%;
   background-size: cover;
 }
+
+.why-brochella > img {
+  height: 350px;
+  width: 350px;
+  border-radius: 100%;
+}
+
+.why-brochella > p {
+  text-align: left!important;
+  padding: 70px 130px 50px 50px!important;
+}
+
+.why-brochella > p > h3 {
+  font-size: 38px;
+  font-weight: 600;
+  text-decoration: overline;
+}
+
+.why-brochella {
+  display: flex;
+  margin: 40px;
+  padding: 15px;
+}
