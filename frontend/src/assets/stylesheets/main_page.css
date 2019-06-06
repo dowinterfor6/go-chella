@@ -1,4 +1,4 @@
-/* -------Parllax-------- */
+/* -------Parallax-------- */
 
 .parallax-container {
   position: relative;
@@ -36,8 +36,8 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-
 /* ---------------------- */
+
 .main-landing section {
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDnjU59BpeZA72vhC9i-Bba7AoHU418Vaa6-IZLbcupXmcZfBMw');
   background-size: cover;
