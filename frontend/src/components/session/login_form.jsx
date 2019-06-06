@@ -98,7 +98,7 @@ class LoginForm extends React.Component {
           e.currentTarget.classList.remove('shake');
         }}
       >
-        <h1>Login</h1>
+        <h1>Log In</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
             <div className="label-message-container">
