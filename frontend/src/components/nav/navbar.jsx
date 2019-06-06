@@ -48,14 +48,14 @@ class NavBar extends React.Component {
               <a
                 onClick={() => this.props.openModal('signup')}
               >
-                Signup
+                Sign Up
               </a>
             </li>
             <li className='hvr-underline-from-center' >
               <a
                 onClick={() => this.props.openModal('login')}
               >
-              Login
+              Log In
               </a>
             </li>
           </ul>

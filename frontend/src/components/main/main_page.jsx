@@ -50,7 +50,7 @@ class MainPage extends React.Component {
         
         <div className="parallax-container">
         <div className="parallax"><img src="https://i.pinimg.com/originals/67/a9/a7/67a9a7ee5a6be4378d463609cbd8b8ee.jpg" alt="" /></div>
-        <h1>WE HANDLE THE STRESS, SO YOUR EVENT IS A SUCCESS.</h1>
+        <h1 style={{ color: "white" }}>WE HANDLE THE STRESS, SO YOUR EVENT IS A SUCCESS.</h1>
         </div>
 
         <section className="what-brochella">
