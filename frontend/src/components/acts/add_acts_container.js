@@ -18,19 +18,15 @@ class AddActsForm extends React.Component {
 
     componentDidMount() {
         this.props.fetchUserGroups(this.props.currentUser.id)
-        .then((res) => {
-            Object.values(res.groups).map((groupId) => (
-                this.props.fetchGroup(groupId)
-                .then((res) => {
-                    this.setState({ [groupId]: res.group.data })
-                })
-                ))
-                this.setState({ loading: false });
-            });
-    }
-
-    componentWillUnmount() {
-        this.props.closeModal();
+            .then((res) => {
+                Object.values(res.groups).map((groupId) => (
+                    this.props.fetchGroup(groupId)
+                        .then((res) => {
+                            this.setState({ [groupId]: res.group.data })
+                        })
+                    ))
+                });
+            this.setState({ loading: false });
     }
 
     update(field) {
@@ -49,45 +45,24 @@ class AddActsForm extends React.Component {
             return <Loading />
         };
 
-        // if (this.state.groups) {
-        //     this.state.groups.map((group_id) => {
-        //       if (group_id !== 'loading' && group_id !=='activePanel') {
-        //         return (
-        //         <div className="session-form-modal">
-        //             <h1 className="delete-header">Add This Act</h1>
+        let groups = (
+            Object.keys(this.state).slice(2).sort().map((key, idx) => (
+                <option key={idx}>{this.state[key].name}</option>
+            ))
+          )
 
-        //             <h3>Choose a group to add this act to below:</h3>
-        //             <li 
-        //                 key={group_id} 
-        //                 className={`group-index-item ${group_id}`}
-        //                 onClick={this.handleDisplay}
-        //             > 
-        //                 {this.state[group_id].name}
-        //             </li>
-        //         </div>
-        //         )
-        //       }
-        //       return null;
-        //     });
-        //   } else {
-        //       return <Loading />;
-        //   }
-
-    
         return (
             <div className="session-form-modal">
-
                 <h1 className="delete-header">Add This Act</h1>
 
                 <h3>Choose a group to add this act to below:</h3>
 
                 <select>
-                    <option>Kevin</option>
+                    {groups}
                 </select>
 
-                <button className="create-button">Add Act</button>
             </div>
-        )
+        );
     }
 }
 
