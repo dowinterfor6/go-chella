@@ -2,6 +2,7 @@ import React from 'react';
 import Map from '../map/map';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/group_show.css';
+import { withRouter } from 'react-router-dom';
 
 class GroupShow extends React.Component {
   constructor(props) {
@@ -139,4 +140,4 @@ class GroupShow extends React.Component {
   }
 };
 
-export default GroupShow;
+export default withRouter(GroupShow);

@@ -3,8 +3,9 @@ import InviteLink from './invite_link';
 import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
+  let currentGroupId = Object.keys(state.groups)[0];
   return {
-    group: state.groups.data
+    group: state.groups[currentGroupId]
   };
 };
 
