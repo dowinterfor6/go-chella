@@ -40,7 +40,7 @@ class MainPage extends React.Component {
         </div>
 
         <section className="why-brochella">
-          <img src="https://previews.123rf.com/images/rawpixel/rawpixel1507/rawpixel150707569/42792776-friends-summer-beach-party-festival-concept.jpg" alt="friends" />
+          <div className="friends-photo"></div>
           <p>
           <h3>Gather Your Crew</h3>
             Ever feel like it's a massive hassle getting all your bros together
@@ -51,8 +51,10 @@ class MainPage extends React.Component {
         </section>
         
         <div className="parallax-container">
-        <div className="parallax"><img src="https://i.pinimg.com/originals/67/a9/a7/67a9a7ee5a6be4378d463609cbd8b8ee.jpg" alt="" /></div>
-        <h1 style={{ color: "white" }}>WE HANDLE THE STRESS, SO YOUR EVENT IS A SUCCESS.</h1>
+          <div className="parallax">
+            <img src="https://i.pinimg.com/originals/67/a9/a7/67a9a7ee5a6be4378d463609cbd8b8ee.jpg" alt="" />
+          </div>
+          <h1 style={{ color: "white" }}>WE HANDLE THE STRESS, SO YOUR EVENT IS A SUCCESS.</h1>
         </div>
 
         <section className="what-brochella">
@@ -64,7 +66,7 @@ class MainPage extends React.Component {
             artists you plan on seeing, and friends you have invited. With each group you create, you will be able to explore the event grounds,
             detailed information reagrding each artist associated to your agenda, and affiliated members' profiles (soon<sup>tm</sup>).
           </p>
-          <img src="https://st2.depositphotos.com/1037987/9823/i/950/depositphotos_98233774-stock-photo-friends-at-music-festival-campsite.jpg" alt="more-friends" />
+          <div className="more-friends"></div>        
         </section>
 
         <div className="parallax-container">

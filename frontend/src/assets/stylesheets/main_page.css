@@ -154,3 +154,23 @@ body {
   width: 100%;
   margin-right: 50px;
 }
+
+.friends-photo {
+  background: url(https://previews.123rf.com/images/rawpixel/rawpixel1507/rawpixel150707569/42792776-friends-summer-beach-party-festival-concept.jpg);
+  height: 350px;
+  min-width: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+}
+
+.more-friends {
+  background: url(https://st2.depositphotos.com/1037987/9823/i/950/depositphotos_98233774-stock-photo-friends-at-music-festival-campsite.jpg);
+  height: 350px;
+  min-width: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+}
