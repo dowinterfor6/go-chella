@@ -212,6 +212,55 @@
   justify-content: space-evenly;
 }
 
+/* CUSTOM LOADING SCREEN BEER */
+.beer-mug {
+  position: absolute;
+  left: calc(50vw - 50px);
+  top: calc((100vh - 200px) / 2 + 100px);
+  width: 100px;
+  height: 100px;
+  background: url('../../assets/images/beerf9bd06-white.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 9;
+}
+
+.filled-beer {
+  position: absolute;
+  left: calc(50vw - 50px);
+  top: calc((100vh - 200px) / 2 + 100px);
+  width: 100px;
+  height: 100px;
+  background-color: white;
+}
+
+.fill-cover {
+  position: absolute;
+  left: calc(50vw - 45px);
+  top: calc((100vh - 200px) / 2 + 100px);
+  width: 90px;
+  height: 100px;
+  background-color: #f9bd06;
+}
+
+.percent-loading {
+  margin: calc((100vh - 200px) / 2 + 50px) auto 0 auto;
+  width: fit-content;
+  font-size: 3em;
+}
+
+.loading-screen-beer-background {
+  position: absolute;
+  left: calc(50vw - 125px);
+  top: calc((100vh - 200px) / 2 + 50px);
+  width: 250px;
+  height: 250px;
+  background-image: radial-gradient(closest-side, rgba(255,255,255,1) 75%, rgba(255,255,255,0));
+  border-radius: 100%;
+  z-index: -1;
+}
+
 /* ANIMATIONS */
 @keyframes fadeIn {
   from {
