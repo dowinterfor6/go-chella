@@ -114,7 +114,7 @@ class GroupIndex extends React.Component {
       Object.keys(nextProps.groups[key].memberInfo).length
       === nextProps.groups[key].members.length
     ))) {
-      // this.setState({ groups: nextProps.groups, loading: false })
+      this.setState({ groups: nextProps.groups, loading: false })
     };
   }
 
