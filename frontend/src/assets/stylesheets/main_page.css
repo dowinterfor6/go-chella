@@ -7,6 +7,9 @@
 }
 
 .parallax-container h1 {
+  font-weight: 600;
+  text-decoration: overline;
+  text-align: center;
   font-size: 50px;
   position: absolute;
   top: 50%;
