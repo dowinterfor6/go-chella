@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import { fetchDisplayAct } from '../../actions/act_actions';
@@ -37,7 +38,7 @@ class ActIndexItem extends React.Component {
         return (
             <div className="acts-show-container">
                 <h2><strong>{this.state.act.name}</strong></h2>
-                <img src={this.state.act.url} alt="act"/>
+                <img src={this.state.act.url} alt="act" height="470" width="800"/>
                 <span>
                     <div className="acts-desc">
                         You can see {this.state.act.name} perform LIVE at Go-Chella on {(this.parseDate(this.state.act.date).date).split('-')[1] 
@@ -45,8 +46,13 @@ class ActIndexItem extends React.Component {
                         <br />
                         Show starts at {this.parseDate(this.state.act.date).time} on the {this.state.act.stage} Stage.
                     </div>
+                    <button className="add-act" onClick={() => this.props.openModal('Add Act')}>Add Act</button>
                 </span>
-                <button className="add-act" onClick={() => this.props.openModal('Add Act')}>Add Act</button>
+                <div className="return-footer">
+                    <p>Not a fan of {this.state.act.name}?</p>
+                    <br />
+                    <Link className="discover-link" to="/discover"> Head back to the directory instead.</Link>
+                </div>
             </div>
         )
 
