@@ -103,6 +103,7 @@ body {
   height: 100%;
   width: 100%;
   background-size: cover;
+  overflow-x: hidden;
 }
 
 .why-brochella > img {
@@ -124,6 +125,32 @@ body {
 
 .why-brochella {
   display: flex;
-  margin: 40px;
+  margin: 20px;
   padding: 15px;
+}
+
+
+.what-brochella > img {
+  height: 350px;
+  width: 350px;
+  border-radius: 100%;
+  margin-right: 150px;
+}
+
+.what-brochella > p {
+  text-align: left!important;
+  padding: 20px 80px 50px 20px!important;
+}
+
+.what-brochella > p > h3 {
+  font-size: 38px;
+  font-weight: 600;
+  text-decoration: overline;
+}
+
+.what-brochella {
+  display: flex;
+  margin: 40px;
+  width: 100%;
+  margin-right: 50px;
 }
