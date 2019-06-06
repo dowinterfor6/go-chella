@@ -51,7 +51,6 @@ class DiscoverPage extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let acts = (
       Object.keys(this.state).slice(2).sort().map((key, idx) => (
         <li className='discovery-index-item' key={idx}>
