@@ -112,12 +112,17 @@ body {
   border-radius: 100%;
 }
 
-.why-brochella > p {
+.why-brochella > .p {
   text-align: left!important;
   padding: 70px 130px 50px 50px!important;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  line-height: 2em;
+  padding: 0px 180px 0px 180px;
 }
 
-.why-brochella > p > h3 {
+.why-brochella > .p > h3 {
   font-size: 38px;
   font-weight: 600;
   text-decoration: overline;
@@ -137,12 +142,17 @@ body {
   margin-right: 150px;
 }
 
-.what-brochella > p {
+.what-brochella > .p {
   text-align: left!important;
   padding: 20px 80px 50px 20px!important;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  line-height: 2em;
+  padding: 0px 180px 0px 180px;
 }
 
-.what-brochella > p > h3 {
+.what-brochella > .p > h3 {
   font-size: 38px;
   font-weight: 600;
   text-decoration: overline;
@@ -161,7 +171,7 @@ body {
   min-width: 350px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: -17px;
   border-radius: 100%;
 }
 
@@ -171,7 +181,7 @@ body {
   min-width: 350px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: -97px -1px;
   border-radius: 100%;
   margin-right: 150px;
 }

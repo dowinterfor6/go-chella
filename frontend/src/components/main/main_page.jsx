@@ -44,31 +44,31 @@ class MainPage extends React.Component {
 
         <section className="why-brochella">
           <div className="friends-photo"></div>
-          <p>
+          <div className="p">
           <h3>Gather Your Crew</h3>
             Ever feel like it's a massive hassle getting all your bros together
             for events like Coachella? Sent out too many texts for an unorganized
             group trip to a coveted music festival? Lost track of who's coming 
             from where, who's hitching a ride with who, and most importantly, who's bringing the beer?
-          </p>
+          </div>
         </section>
         
         <div className="parallax-container">
           <div className="parallax">
             <img src={hands} alt="hands" />
           </div>
-          <h1 style={{ color: "white" }}>WE HANDLE THE STRESS, SO YOUR EVENT IS A SUCCESS.</h1>
+          <h1 style={{ color: "white", lineHeight: 1.5 }}>WE HANDLE THE STRESS, SO YOUR EVENT IS A SUCCESS.</h1>
         </div>
 
         <section className="what-brochella">
-          <p>
+          <div className="p">
             <h3>The Only App You'll Need</h3>
             Go-chella is a platform for planning an itinerary with your friends for the Coachella event. 
             With a simplistic and minimalistic design, you can easily navigate through the site to create groups where you can
             invite friends (soon<sup>tm</sup>) and organize your trip activities. Trip activities will entail location whereabouts, 
             artists you plan on seeing, and friends you have invited. With each group you create, you will be able to explore the event grounds,
             detailed information reagrding each artist associated to your agenda, and affiliated members' profiles (soon<sup>tm</sup>).
-          </p>
+          </div>
           <div className="more-friends"></div>        
         </section>
 
