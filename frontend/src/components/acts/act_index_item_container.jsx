@@ -43,7 +43,6 @@ class ActIndexItem extends React.Component {
                     <div className="acts-desc">
                         You can see {this.state.act.name} perform LIVE at Go-Chella on {(this.parseDate(this.state.act.date).date).split('-')[1] 
                         + '/' + (this.parseDate(this.state.act.date).date).split('-')[2]}.
-                        <br />
                         Show starts at {this.parseDate(this.state.act.date).time} on the {this.state.act.stage} Stage.
                     </div>
                     <button className="add-act" onClick={() => this.props.openModal('Add Act')}>Add Act</button>
