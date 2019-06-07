@@ -25,12 +25,14 @@ class NotLoggedIn extends React.Component {
         <h2>
           You need an account to join this group... Would you like to make one and join "{this.props.group.name}"?
         </h2>
-        <button onClick={this.handleNavigation}>
-          Sign up and join group!
-        </button>
-        <button onClick={this.handleNavigation}>
-          Maybe some other time
-        </button>
+        <div className="buttons">
+          <button onClick={this.handleNavigation}>
+            Sign up and join group!
+          </button>
+          <button onClick={this.handleNavigation}>
+            Maybe some other time
+          </button>
+        </div>
       </div>
     )
   }

@@ -16,9 +16,11 @@ class InvalidLink extends React.Component {
     return(
       <div className="invalid-link-container join-sub-container">
         <h2>dis shit dont exist</h2>
-        <button onClick={this.handleNavigation}>
-          Back to dashboard
-        </button>
+        <div className="buttons">
+          <button onClick={this.handleNavigation}>
+            Back to dashboard
+          </button>
+        </div>
       </div>
     )
   }

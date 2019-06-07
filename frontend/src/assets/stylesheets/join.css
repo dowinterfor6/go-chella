@@ -20,7 +20,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 75px;
+  height: 100px;
+  text-align: center;
 }
 
 .buttons {
