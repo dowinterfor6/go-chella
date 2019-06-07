@@ -12,8 +12,12 @@ class AddActsForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: true
+            act: this.props.act,
+            loading: true,
+            group: ''
         }
+        this.updateGroupActs = this.updateGroupActs.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -29,14 +33,17 @@ class AddActsForm extends React.Component {
             this.setState({ loading: false });
     }
 
-    update(field) {
+    updateGroupActs() {
         return (e) => this.setState({
-            [field]: field.push(this.state.act)
+            group: e.currentTarget.value
         });
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        let daGroup = this.state[this.state.group];
+        daGroup.acts.push(this.props.act.id);
+        this.props.updateGroup(daGroup).then(this.props.closeModal);
     }
 
     render() {
@@ -44,31 +51,34 @@ class AddActsForm extends React.Component {
         if (this.state.loading) {
             return <Loading />
         };
+        console.log(this.state[this.state.group]);
+        console.log(this.state.act)
 
         let groups = (
-            Object.keys(this.state).slice(2).sort().map((key, idx) => (
-                <option key={idx}>{this.state[key].name}</option>
+            Object.keys(this.state).slice(2, Object.keys(this.state).length).sort().map((key, idx) => (
+                <option key={idx} value={key}>{this.state[key].name}</option>
             ))
           )
 
         return (
-            <div className="session-form-modal">
+            <div className="delete-form-modal"
+                onClick={(e) => e.stopPropagation() }>
                 <h1 className="delete-header">Add This Act</h1>
 
                 <h3>Choose a group to add this act to below:</h3>
 
-                <select>
+                <select onChange={this.updateGroupActs()} value={this.state.group}>
                     {groups}
                 </select>
-
+                <button onClick={this.handleSubmit}>Add Act</button>
             </div>
         );
     }
 }
 
-const mstp = state => {
+const mstp = (state, ownProps) => {
     return {
-        act: state.act,
+        act: state.acts,
         currentUser: state.session.user
     };
 };
@@ -76,7 +86,7 @@ const mstp = state => {
 const mdtp = dispatch => {
     return {
         fetchAct: id => dispatch(fetchAct(id)),
-        upateGroup: group => dispatch(updateGroup(group)),
+        updateGroup: group => dispatch(updateGroup(group)),
         fetchUserGroups: userId => dispatch(fetchUserGroups(userId)),
         fetchGroup: groupId => dispatch(fetchGroup(groupId)),
         closeModal: () => dispatch(closeModal())

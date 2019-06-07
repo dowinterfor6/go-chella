@@ -45,7 +45,7 @@ class ActIndexItem extends React.Component {
                         + '/' + (this.parseDate(this.state.act.date).date).split('-')[2]}.
                         Show starts at {this.parseDate(this.state.act.date).time} on the {this.state.act.stage} Stage.
                     </div>
-                    <button className="add-act" onClick={() => this.props.openModal('Add Act')}>Add Act</button>
+                <button className="add-act" onClick={() => this.props.openModal('Add Act')}>Add Act</button>
                 </span>
                 <div className="return-footer">
                     <p>Not a fan of {this.state.act.name}?</p>
