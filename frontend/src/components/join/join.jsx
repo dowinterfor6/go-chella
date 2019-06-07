@@ -19,6 +19,10 @@ class Join extends React.Component {
     this.props.fetchGroup(this.props.match.params.groupId)
       .then((res) => {
         this.setState({ group: res.group.data });
+        this.props.fetchUser(this.props.currentUser.id)
+          .then((res) => {
+            this.setState({ currentUser: res.data })
+          });
       })
       .catch((res) => {
         this.setState({ group: null });
@@ -53,7 +57,12 @@ class Join extends React.Component {
       componentToRender = <AlreadyInGroup group={this.state.group}/>
     } else {
       if (this.state.currentUser) {
-        componentToRender = <LoggedInJoin group={this.state.group} />
+        componentToRender = <LoggedInJoin 
+          group={this.state.group} 
+          currentUser={this.state.currentUser}
+          updateUser={this.props.updateUser}
+          updateGroup={this.props.updateGroup}
+          />
       } else {
         componentToRender = <NotLoggedIn group={this.state.group} />
       }

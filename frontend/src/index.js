@@ -6,6 +6,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import { fetchUser } from './actions/user_actions';
+import { updateUser } from './util/user_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -30,4 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.dispatch = store.dispatch;
   window.fetchUser = fetchUser;
+  
+  window.updateUser = updateUser;
 });

@@ -12,9 +12,22 @@ class LoggedInJoin extends React.Component {
   handleNavigation(e) {
     let buttonText = e.currentTarget.innerHTML;
     if (buttonText === 'Count me in!') {
-      // Add user to group
+      let updatedUser = this.props.currentUser;
+      updatedUser.groups.push(this.props.group.id);
+      let updatedGroup = this.props.group;
+      updatedGroup.members.push(this.props.currentUser.id);
+      // this.props.updateUser(updatedUser)
+      //   .then((res) => {
+      //     this.props.history.push(`/groups/${this.props.group.id}`);
+      //   })
+      let updateUserPromise = this.props.updateUser(updatedUser);
+      let updateGroupPromise = this.props.updateGroup(updatedGroup);
+      Promise.all([updateUserPromise, updateGroupPromise])
+        .then((res) => {
+          this.props.history.push(`/groups/${this.props.group.id}`)
+        })
+      
       // TODO: add conditional to /groups/:groupId route to check if user is in group
-      this.props.history.push(`/groups/${this.props.group.id}`);
     } else if (buttonText === 'No thanks') {
       this.props.history.push('/');
     }
