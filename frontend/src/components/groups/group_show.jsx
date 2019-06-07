@@ -34,8 +34,36 @@ class GroupShow extends React.Component {
             ))
           }
         )
-    })
-    M.AutoInit();
+      })
+      .then(() => {
+        this.props.fetchOneUser(this.props.currentUser.id)
+          .then((res) => this.setState({ user: res.user.data }))
+      });
+  }
+
+  leaveGroup(e) {
+    e.preventDefault();
+    // Create a new Group Object to pass to updateGroup
+    let newGroup = Object.assign({}, this.state.group);
+    let newMembers = this.state.group.members.filter((member) => member !== this.props.currentUser.id);
+    newGroup.members = newMembers;
+
+
+    if(newMembers.length === 0) {
+      this.props.updateGroup(newGroup);
+      this.props.deleteGroup(newGroup.id);
+    } else {
+      this.props.updateGroup(newGroup);
+    }
+
+    // Create a new User Object to pass to updateUser
+    let newUser = Object.assign({}, this.state.user);
+    let newGroups = this.state.user.groups.filter((group) => group !== this.state.group.id);
+    newUser.groups = newGroups;
+
+    // Update both the group and the user, and then redirect to the dashboard
+    this.props.updateUser(newUser)
+      .then(this.props.history.push('/discover'));
   }
 
   render() {
@@ -111,6 +139,10 @@ class GroupShow extends React.Component {
           <button onClick={() => this.props.openModal('Delete Confirmation')}>
             Delete Group
             </button>
+
+          <button onClick={(e) => this.leaveGroup(e)}>
+            Leave Group
+          </button>
         </div>
       );
     }

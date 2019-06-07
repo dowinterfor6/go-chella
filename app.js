@@ -31,6 +31,8 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
+mongoose.set('useFindAndModify', false);
+
 // Middleware for body parser
 // IMP! Must be above routes
 app.use(bodyParser.urlencoded({ extended: false}));

@@ -35,7 +35,7 @@ function DeleteForm(props) {
 
 const mstp = state => {
     return {
-        group: state.groups.data
+        group: state.groups
     };
 };
 
