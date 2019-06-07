@@ -47,6 +47,7 @@ class GroupShow extends React.Component {
     newGroup.members = newMembers;
 
 
+    // If this was the last member, then delete the group entirely
     if(newMembers.length === 0) {
       this.props.updateGroup(newGroup);
       this.props.deleteGroup(newGroup.id);
@@ -59,7 +60,7 @@ class GroupShow extends React.Component {
     let newGroups = this.state.user.groups.filter((group) => group !== this.state.group.id);
     newUser.groups = newGroups;
 
-    // Update both the group and the user, and then redirect to the dashboard
+    // Update the user and then redirect to the dashboard
     this.props.updateUser(newUser)
       .then(this.props.history.push('/discover'));
   }
