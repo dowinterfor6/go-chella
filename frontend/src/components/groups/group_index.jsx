@@ -37,6 +37,7 @@ class GroupIndex extends React.Component {
           // Add owner
           objToLoad++;
           // Add acts
+          console.log(this.props.groups[groupId]);
           objToLoad += this.props.groups[groupId].acts.length;
           // Add members
           objToLoad += this.props.groups[groupId].members.length;

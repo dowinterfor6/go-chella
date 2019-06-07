@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchGroup, updateGroup } from '../../actions/group_actions';
 import { fetchAct } from '../../actions/act_actions';
-import { fetchUserGroups } from '../../actions/user_actions';
+import { fetchUserGroups, fetchOneUser } from '../../actions/user_actions';
 import { closeModal } from '../../actions/modal_actions';
 import Loading from '../loading/loading';
 import '../../assets/stylesheets/modal.css';
@@ -14,23 +14,37 @@ class AddActsForm extends React.Component {
         this.state = {
             act: this.props.act,
             loading: true,
-            group: ''
+            group: '',
+            theUser: ''
         }
         this.updateGroupActs = this.updateGroupActs.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchUserGroups(this.props.currentUser.id)
+        this.props.fetchOneUser(this.props.currentUser.id)
             .then((res) => {
-                Object.values(res.groups).map((groupId) => (
-                    this.props.fetchGroup(groupId)
-                        .then((res) => {
-                            this.setState({ [groupId]: res.group.data })
+                this.setState({ theUser: res.user.data });
+            })
+            .then(() => {
+                this.state.theUser.groups.forEach((group) => {
+                    this.props.fetchGroup(group)
+                        .then((theRealGroup) => {
+                            this.setState({ [theRealGroup.group.data.id]: theRealGroup.group.data })
                         })
-                    ))
-                });
-            this.setState({ loading: false });
+                })
+            })
+        // this.props.fetchUserGroups(this.props.currentUser.id)
+        // .then((res) => {
+        //         console.log(res.groups);
+        //         res.groups.map((groupId) => (
+        //             this.props.fetchGroup(groupId)
+        //                 .then((res) => {
+        //                     this.setState({ [groupId]: res.group.data })
+        //                 })
+        //             ))
+        //         });
+        this.setState({ loading: false });
     }
 
     updateGroupActs() {
@@ -42,7 +56,7 @@ class AddActsForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let daGroup = this.state[this.state.group];
-        daGroup.acts.push(this.props.act.id);
+        daGroup.acts.push(this.state.act._id);
         this.props.updateGroup(daGroup).then(this.props.closeModal);
     }
 
@@ -51,8 +65,8 @@ class AddActsForm extends React.Component {
         if (this.state.loading) {
             return <Loading />
         };
-        console.log(this.state[this.state.group]);
-        console.log(this.state.act)
+
+        console.log(this.state);
 
         let groups = (
             Object.keys(this.state).slice(2, Object.keys(this.state).length).sort().map((key, idx) => (
@@ -78,6 +92,7 @@ class AddActsForm extends React.Component {
 
 const mstp = (state, ownProps) => {
     return {
+        groups: state.groups,
         act: state.acts,
         currentUser: state.session.user
     };
@@ -85,6 +100,7 @@ const mstp = (state, ownProps) => {
 
 const mdtp = dispatch => {
     return {
+        fetchOneUser: id => dispatch(fetchOneUser(id)),
         fetchAct: id => dispatch(fetchAct(id)),
         updateGroup: group => dispatch(updateGroup(group)),
         fetchUserGroups: userId => dispatch(fetchUserGroups(userId)),
