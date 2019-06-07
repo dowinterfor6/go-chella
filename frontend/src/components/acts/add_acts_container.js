@@ -69,7 +69,7 @@ class AddActsForm extends React.Component {
         console.log(this.state);
 
         let groups = (
-            Object.keys(this.state).slice(2, Object.keys(this.state).length).sort().map((key, idx) => (
+            Object.keys(this.state).slice(4).sort().map((key, idx) => (
                 <option key={idx} value={key}>{this.state[key].name}</option>
             ))
           )
