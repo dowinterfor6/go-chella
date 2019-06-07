@@ -8,10 +8,11 @@ import React from 'react';
 class FilteredActs extends React.Component {
     constructor(props) {
         super(props);
-        this.state ={
+
+        this.state = {
             date: this.props.date,
             stage: this.props.stage
-        };
+        }
     }
 
     componentDidMount() {
@@ -28,6 +29,30 @@ class FilteredActs extends React.Component {
                 })
     }
 
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if(prevState.date !== nextProps.date) {
+            return { date: nextProps.date };
+        } else {
+            return null;
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.date !== this.props.date) {
+            this.props.fetchActs()
+            .then((res) => {
+                return res.acts.filter((act) => {
+                    return this.parseDate(act.date).date === this.props.date;
+                })
+            })
+            .then((acts) => {
+                acts.map((act) => (
+                    this.setState({ [Date.parse(act.date)]: act })
+                    ))
+                })
+        }
+    }
+
     parseDate(date) {
         let newDate;
         let newTime;
@@ -39,21 +64,28 @@ class FilteredActs extends React.Component {
     }
 
     render() {
+        
+        let acts = [];
+        Object.keys(this.state).slice(2).forEach((id) => {
+            if(this.parseDate(this.state[id].date).date === this.props.date) {
+                acts.push(this.state[id]);
+            }
+        })
 
-        let acts = (
-            Object.keys(this.state).slice(2).sort().map((key, idx) => (
-              <li className='discovery-index-item' key={idx}>
-                <h3>{this.state[key].name}</h3>
-                <h4>Date: {this.parseDate(this.state[key].date).date} Time: {this.parseDate(this.state[key].date).time}</h4>
-                <Link to={`/acts/${this.state[key]._id}`} act={this.state[key]}><img src={this.state[key].url} alt={this.state[key].name} /></Link>
-                <a href={``}></a>
-              </li>
-            ))
-          )
+        let allThat = (
+                acts.map((act, idx) => (
+                  <li className='discovery-index-item' key={idx}>
+                    <h3>{act.name}</h3>
+                    <h4>Date: {this.parseDate(act.date).date} Time: {this.parseDate(act.date).time}</h4>
+                    <Link to={`/acts/${act._id}`} act={act}><img src={act.url} alt={act.name} /></Link>
+                    <a href={``}></a>
+                  </li>
+                ))
+        )
         
         return (
             <ul className="act-list">
-                {acts}
+                {allThat}
             </ul>
         );
     }
