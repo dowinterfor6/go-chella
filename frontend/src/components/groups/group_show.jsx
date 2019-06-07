@@ -40,8 +40,11 @@ class GroupShow extends React.Component {
 
   leaveGroup(e) {
     e.preventDefault();
-    console.log(this.state.group);
-    console.log(this.state[this.props.currentUser.id].groups.filter((group) => group !== this.state.group.id))
+
+    let newGroup = Object.assign({}, this.state.group);
+    let newMembers = this.state.group.members.filter((member) => member !== this.props.currentUser.id);
+    newGroup.members = newMembers;
+    this.props.updateGroup(newGroup).then(console.log('Successfully Updated Group!'));
   }
 
   render() {
