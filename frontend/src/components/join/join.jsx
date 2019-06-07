@@ -33,6 +33,15 @@ class Join extends React.Component {
       })
   }
 
+  componentWillUnmount() {
+    let ul = document.getElementsByTagName('ul')[0];
+    ul.removeAttribute('style');
+    let nav = document.getElementsByClassName('nav-logo-before-login')[0];
+    if (nav) {
+      nav.removeAttribute('style');
+    };
+  }
+
   render() {
     if (this.state.group === -1) {
       return <div></div>;
