@@ -34,16 +34,6 @@ class AddActsForm extends React.Component {
                         })
                 })
             })
-        // this.props.fetchUserGroups(this.props.currentUser.id)
-        // .then((res) => {
-        //         console.log(res.groups);
-        //         res.groups.map((groupId) => (
-        //             this.props.fetchGroup(groupId)
-        //                 .then((res) => {
-        //                     this.setState({ [groupId]: res.group.data })
-        //                 })
-        //             ))
-        //         });
         this.setState({ loading: false });
     }
 
@@ -65,8 +55,6 @@ class AddActsForm extends React.Component {
         if (this.state.loading) {
             return <Loading />
         };
-
-        console.log(this.state);
 
         let groups = (
             Object.keys(this.state).slice(4).sort().map((key, idx) => (
