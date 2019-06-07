@@ -3,6 +3,7 @@
   flex-direction: column;
   margin-top: 200px;
 } */
+
 .main-join-container {
   display: flex;
   flex-direction: column;
@@ -26,4 +27,18 @@
   width: 500px;
   display: flex;
   justify-content: space-between;
+}
+
+.buttons button {
+  height: 35px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 2.5px;
+  border: 1px solid rgb(160, 160, 160);
+}
+
+.buttons button:hover {
+  background-color: rgb(207, 207, 207);
+  border: 1px solid rgb(114, 114, 114);
 }

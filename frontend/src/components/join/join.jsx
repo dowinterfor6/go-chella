@@ -23,8 +23,14 @@ class Join extends React.Component {
       .catch((res) => {
         this.setState({ group: null });
       })
-    let nav = document.getElementsByClassName('nav-bar-items-after-login')[0];
-    nav.setAttribute('style', 'display: none');
+      .finally(() => {
+        let ul = document.getElementsByTagName('ul')[0];
+        ul.setAttribute('style', 'display: none');
+        let nav = document.getElementsByClassName('nav-logo-before-login')[0];
+        if (nav) {
+          nav.setAttribute('style', 'position: inherit');
+        };
+      })
   }
 
   render() {
