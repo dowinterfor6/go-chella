@@ -13,6 +13,7 @@ class LoggedInJoin extends React.Component {
     let buttonText = e.currentTarget.innerHTML;
     if (buttonText === 'Count me in!') {
       // Add user to group
+      // TODO: add conditional to /groups/:groupId route to check if user is in group
       this.props.history.push(`/groups/${this.props.group.id}`);
     } else if (buttonText === 'No thanks') {
       this.props.history.push('/');
