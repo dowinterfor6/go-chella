@@ -103,7 +103,7 @@ class GroupShow extends React.Component {
       if (ownerUser) {
         owner = (
           <div className="owner-display">
-            <h2>Created by: {ownerUser.username}</h2>
+            <h2>Group Host: {ownerUser.username}</h2>
           </div>
         )
       };

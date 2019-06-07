@@ -65,7 +65,7 @@
 }
 
 .group-show-main > * {
-  padding: 0px 15px 0px 15px;
+  padding: 0px 15px 15px 15px;
   box-shadow: 5px 5px 5px 5px grey;
 }
 
