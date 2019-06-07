@@ -33,6 +33,15 @@ class GroupShow extends React.Component {
           }
         )
       })
+      .then(() => {
+        this.props.fetchOneUser(this.props.currentUser.id);
+      });
+  }
+
+  leaveGroup(e) {
+    e.preventDefault();
+    console.log(this.state.group);
+    console.log(this.state[this.props.currentUser.id].groups.filter((group) => group !== this.state.group.id))
   }
 
   render() {
@@ -108,6 +117,10 @@ class GroupShow extends React.Component {
           <button onClick={() => this.props.openModal('Delete Confirmation')}>
             Delete Group
             </button>
+
+          <button onClick={(e) => this.leaveGroup(e)}>
+            Leave Group
+          </button>
         </div>
       );
     }
