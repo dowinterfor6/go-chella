@@ -23,7 +23,7 @@ class NotLoggedIn extends React.Component {
     return (
       <div className="not-logged-in-container">
         <h1>
-          You need an account to join this group... Would you like to make one and join {this.props.group.name}
+          You need an account to join this group... Would you like to make one and join "{this.props.group.name}"?
         </h1>
         <button onClick={this.handleNavigation}>
           Sign up and join group!
