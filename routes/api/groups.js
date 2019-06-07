@@ -119,7 +119,16 @@ router.delete('/:id', passport.authenticate('jwt', { session: false }), (req, re
             });
         }
     )
-    Group.findOneAndDelete({ _id: req.params.id })
+    Group.findOneAndRemove({_id: req.params.id})
+     .then((docs)=>{
+        if(docs) {
+           resolve({"success":true,data:docs});
+        } else {
+           reject({"success":false,data:"no such group exists"});
+        }
+   }).catch((err)=>{
+       reject(err);
+   })
 });
 
 router.put('/:id', (req, res) => {
