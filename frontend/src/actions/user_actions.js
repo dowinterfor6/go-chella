@@ -73,3 +73,7 @@ export const fetchOwner = (userId, currentGroupId) => (dispatch) => (
       (rawData) => dispatch(receiveOwner(rawData.data, currentGroupId))
     )
 )
+
+export const updateUser = (user) => dispatch => (
+  userApiUtil.updateUser(user).then(user => dispatch(receiveOneUser(user)))
+);
