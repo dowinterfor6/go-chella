@@ -154,4 +154,10 @@ router.put('/:id', (req, res) => {
     .then((user) => res.send(user))
 });
 
+router.put('/:id', (req, res) => {
+  User.findByIdAndUpdate({ _id: req.body.id }, req.body)
+    .then(() => User.findOne({ _id: req.body.id }))
+    .then((user) => res.send(user))
+})
+
 module.exports = router;
