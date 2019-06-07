@@ -19,14 +19,16 @@ class AlreadyInGroup extends React.Component {
 
   render() {
     return (
-      <div className="already-in-group-container">
-        <h1>Something went wrong... it looks like you're already in "{this.props.group.name}"!</h1>
-        <button onClick={this.handleNavigation}>
-          Are you sure? Take me to the group!
-        </button>
-        <button onClick={this.handleNavigation}>
-          Back to dashboard
-        </button>
+      <div className="already-in-group-container join-sub-container">
+        <h2>Something went wrong... it looks like you're already in "{this.props.group.name}"!</h2>
+        <div className="buttons">
+          <button onClick={this.handleNavigation}>
+            Are you sure? Take me to the group!
+          </button>
+          <button onClick={this.handleNavigation}>
+            Back to dashboard
+          </button>
+        </div>
       </div>
     )
   }

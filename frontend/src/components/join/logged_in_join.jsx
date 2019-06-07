@@ -23,8 +23,8 @@ class LoggedInJoin extends React.Component {
     let groupName = this.props.group.name;
 
     return (
-      <div className="logged-in-join-container">
-        <h1>Are you sure you want to join "{groupName}"?</h1>
+      <div className="logged-in-join-container join-sub-container">
+        <h2>Are you sure you want to join "{groupName}"?</h2>
         <button onClick={this.handleNavigation}>
           Count me in!
         </button>

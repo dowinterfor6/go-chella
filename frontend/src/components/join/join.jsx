@@ -31,7 +31,6 @@ class Join extends React.Component {
     if (this.state.group === -1) {
       return <div></div>;
     };
-    // TODO: consider invalid invite link
     let componentToRender;
     if (!this.state.group) {
       componentToRender = <InvalidLink />
@@ -46,8 +45,8 @@ class Join extends React.Component {
     }
 
     return (
-      <div>
-        join this shit
+      <div className="main-join-container">
+        <h1>Join a group via invite url!</h1>
         {componentToRender}
       </div>
     )

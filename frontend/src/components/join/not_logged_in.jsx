@@ -21,10 +21,10 @@ class NotLoggedIn extends React.Component {
   render() {
 
     return (
-      <div className="not-logged-in-container">
-        <h1>
+      <div className="not-logged-in-container join-sub-container">
+        <h2>
           You need an account to join this group... Would you like to make one and join "{this.props.group.name}"?
-        </h1>
+        </h2>
         <button onClick={this.handleNavigation}>
           Sign up and join group!
         </button>

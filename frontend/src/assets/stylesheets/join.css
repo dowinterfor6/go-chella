@@ -1,5 +1,29 @@
-.not-logged-in-container {
+/* .not-logged-in-container {
   display: flex;
   flex-direction: column;
   margin-top: 200px;
+} */
+.main-join-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 150px;
+  padding: 0 200px;
+}
+
+.join-sub-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+}
+
+.buttons {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
 }

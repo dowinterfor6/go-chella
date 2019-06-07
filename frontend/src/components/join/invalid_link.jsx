@@ -14,8 +14,8 @@ class InvalidLink extends React.Component {
 
   render() {
     return(
-      <div className="invalid-link-container">
-        <div>dis shit dont exist</div>
+      <div className="invalid-link-container join-sub-container">
+        <h2>dis shit dont exist</h2>
         <button onClick={this.handleNavigation}>
           Back to dashboard
         </button>
