@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchGroup, updateGroup, deleteGroup } from '../../actions/group_actions';
 import { openModal } from '../../actions/modal_actions';
-import { fetchAllUsers, fetchOneUser } from '../../actions/user_actions';
+import { fetchAllUsers, fetchOneUser, updateUser } from '../../actions/user_actions';
 import { fetchActs } from '../../actions/act_actions';
 import GroupShow from './group_show';
 
@@ -20,7 +20,8 @@ const mapDispatchToProps = (dispatch) => {
     updateGroup: (group) => dispatch(updateGroup(group)),
     deleteGroup: (id) => dispatch(deleteGroup(id)), 
     openModal: (modal) => dispatch(openModal(modal)),
-    fetchOneUser: id => dispatch(fetchOneUser(id))
+    fetchOneUser: id => dispatch(fetchOneUser(id)),
+    updateUser: user => dispatch(updateUser(user))
   })
 }
 
