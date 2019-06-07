@@ -1,12 +1,14 @@
 .group-show-container {
   /* height: calc(100vh - 230px); */
   /* box-sizing: border-box; */
-  align-items: center;
+  /* align-items: center; */
+  text-align: center;
   justify-content: space-between;
 }
 
 .group-show-container h1 {
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .group-show-header {
@@ -59,12 +61,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 20px 100px 0px 100px;
+  margin: 25px 300px 0px 300px;
 }
 
-.member-list, .acts-list {
-  /* border: 2px solid red; */
-  /* padding-top: 10px; */
+.group-show-main > * {
+  padding: 0px 15px 0px 15px;
+  box-shadow: 5px 5px 5px 5px grey;
 }
 
 /* HOVER */
@@ -97,3 +99,4 @@
 .hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
   right: 0;
 }
+

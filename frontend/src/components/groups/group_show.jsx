@@ -3,6 +3,8 @@ import Map from '../map/map';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/group_show.css';
 import { withRouter } from 'react-router-dom';
+import M from 'materialize-css/dist/js/materialize.js';
+
 
 class GroupShow extends React.Component {
   constructor(props) {
@@ -32,7 +34,8 @@ class GroupShow extends React.Component {
             ))
           }
         )
-      })
+    })
+    M.AutoInit();
   }
 
   render() {
@@ -115,34 +118,32 @@ class GroupShow extends React.Component {
     return(
       <div className='group-show-container'> 
 
-          <h1>{this.state.group.name}</h1>
+        <h1>{this.state.group.name}</h1>
         <div className="group-show-header">
-          <a
-            className='invite-link-display hvr-underline-from-left'
-            onClick={() => this.props.openModal('invite')}
-          >
-          Get invite link
-          </a>
+          {owner}
           {permButtons}
-          <h3>{owner}</h3>
         </div>
 
         <div className="group-show-main">
-          <div className="member-list"> 
+          {/* <div className="member-list">  */}
             {memberList}
-          </div>
+          {/* </div> */}
 
-          <div className="acts-list"> 
+          {/* <div className="acts-list">  */}
             {acts}
-          </div>
+          {/* </div> */}
 
-          <div className="map-container">
+          {/* <div className="map-container"> */}
             <Map />
+          {/* </div> */}
         </div>
-        
-
-
-        </div>
+        <br />
+        <a
+          className='invite-link-display hvr-underline-from-left'
+          onClick={() => this.props.openModal('invite')}
+        >
+          Get invite link
+          </a>
 
       </div>
     );
