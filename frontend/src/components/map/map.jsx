@@ -11,7 +11,7 @@ class Map extends React.Component {
     const indioGrounds = {lat: 33.6822525, lng: -116.2400298 };
 
     this.map = new window.google.maps.Map(document.getElementById('map'), {
-      zoom: 15, 
+      zoom: 13, 
       center: indioGrounds
     });
     
@@ -31,7 +31,7 @@ class Map extends React.Component {
   render() {
     return (
       <div className="map-display-container">
-        <h1> COACHELLA GROUNDS </h1>
+        <h2>Map Site</h2>
         <div id="map"></div>
       </div>
     )

@@ -114,27 +114,36 @@ class GroupShow extends React.Component {
 
     return(
       <div className='group-show-container'> 
-        <div className="group-show-main">
-          <div className="group-show-header">
-            <h1>{this.state.group.name}</h1>
-            <br />
-            <a 
-              className='invite-link-display hvr-underline-from-left'
-              onClick={() => this.props.openModal('invite')}
-            >
-              Get invite link
-            </a>
-            <br/>
+
+          <h1>{this.state.group.name}</h1>
+        <div className="group-show-header">
+          <a
+            className='invite-link-display hvr-underline-from-left'
+            onClick={() => this.props.openModal('invite')}
+          >
+          Get invite link
+          </a>
           {permButtons}
-          </div>
-          {owner}
-          {memberList}
-          {acts}
+          <h3>{owner}</h3>
         </div>
 
-        <aside className="map-container">
-          <Map />
-        </aside>
+        <div className="group-show-main">
+          <div className="member-list"> 
+            {memberList}
+          </div>
+
+          <div className="acts-list"> 
+            {acts}
+          </div>
+
+          <div className="map-container">
+            <Map />
+        </div>
+        
+
+
+        </div>
+
       </div>
     );
   }

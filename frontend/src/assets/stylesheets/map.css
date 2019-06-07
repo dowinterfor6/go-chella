@@ -1,6 +1,6 @@
   #map {
-    height: 500px;
-    width: 500px;
+    height: 350px;
+    width: 350px;
   }
 
   html, body {
@@ -11,7 +11,7 @@
 
 .map-display-container {
   height: 100%;
-  display: inline-flex;
+  /* display: inline-flex; */
   flex-direction: column;
   justify-content: space-evenly;
 }
