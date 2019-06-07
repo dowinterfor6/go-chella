@@ -2,8 +2,9 @@ import React from 'react';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/main_page.css';
 import M from 'materialize-css/dist/js/materialize.js';
-// import 'materialize-css/dist/css/materialize.css';
-
+import astronaut from '../../assets/images/astronaut.jpg';
+import hands from '../../assets/images/hands.jpg';
+import splashEvent from '../../assets/images/splash_event.jpg';
 
 class MainPage extends React.Component {
   constructor(props){
@@ -35,7 +36,9 @@ class MainPage extends React.Component {
     return (
       <div className='main-landing'>
         <div className="parallax-container">
-          <div className="parallax"><img src="http://www.lagunabeachmagazine.com/wp-content/uploads/2019/03/Coachella-3.jpg" alt="" /></div>
+          <div className="parallax">
+            <img src={astronaut} alt="astronaut" />
+          </div>
           <h1>PLAN AN EXCEPTIONAL EXPERIENCE, EVERYTIME.</h1>
         </div>
 
@@ -52,7 +55,7 @@ class MainPage extends React.Component {
         
         <div className="parallax-container">
           <div className="parallax">
-            <img src="https://i.pinimg.com/originals/67/a9/a7/67a9a7ee5a6be4378d463609cbd8b8ee.jpg" alt="" />
+            <img src={hands} alt="hands" />
           </div>
           <h1 style={{ color: "white", lineHeight: 1.5 }}>WE HANDLE THE STRESS, SO YOUR EVENT IS A SUCCESS.</h1>
         </div>
@@ -70,7 +73,9 @@ class MainPage extends React.Component {
         </section>
 
         <div className="parallax-container">
-        <div className="parallax"><img src="https://peopledotcom.files.wordpress.com/2019/04/coachella-2.jpg" alt="" /></div>
+        <div className="parallax">
+          <img src={splashEvent} alt="splash-event" />
+        </div>
         <h1>EVERY DETAIL MATTERS.</h1>
         </div>
         <section className="get-started">
