@@ -12,7 +12,8 @@ class NotLoggedIn extends React.Component {
     let buttonText = e.currentTarget.innerHTML;
     if (buttonText === "Sign up and join group!") {
       // Open modal
-      console.log('hell yeah');
+      // https://go-chella.herokuapp.com/#/invite/beer_tour/5cdafbfa9f82fb344e8a45e4
+      this.props.openModal('signup');
     } else if (buttonText === "Maybe some other time") {
       this.props.history.push('/');
     }

@@ -11,7 +11,8 @@ class SignupForm extends React.Component {
       email: '',
       password: '',
       password2: '',
-      errors: {}
+      errors: {},
+      inviteLogin: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,6 +51,26 @@ class SignupForm extends React.Component {
       .then(() => {
         if (this.props.errors.length === 0) {
           this.props.closeModal()
+          let pathArr = this.props.location.pathname.split('/');
+          if (pathArr.includes('invite')) {
+            let groupId = pathArr[3];
+            
+            let userId = this.props.session.user.id;
+            this.props.fetchUser(userId)
+              .then((res) => {
+                let updatedUser = res.data;
+                updatedUser.groups.push(groupId);
+                let updatedGroup = this.props.groups[groupId];
+                updatedGroup.members.push(res.data.id);
+
+                let updateUserPromise = this.props.updateUser(updatedUser);
+                let updateGroupPromise = this.props.updateGroup(updatedGroup);
+                Promise.all([updateUserPromise, updateGroupPromise])
+                  .then((res) => {
+                    this.props.history.push(`/groups/${groupId}`)
+                  })
+              })
+          }
         } else {
           let component = document.getElementsByClassName('session-form-modal')[0];
           component.classList.add('shake');
