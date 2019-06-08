@@ -96,28 +96,6 @@
   justify-content: space-between;
 }
 
-.group-index-viewer {
-  display: grid;
-  grid-template-columns: 20px 1fr 20px;
-}
-
-.group-index-viewer > * {
-  grid-column: 2 / -2;
-}
-
-.group-index-viewer > .group-index-item {
-  grid-column: 1 / -1;
-}
-
-.hs {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(6, calc(50% - 40px));
-  grid-template-rows: minmax(150px, 1fr);
-  padding: 0 20px;
-}
-
-
 /* .group-index-viewer {
   width: 80%;
   padding-top: 20px;
