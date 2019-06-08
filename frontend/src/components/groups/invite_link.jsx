@@ -9,7 +9,7 @@ const handleCopy = (e) => {
 
 const InviteLink = (props) => {
   let groupId = props.location.pathname.split('/')[2];
-  let groupNameParse = props.group.name.toLowerCase();
+  let groupNameParse = props.group[groupId].name.toLowerCase();
   groupNameParse = groupNameParse.match(/[a-zA-Z]+/g).join('_');
   let inviteLink = 'https://brochella.herokuapp.com/invite/' + groupNameParse + '/' + groupId;
 
