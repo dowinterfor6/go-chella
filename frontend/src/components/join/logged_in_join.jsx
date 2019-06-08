@@ -16,10 +16,7 @@ class LoggedInJoin extends React.Component {
       updatedUser.groups.push(this.props.group.id);
       let updatedGroup = this.props.group;
       updatedGroup.members.push(this.props.currentUser.id);
-      // this.props.updateUser(updatedUser)
-      //   .then((res) => {
-      //     this.props.history.push(`/groups/${this.props.group.id}`);
-      //   })
+      
       let updateUserPromise = this.props.updateUser(updatedUser);
       let updateGroupPromise = this.props.updateGroup(updatedGroup);
       Promise.all([updateUserPromise, updateGroupPromise])
