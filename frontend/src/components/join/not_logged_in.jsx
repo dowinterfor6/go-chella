@@ -11,8 +11,6 @@ class NotLoggedIn extends React.Component {
   handleNavigation(e) {
     let buttonText = e.currentTarget.innerHTML;
     if (buttonText === "Sign up and join group!") {
-      // Open modal
-      // https://go-chella.herokuapp.com/#/invite/beer_tour/5cdafbfa9f82fb344e8a45e4
       this.props.openModal('signup');
     } else if (buttonText === "Maybe some other time") {
       this.props.history.push('/');
