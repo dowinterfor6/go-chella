@@ -158,17 +158,10 @@ class GroupShow extends React.Component {
         </div>
 
         <div className="group-show-main">
-          {/* <div className="member-list">  */}
             {memberList}
-          {/* </div> */}
-
-          {/* <div className="acts-list">  */}
             {acts}
-          {/* </div> */}
 
-          {/* <div className="map-container"> */}
             <Map />
-          {/* </div> */}
         </div>
         <br />
         <a

@@ -97,10 +97,10 @@
 }
 
 .group-index-viewer {
-  width: 80%;
-  padding-top: 20px;
+  width: 60vw;
+  padding-top: 50px;
   box-sizing: border-box;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   overflow: auto;
@@ -130,17 +130,17 @@
 }
 
 .group-index-item {
-  height: 100px;
+  height: 50px;
   min-width: 162px;
   max-width: 162px;
-  margin: 10px;
+  margin: 5px;
   margin-top: 0;
-  padding: 10px;
+  padding: 18px;
   box-sizing: border-box;
-  font-size: 20px;
   cursor: pointer;
   background-color: #dec9e9;
   font-family: 'Raleway', sans-serif;
+  font-size: 18px;
   text-align: center;
   display: flex;
   justify-content: center;
