@@ -103,7 +103,7 @@ button {
 }
 
 button:hover {
-	background-color: rgba(151, 151, 151, 0.3);
+	background-color: rgba(167, 115, 195, 0.3);
 	border: 1px solid black;
 	transition-property: all;
 	transition-duration: 0.25s;
@@ -112,4 +112,12 @@ button:hover {
 button:focus {
 	outline: none;
 	border: 1px solid #a773c3;
+}
+
+select {
+	cursor: pointer;
+}
+
+select:focus {
+	outline: none;
 }

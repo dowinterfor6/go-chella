@@ -85,12 +85,6 @@ class DiscoverPage extends React.Component {
       ))
     )
 
-    // let stagesDropdown = (
-    //   stages.sort().map((stage, id) => (
-    //     <option key={id} value={stage}>{stage}</option>
-    //   ))
-    // )
-
     let filter = (
       <div className="filter-menu">
         <label>Choose a Date:
