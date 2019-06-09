@@ -31,6 +31,12 @@ class GroupIndex extends React.Component {
         promise = this.props.fetchGroup(id);
         promiseArr.push(promise);
       });
+
+      // If there are no groups
+      if (promiseArr.length === 0) {
+        this.setState({ numObjToLoad: 1, objLoaded: 1, loading: false });
+      }
+
       Promise.all(promiseArr).then((res) => {
         let objToLoad = 0;
         Object.keys(this.props.groups).forEach((groupId) => {
