@@ -3,8 +3,6 @@ import Map from '../map/map';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/group_show.css';
 import { withRouter } from 'react-router-dom';
-import M from 'materialize-css/dist/js/materialize.js';
-
 
 class GroupShow extends React.Component {
   constructor(props) {
@@ -154,23 +152,20 @@ class GroupShow extends React.Component {
         <h1>{this.state.group.name}</h1>
         <div className="group-show-header">
           {owner}
+          <a
+            className='invite-link-display hvr-underline-from-left'
+            onClick={() => this.props.openModal('invite')}
+          >
+            Get invite link
+          </a>
           {permButtons}
         </div>
 
         <div className="group-show-main">
             {memberList}
             {acts}
-
             <Map />
         </div>
-        <br />
-        <a
-          className='invite-link-display hvr-underline-from-left'
-          onClick={() => this.props.openModal('invite')}
-        >
-          Get invite link
-          </a>
-
       </div>
     );
   }

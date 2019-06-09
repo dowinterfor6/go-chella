@@ -14,31 +14,22 @@
 .group-show-header {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-bottom: 10px;
 }
 
 .group-show-nav-container {
-  width: 100%;
+  width: 200px;
   display: flex;
-  justify-content: center;
-}
-
-.group-show-nav-container button {
-  height: 35px;
-  cursor: pointer;
-  outline: none;
-  border-radius: 2.5px;
-  border: 1px solid rgb(160, 160, 160);
-}
-
-.group-show-nav-container button:hover {
-  background-color: rgb(207, 207, 207);
-  border: 1px solid rgb(114, 114, 114);
+  justify-content: space-between;
 }
 
 .invite-link-display {
-  padding: 10px 0 10px 0;
+  width: fit-content;
+  padding: 10px 0 5px 0;
+  margin-bottom: 5px;
   box-sizing: border-box;
 }
 
@@ -58,15 +49,17 @@
 
 .group-show-main {
   height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 25px 300px 0px 300px;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  margin: 25px auto;
 }
 
 .group-show-main > * {
-  padding: 0px 15px 15px 15px;
+  padding: 15px;
   box-shadow: 2px 2px 2px 2px grey;
+  box-sizing: border-box;
 }
 
 /* HOVER */
