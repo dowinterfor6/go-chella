@@ -113,12 +113,12 @@ class GroupIndex extends React.Component {
     }
     if (Object.keys(nextProps.groups).every((key) => (
       typeof nextProps.groups[key].owner === 'object' &&
-      nextProps.groups[key].actsInfo && 
+      (nextProps.groups[key].actsInfo && 
       Object.keys(nextProps.groups[key].actsInfo).length 
-        === nextProps.groups[key].acts.length &&
-      nextProps.groups[key].memberInfo &&
+        === nextProps.groups[key].acts.length) &&
+      (nextProps.groups[key].memberInfo &&
       Object.keys(nextProps.groups[key].memberInfo).length
-      === nextProps.groups[key].members.length
+      === nextProps.groups[key].members.length)
     ))) {
       this.setState({ groups: nextProps.groups, loading: false })
     };
