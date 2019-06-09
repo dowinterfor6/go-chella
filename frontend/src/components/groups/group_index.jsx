@@ -163,12 +163,15 @@ class GroupIndex extends React.Component {
     };
 
     return (
-      <div className='group-index-container'>
-        { display }
-        <ul className='group-index-viewer'> 
-          { groups }
-        </ul>
-      </div>
+      <section className="main-index-content">
+        <h1>Organize your group for Coachella!</h1>
+        <div className='group-index-container'>
+          { display }
+          <ul className='group-index-viewer'> 
+            { groups }
+          </ul>
+        </div>
+      </section>
     )
   }
 }

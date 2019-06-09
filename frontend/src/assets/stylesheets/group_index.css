@@ -261,6 +261,17 @@
   z-index: -1;
 }
 
+.main-index-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-index-content h1 {
+  margin-bottom: 15px;
+}
+
 /* ANIMATIONS */
 @keyframes fadeIn {
   from {
