@@ -19,14 +19,14 @@ class Join extends React.Component {
     this.props.fetchGroup(this.props.match.params.groupId)
       .then((res) => {
         this.setState({ group: res.group.data });
-        this.props.fetchUser(this.props.currentUser.id)
-          .then((res) => {
-            this.setState({ currentUser: res.data })
-          });
+        if (this.props.currentUser) {
+          this.props.fetchUser(this.props.currentUser.id)
+            .then((res) => {
+              this.setState({ currentUser: res.data })
+            });
+        }
       })
-      .catch((res) => {
-        this.setState({ group: null });
-      })
+      // TODO: Catch invalid link error
       .finally(() => {
         let ul = document.getElementsByTagName('ul')[0];
         ul.setAttribute('style', 'display: none');
@@ -64,7 +64,12 @@ class Join extends React.Component {
           updateGroup={this.props.updateGroup}
           />
       } else {
-        componentToRender = <NotLoggedIn group={this.state.group} />
+        componentToRender = <NotLoggedIn 
+          group={this.state.group} 
+          openModal={this.props.openModal}
+          updateUser={this.props.updateUser}
+          updateGroup={this.props.updateGroup}
+          />
       }
     }
 

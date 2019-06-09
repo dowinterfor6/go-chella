@@ -6,7 +6,6 @@ import { deleteGroup } from '../../../actions/group_actions';
 import '../../../assets/stylesheets/modal.css';
 
 function DeleteForm(props) {
-    // console.log(props.location.pathname.split('/')[2]); 
     return (
       <div className="delete-form-modal"
         onClick={(e) => e.stopPropagation() }
@@ -16,11 +15,12 @@ function DeleteForm(props) {
         <button 
           className="delete-button"
           onClick={
-            (e) => {
-              props.deleteGroup(props.group[props.location.pathname.split('/')[2]].id);
-              props.closeModal();
-              props.history.push('/dashboard');
-            }
+            (e) => (
+              props.deleteGroup(props.group[props.location.pathname.split('/')[2]].id).then((res) => {
+                props.closeModal();
+                props.history.push('/dashboard');
+              })
+            )
           }
         >
         Confirm & Delete

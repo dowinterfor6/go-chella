@@ -133,17 +133,17 @@ class GroupShow extends React.Component {
         <div className="group-show-nav-container">
           <button onClick={() => this.props.openModal('Edit Group')}>
             Edit Group
-            </button>
+          </button>
 
           <button onClick={() => this.props.openModal('Delete Confirmation')}>
             Delete Group
-            </button>
-
-          <button onClick={(e) => this.leaveGroup(e)}>
-            Leave Group
           </button>
         </div>
       );
+    } else {
+      <button onClick={this.leaveGroup}>
+        Leave Group
+      </button>
     }
 
     return(

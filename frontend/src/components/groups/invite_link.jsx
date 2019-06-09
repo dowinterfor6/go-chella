@@ -11,7 +11,7 @@ const InviteLink = (props) => {
   let groupId = props.location.pathname.split('/')[2];
   let groupNameParse = props.group[groupId].name.toLowerCase();
   groupNameParse = groupNameParse.match(/[a-zA-Z]+/g).join('_');
-  let inviteLink = 'https://brochella.herokuapp.com/invite/' + groupNameParse + '/' + groupId;
+  let inviteLink = 'https://go-chella.herokuapp.com/#/invite/' + groupNameParse + '/' + groupId;
 
   return (
     <div className="delete-form-modal"
