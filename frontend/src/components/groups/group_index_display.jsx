@@ -12,7 +12,6 @@ class GroupIndexDisplay extends React.Component {
     };
 
     this.currentActId = null;
-
     this.handleNavigation = this.handleNavigation.bind(this);
   }
 
@@ -83,7 +82,6 @@ class GroupIndexDisplay extends React.Component {
         </div>
       </div>
     );
-
     if (this.state.activeGroup) {
       display = (
         <div 

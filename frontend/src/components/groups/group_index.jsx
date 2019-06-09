@@ -102,7 +102,7 @@ class GroupIndex extends React.Component {
             groups[ownerResult.id].owner = ownerResult.data;
           }
         );
-        // this.setState({groups: groups, loading: false})
+        this.setState({groups: groups, loading: false})
       });
     });
   }
@@ -136,6 +136,7 @@ class GroupIndex extends React.Component {
     if (this.state.loading) {
       return <Loading percent={percent}/>
     };
+
     let groups = [];
     groups = Object.keys(this.state.groups).map((groupId) => {
       return (
@@ -171,5 +172,4 @@ class GroupIndex extends React.Component {
     )
   }
 }
-
 export default GroupIndex;
