@@ -6,7 +6,6 @@ import { RECEIVE_ACT } from '../actions/act_actions';
 const groupsReducer = (state={}, action) => {
   Object.freeze(state); 
   let nextState = merge({}, state);
-
   let currentGroup;
   switch (action.type) {
     case RECEIVE_ACT:

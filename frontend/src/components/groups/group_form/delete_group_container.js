@@ -16,11 +16,12 @@ function DeleteForm(props) {
         <button 
           className="delete-button"
           onClick={
-            (e) => {
-              props.deleteGroup(props.group[props.location.pathname.split('/')[2]].id);
-              props.closeModal();
-              props.history.push('/dashboard');
-            }
+            (e) => (
+              props.deleteGroup(props.group[props.location.pathname.split('/')[2]].id).then((res) => {
+                props.closeModal();
+                props.history.push('/dashboard');
+              })
+            )
           }
         >
         Confirm & Delete
