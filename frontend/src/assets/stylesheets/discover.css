@@ -29,7 +29,8 @@
   margin-bottom: 10px;
 }
 
-.discovery-header button {
+/* TODO: BUTTON */
+/* .discovery-header button {
   height: 35px;
   cursor: pointer;
   outline: none;
@@ -41,7 +42,7 @@
 .discovery-header button:hover {
   background-color: rgb(207, 207, 207);
   border: 1px solid rgb(114, 114, 114);
-}
+} */
 
 .act-list {
   height: 80%;

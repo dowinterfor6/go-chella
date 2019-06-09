@@ -92,3 +92,22 @@ h3 {
 h4 {
 	font-size: 16px;
 }
+
+button {
+	box-sizing: border-box;
+	height: 30px;
+	background: none;
+	border: 1px solid rgb(121, 121, 121);
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: rgba(121, 121, 121, 0.3);
+	border: 1px solid black;
+}
+
+button:focus {
+	outline: none;
+	border: 1px solid #a773c3;
+}
