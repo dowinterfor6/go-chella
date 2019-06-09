@@ -146,7 +146,13 @@ router.get('/:id', passport.authenticate('jwt', {session: false}), (req, res) =>
       })
     })
     .catch((err) => res.status(404).json({ nouserfound: "That user does not exist."}))
-})
+});
+
+router.put('/:id', (req, res) => {
+  User.findByIdAndUpdate({ _id: req.params.id }, req.body)
+    .then(() => User.findOne({ _id: req.params.id }))
+    .then((user) => res.send(user))
+});
 
 router.put('/:id', (req, res) => {
   User.findByIdAndUpdate({ _id: req.body.id }, req.body)

@@ -49,6 +49,7 @@ class GroupShow extends React.Component {
     newGroup.members = newMembers;
 
 
+    // If this was the last member, then delete the group entirely
     if(newMembers.length === 0) {
       this.props.updateGroup(newGroup);
       this.props.deleteGroup(newGroup.id);
@@ -61,7 +62,7 @@ class GroupShow extends React.Component {
     let newGroups = this.state.user.groups.filter((group) => group !== this.state.group.id);
     newUser.groups = newGroups;
 
-    // Update both the group and the user, and then redirect to the dashboard
+    // Update the user and then redirect to the dashboard
     this.props.updateUser(newUser)
       .then(this.props.history.push('/discover'));
   }
@@ -134,17 +135,17 @@ class GroupShow extends React.Component {
         <div className="group-show-nav-container">
           <button onClick={() => this.props.openModal('Edit Group')}>
             Edit Group
-            </button>
+          </button>
 
           <button onClick={() => this.props.openModal('Delete Confirmation')}>
             Delete Group
-            </button>
-
-          <button onClick={(e) => this.leaveGroup(e)}>
-            Leave Group
           </button>
         </div>
       );
+    } else {
+      <button onClick={this.leaveGroup}>
+        Leave Group
+      </button>
     }
 
     return(

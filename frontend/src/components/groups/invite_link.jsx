@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 const handleCopy = (e) => {
   let text = document.getElementsByClassName('link-display')[0];
@@ -7,9 +8,10 @@ const handleCopy = (e) => {
 }
 
 const InviteLink = (props) => {
-  let groupNameParse = props.group.name.toLowerCase();
-  groupNameParse = groupNameParse.match(/[a-zA-Z]+/g).join('');
-  let inviteLink = 'https://brochella.herokuapp.com/' + groupNameParse + '_invite/' + props.group.id;
+  let groupId = props.location.pathname.split('/')[2];
+  let groupNameParse = props.group[groupId].name.toLowerCase();
+  groupNameParse = groupNameParse.match(/[a-zA-Z]+/g).join('_');
+  let inviteLink = 'https://go-chella.herokuapp.com/#/invite/' + groupNameParse + '/' + groupId;
 
   return (
     <div className="delete-form-modal"
@@ -29,4 +31,4 @@ const InviteLink = (props) => {
   )
 }
 
-export default InviteLink;
+export default withRouter(InviteLink);

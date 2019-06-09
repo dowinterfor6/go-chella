@@ -12,6 +12,6 @@ export const fetchUser = (userId) => {
   return axios.get(`api/users/${userId}`)
 }
 
-export const updateUser = user => {
+export const updateUser = (user) => {
   return axios.put(`/api/users/${user.id}`, user)
 }

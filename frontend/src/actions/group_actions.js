@@ -25,6 +25,9 @@ export const updateGroup = (group) => (dispatch) => (
   GroupAPIUtil.updateGroup(group).then(group => dispatch(receiveGroup(group)))
 );
 
-export const deleteGroup = (groupId) => (dispatch) => (
-  GroupAPIUtil.deleteGroup(groupId).then(group => dispatch(removeGroup(group.id)))
-);
+export const deleteGroup = (groupId) => (dispatch) => {
+  return GroupAPIUtil.deleteGroup(groupId)
+    .then(group => {
+      return dispatch(removeGroup(group.data._id))
+    })
+};

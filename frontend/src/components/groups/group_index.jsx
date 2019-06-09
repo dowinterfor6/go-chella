@@ -31,6 +31,12 @@ class GroupIndex extends React.Component {
         promise = this.props.fetchGroup(id);
         promiseArr.push(promise);
       });
+
+      // If there are no groups
+      if (promiseArr.length === 0) {
+        this.setState({ numObjToLoad: 1, objLoaded: 1, loading: false });
+      }
+
       Promise.all(promiseArr).then((res) => {
         let objToLoad = 0;
         Object.keys(this.props.groups).forEach((groupId) => {
@@ -107,12 +113,12 @@ class GroupIndex extends React.Component {
     }
     if (Object.keys(nextProps.groups).every((key) => (
       typeof nextProps.groups[key].owner === 'object' &&
-      nextProps.groups[key].actsInfo && 
+      (nextProps.groups[key].actsInfo && 
       Object.keys(nextProps.groups[key].actsInfo).length 
-        === nextProps.groups[key].acts.length &&
-      nextProps.groups[key].memberInfo &&
+        === nextProps.groups[key].acts.length) &&
+      (nextProps.groups[key].memberInfo &&
       Object.keys(nextProps.groups[key].memberInfo).length
-      === nextProps.groups[key].members.length
+      === nextProps.groups[key].members.length)
     ))) {
       this.setState({ groups: nextProps.groups, loading: false })
     };

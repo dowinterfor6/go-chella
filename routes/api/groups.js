@@ -117,9 +117,22 @@ router.delete('/:id', passport.authenticate('jwt', { session: false }), (req, re
                     }
                 )
             });
+            res.send(group);
         }
     )
-    Group.findOneAndDelete({ _id: req.params.id })
+    Group.findOneAndRemove({_id: req.params.id})
+        .then((docs)=>{
+            // if(docs) {
+            //     resolve({"success":true,data:docs});
+            // } else {
+            //     reject({"success":false,data:"no such group exists"});
+            // }
+            // TODO: might not be necessary
+            return docs;
+        }).catch((err)=>{
+            console.log(err);
+            // reject(err);
+        })
 });
 
 router.put('/:id', (req, res) => {

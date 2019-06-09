@@ -5,7 +5,8 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-import { fetchUser } from './actions/user_actions';
+// import { deleteGroup } from './util/group_api_util';
+import { deleteGroup } from './actions/group_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -29,5 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store} />, root);
 
   window.dispatch = store.dispatch;
-  window.fetchUser = fetchUser;
+  window.deleteGroup = deleteGroup;
+  // window.deleteGroup = deleteGroup;
 });
