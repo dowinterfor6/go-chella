@@ -3,6 +3,8 @@ import Map from '../map/map';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/group_show.css';
 import { withRouter } from 'react-router-dom';
+import M from 'materialize-css/dist/js/materialize.js';
+
 
 class GroupShow extends React.Component {
   constructor(props) {
@@ -102,7 +104,7 @@ class GroupShow extends React.Component {
       if (ownerUser) {
         owner = (
           <div className="owner-display">
-            <h2>Created by: {ownerUser.username}</h2>
+            <h2>Group Host: {ownerUser.username}</h2>
           </div>
         )
       };
@@ -148,25 +150,27 @@ class GroupShow extends React.Component {
 
     return(
       <div className='group-show-container'> 
-        <div className="group-show-main">
-          <div className="group-show-header">
-            <h1>{this.state.group.name}</h1>
-            <a 
-              className='invite-link-display hvr-underline-from-left'
-              onClick={() => this.props.openModal('invite')}
-            >
-              Get invite link
-            </a>
-          {permButtons}
-          </div>
+
+        <h1>{this.state.group.name}</h1>
+        <div className="group-show-header">
           {owner}
-          {memberList}
-          {acts}
+          {permButtons}
         </div>
 
-        <aside className="map-container">
-          <Map />
-        </aside>
+        <div className="group-show-main">
+            {memberList}
+            {acts}
+
+            <Map />
+        </div>
+        <br />
+        <a
+          className='invite-link-display hvr-underline-from-left'
+          onClick={() => this.props.openModal('invite')}
+        >
+          Get invite link
+          </a>
+
       </div>
     );
   }

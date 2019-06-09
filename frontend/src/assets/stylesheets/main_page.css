@@ -46,7 +46,7 @@
   background-size: cover;
   width: 100%;
   height: 100%;
-  padding: 200px 0px 200px 0px;
+  padding: 200px 0px 200px 50px;
 }
 
 .main-landing section h2, .main-landing section p {
@@ -98,7 +98,8 @@
 }
  
 body {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDnjU59BpeZA72vhC9i-Bba7AoHU418Vaa6-IZLbcupXmcZfBMw");
+  background-image: url("http://i.imgur.com/OTQGQJe.png");
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDnjU59BpeZA72vhC9i-Bba7AoHU418Vaa6-IZLbcupXmcZfBMw"); */
   background-attachment: fixed;
   height: 100%;
   width: 100%;
@@ -130,7 +131,7 @@ body {
 
 .why-brochella {
   display: flex;
-  margin: 20px;
+  /* margin: 20px; */
   padding: 15px;
 }
 
@@ -160,7 +161,7 @@ body {
 
 .what-brochella {
   display: flex;
-  margin: 40px;
+  /* margin: 40px; */
   width: 100%;
   margin-right: 50px;
 }
