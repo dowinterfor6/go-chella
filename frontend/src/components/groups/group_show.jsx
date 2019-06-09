@@ -151,14 +151,12 @@ class GroupShow extends React.Component {
         <div className="group-show-main">
           <div className="group-show-header">
             <h1>{this.state.group.name}</h1>
-            <br />
             <a 
               className='invite-link-display hvr-underline-from-left'
               onClick={() => this.props.openModal('invite')}
             >
               Get invite link
             </a>
-            <br/>
           {permButtons}
           </div>
           {owner}

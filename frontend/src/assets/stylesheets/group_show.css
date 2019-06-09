@@ -17,10 +17,15 @@
   
 }
 
-.group-show-header h1 a {
+.group-show-header {
+  height: 125px;
   display: flex;
-  text-align: center;
-  font-size: 35px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.invite-link-display {
+  width: fit-content;
 }
 
 .group-show-nav-container {
