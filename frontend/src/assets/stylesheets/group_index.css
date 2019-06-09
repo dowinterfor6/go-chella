@@ -339,3 +339,8 @@
   -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
 }
+
+/* Mobile-responsive */
+@media only screen and (max-width: 900px) {
+  
+}
