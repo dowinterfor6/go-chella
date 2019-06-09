@@ -3,8 +3,6 @@ import Map from '../map/map';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/group_show.css';
 import { withRouter } from 'react-router-dom';
-import M from 'materialize-css/dist/js/materialize.js';
-
 
 class GroupShow extends React.Component {
   constructor(props) {

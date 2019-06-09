@@ -97,7 +97,7 @@
 }
 
 .group-index-viewer {
-  width: 60vw;
+  width: 900px;
   padding-top: 50px;
   box-sizing: border-box;
   margin: 0 auto;
@@ -130,7 +130,7 @@
 }
 
 .group-index-item {
-  height: 50px;
+  min-height: 50px;
   min-width: 162px;
   max-width: 162px;
   margin: 5px;
