@@ -29,19 +29,6 @@
   justify-content: space-between;
 }
 
-.group-show-nav-container button {
-  height: 35px;
-  cursor: pointer;
-  outline: none;
-  border-radius: 2.5px;
-  border: 1px solid rgb(160, 160, 160);
-}
-
-.group-show-nav-container button:hover {
-  background-color: rgb(207, 207, 207);
-  border: 1px solid rgb(114, 114, 114);
-}
-
 .invite-link-display {
   padding: 10px 0 5px 0;
   box-sizing: border-box;
