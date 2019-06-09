@@ -103,8 +103,10 @@ button {
 }
 
 button:hover {
-	background-color: rgba(121, 121, 121, 0.3);
+	background-color: rgba(151, 151, 151, 0.3);
 	border: 1px solid black;
+	transition-property: all;
+	transition-duration: 0.25s;
 }
 
 button:focus {
