@@ -52,10 +52,15 @@ class AddActsForm extends React.Component {
         } else {
             daGroup = this.state[this.state.group];
         }
-        daGroup.acts.push(this.state.act._id);
-        this.props.updateGroup(daGroup);
-        alert('Act Successfully Added!');
-        this.props.closeModal();
+
+        if(daGroup.acts.includes(this.state.act._id)) {
+            alert('Whoops! Looks like you are already seeing that act!');
+        } else {
+            daGroup.acts.push(this.state.act._id);
+            this.props.updateGroup(daGroup);
+            alert('Act Successfully Added!');
+            this.props.closeModal();
+        }
     }
 
     render() {

@@ -54,7 +54,7 @@ class GroupShow extends React.Component {
 
   removeAct(id) {
     if(this.state.group.acts.length === 1) {
-      this.state.errors.push('Sorry, must have at least one act');
+      alert('Sorry, must have at least one act');
     } else {
       let newGroup = Object.assign({}, this.state.group);
       let newActs = newGroup.acts.filter((act) => act !== id);
