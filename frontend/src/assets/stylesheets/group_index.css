@@ -342,5 +342,45 @@
 
 /* Mobile-responsive */
 @media only screen and (max-width: 900px) {
-  
+  .main-index-content {
+    /* margin-bottom: 10px; */
+  }
+
+  .main-index-content h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .in-focus-display {
+    width: 90vw;
+    height: 330px;
+  }
+
+  .in-focus-header.default-header-text {
+    height: 120px;
+  }
+
+  .in-focus-header {
+    font-size: 22px;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 42px;
+  }
+
+  .act-list-container {
+    height: 288px;
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    grid-gap: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .act-list-container li {
+    font-size: 18px;
+  }
+
+  .group-index-viewer {
+    padding-top: 25px;
+  }
 }
