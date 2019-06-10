@@ -99,6 +99,7 @@
  
 body {
   background-image: url("http://i.imgur.com/OTQGQJe.png");
+  background-position: bottom;
   /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDnjU59BpeZA72vhC9i-Bba7AoHU418Vaa6-IZLbcupXmcZfBMw"); */
   background-attachment: fixed;
   height: 100%;
@@ -218,8 +219,11 @@ body {
     position: absolute;
     display: grid;
     grid-template-rows: 108.66px 1fr;
-
     overflow-y: hidden;
     overflow-x: hidden;
   }
+}
+
+.fas {
+  font-size: 30px;
 }

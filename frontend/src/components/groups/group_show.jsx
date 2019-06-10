@@ -2,6 +2,7 @@ import React from 'react';
 import Map from '../map/map';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/group_show.css';
+import '../../assets/stylesheets/main_page.css';
 import { withRouter } from 'react-router-dom';
 
 class GroupShow extends React.Component {
@@ -147,24 +148,27 @@ class GroupShow extends React.Component {
     }
 
     return(
-      <div className='group-show-container'> 
+      <div>
+        <i className="fas fa-arrow-circle-left"> Map</i>
+        <div className='group-show-container'> 
 
-        <h1>{this.state.group.name}</h1>
-        <div className="group-show-header">
-          {owner}
-          <a
-            className='invite-link-display hvr-underline-from-left'
-            onClick={() => this.props.openModal('invite')}
-          >
-            Get invite link
-          </a>
-          {permButtons}
-        </div>
+          <h1>{this.state.group.name}</h1>
+          <div className="group-show-header">
+            {owner}
+            <a
+              className='invite-link-display hvr-underline-from-left'
+              onClick={() => this.props.openModal('invite')}
+            >
+              Get invite link
+            </a>
+            {permButtons}
+          </div>
 
-        <div className="group-show-main">
-            {memberList}
-            {acts}
-            <Map />
+          <div className="group-show-main">
+              {memberList}
+              {acts}
+              <Map />
+          </div>
         </div>
       </div>
     );
