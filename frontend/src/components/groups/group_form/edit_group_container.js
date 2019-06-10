@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchGroup, updateGroup } from '../../../actions/group_actions';
 import { closeModal } from '../../../actions/modal_actions';
 import '../../../assets/stylesheets/modal.css'
@@ -7,12 +8,15 @@ import '../../../assets/stylesheets/modal.css'
 class GroupForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.group;
+    this.state = {
+      group: this.props.group,
+      name: ''
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    this.setState({ group: this.props.group }); 
+    this.setState({ group: this.props.group, name: this.props.group.name }); 
   }
 
   componentWillUnmount() {
@@ -20,18 +24,26 @@ class GroupForm extends React.Component {
   }
 
   update(field) {
-    return (e) => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return (e) => {
+      this.setState({
+        [field]: e.currentTarget.value
+      });
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const group = Object.assign({}, this.state);
-    this.props.updateGroup(group).then(this.props.closeModal);
+    const group = Object.assign({}, this.state.group);
+    group.name = this.state.name;
+    this.props.updateGroup(group).then(this.props.closeModal).then(this.props.history.push('/dashboard'));
   };
 
   render() {
+
+    if(!this.state.group) {
+      return null;
+    }
+    
     return (
       <div className="delete-form-modal"
         onClick={(e) => e.stopPropagation()}
@@ -55,8 +67,9 @@ class GroupForm extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  let group = state.groups[ownProps.location.pathname.split('/')[2]];
   return {
-    group: state.groups.data,
+    group,
     formType: 'Edit Group',
   };
 };
@@ -69,7 +82,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(GroupForm);
+)(GroupForm));

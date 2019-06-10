@@ -137,7 +137,7 @@ router.delete('/:id', passport.authenticate('jwt', { session: false }), (req, re
 
 router.put('/:id', (req, res) => {
     Group.findByIdAndUpdate({_id: req.params.id},req.body)
-        .then(() => Group.findOne({_id: req.params.id}))
+        .then(() => Group.findById({_id: req.params.id}))
         .then((group) => res.send(group))
 });
 
