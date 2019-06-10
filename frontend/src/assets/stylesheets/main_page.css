@@ -186,3 +186,40 @@ body {
   border-radius: 100%;
   margin-right: 150px;
 }
+
+/* Mobile-responsive */
+
+@media only screen and (max-width: 900px) {
+  /* .main-landing {
+    width: 100vw;
+  }
+
+  .parallax-container {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .parallax-container h1 {
+    font-size: 25px;
+    line-height: 1.5em;
+    width: 100vw;
+  }
+
+  .main-landing section {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+  } */
+
+  .main-content {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+}

@@ -12,7 +12,7 @@ import ActIndexItemContainer from './acts/act_index_item_container';
 import JoinContainer from './join/join_container';
 
 const App = () => (
-  <div>
+  <div className="main-content">
     <NavBarContainer />
     <Switch>
       <Route exact path='/invite/:groupName/:groupId' component={JoinContainer} />
