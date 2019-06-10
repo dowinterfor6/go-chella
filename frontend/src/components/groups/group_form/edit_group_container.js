@@ -16,8 +16,7 @@ class GroupForm extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ group: this.props.group }); 
-    this.setState({ name: this.props.group.name }); 
+    this.setState({ group: this.props.group, name: this.props.group.name }); 
   }
 
   componentWillUnmount() {
