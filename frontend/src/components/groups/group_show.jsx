@@ -11,7 +11,8 @@ class GroupShow extends React.Component {
     super(props);
 
     this.state = {
-      group: {}
+      group: {},
+      errors: []
     };
   }
 
@@ -41,6 +42,10 @@ class GroupShow extends React.Component {
       });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+
+  }
+
   parseDate(date) {
     let newDate;
     let newTime;
@@ -52,10 +57,14 @@ class GroupShow extends React.Component {
   }
 
   removeAct(id) {
-    let newGroup = Object.assign({}, this.state.group);
-    let newActs = newGroup.acts.filter((act) => act !== id);
-    newGroup.acts = newActs;
-    console.log(newGroup);
+    if(this.state.group.acts.length === 1) {
+      this.state.errors.push('Sorry, must have at least one act');
+    } else {
+      let newGroup = Object.assign({}, this.state.group);
+      let newActs = newGroup.acts.filter((act) => act !== id);
+      newGroup.acts = newActs;
+      this.props.updateGroup(newGroup).then(this.props.history.push('/dashboard'));
+    }
   }
 
   leaveGroup(e) {
@@ -139,7 +148,7 @@ class GroupShow extends React.Component {
                       <strong><Link style={{textDecoration: "underline"}} to={`/acts/${act}`}>{this.state[act].name}:</Link></strong> on &nbsp;
                       {this.parseDate(this.state[act].date).date.split('-')[1] + '/' + this.parseDate(this.state[act].date).date.split('-')[2]}
                       &nbsp; at {this.parseDate(this.state[act].date).time}
-                      &nbsp; on the {this.state[act].stage}. <button className="discover-link" onClick={() => this.removeAct(act)}>(Remove Act)</button>
+                      &nbsp; on the {this.state[act].stage}. <button className="remove-act" onClick={() => this.removeAct(act)}>Remove Act</button>
                     </p>
                   </li>
                 )
