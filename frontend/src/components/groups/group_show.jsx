@@ -51,6 +51,13 @@ class GroupShow extends React.Component {
     return { date: newDate, time: newTime }
   }
 
+  removeAct(id) {
+    let newGroup = Object.assign({}, this.state.group);
+    let newActs = newGroup.acts.filter((act) => act !== id);
+    newGroup.acts = newActs;
+    console.log(newGroup);
+  }
+
   leaveGroup(e) {
     e.preventDefault();
     // Create a new Group Object to pass to updateGroup
@@ -129,10 +136,10 @@ class GroupShow extends React.Component {
                 return (
                   <li key={idx}>
                     <p>
-                      <strong>{this.state[act].name}:</strong> on &nbsp;
+                      <strong><Link style={{textDecoration: "underline"}} to={`/acts/${act}`}>{this.state[act].name}:</Link></strong> on &nbsp;
                       {this.parseDate(this.state[act].date).date.split('-')[1] + '/' + this.parseDate(this.state[act].date).date.split('-')[2]}
                       &nbsp; at {this.parseDate(this.state[act].date).time}
-                      &nbsp; on the {this.state[act].stage}.
+                      &nbsp; on the {this.state[act].stage}. <button className="discover-link" onClick={() => this.removeAct(act)}>(Remove Act)</button>
                     </p>
                   </li>
                 )
