@@ -102,7 +102,7 @@ class GroupIndex extends React.Component {
             groups[ownerResult.id].owner = ownerResult.data;
           }
         );
-        this.setState({groups: groups, loading: false})
+        // this.setState({groups: groups, loading: false})
       });
     });
   }
