@@ -1,5 +1,6 @@
 import React from 'react';
 import Map from '../map/map';
+import { Link } from 'react-router-dom';
 import '../../assets/stylesheets/reset.css';
 import '../../assets/stylesheets/group_show.css';
 import '../../assets/stylesheets/main_page.css';
@@ -38,6 +39,16 @@ class GroupShow extends React.Component {
         this.props.fetchOneUser(this.props.currentUser.id)
           .then((res) => this.setState({ user: res.user.data }))
       });
+  }
+
+  parseDate(date) {
+    let newDate;
+    let newTime;
+    let dateArr = date.split('T');
+    newDate = dateArr[0];
+    let timeArr = dateArr[1].split('Z');
+    newTime = timeArr[0].split('.')[0];
+    return { date: newDate, time: newTime }
   }
 
   leaveGroup(e) {
@@ -80,7 +91,7 @@ class GroupShow extends React.Component {
     if (this.state.group.members) {
       memberList = (
         <div className="group-member-list-container">
-          <h2>Member List:</h2>
+          <h2 style={{fontSize: "48px", color: "white", textDecoration: "underline"}}>Your Crew:</h2>
           <ul className="group-member-list">
             {this.state.group.members.map((key, idx) => {
               if(this.state[key]) {
@@ -111,14 +122,17 @@ class GroupShow extends React.Component {
     if (this.state.group.acts && this.state.group.acts.length > 0) {
       acts = (
         <div className="group-acts-container">
-          <h2>Acts List:</h2>
+          <h2 style={{fontSize: "48px", textDecoration: "underline"}}>Who You're Seeing:</h2>
           <ul className="group-acts-list">
             {this.state.group.acts.map((act, idx) => {
               if(this.state[act]) {
                 return (
                   <li key={idx}>
                     <p>
-                      {this.state[act].name}
+                      <strong>{this.state[act].name}:</strong> on &nbsp;
+                      {this.parseDate(this.state[act].date).date.split('-')[1] + '/' + this.parseDate(this.state[act].date).date.split('-')[2]}
+                      &nbsp; at {this.parseDate(this.state[act].date).time}
+                      &nbsp; on the {this.state[act].stage}.
                     </p>
                   </li>
                 )
@@ -149,7 +163,6 @@ class GroupShow extends React.Component {
 
     return(
       <div>
-        <i className="fas fa-arrow-circle-left"> Map</i>
         <div className='group-show-container'> 
 
           <h1>{this.state.group.name}</h1>
@@ -165,8 +178,8 @@ class GroupShow extends React.Component {
           </div>
 
           <div className="group-show-main">
-              {memberList}
               {acts}
+              {memberList}
               <Map />
           </div>
         </div>
