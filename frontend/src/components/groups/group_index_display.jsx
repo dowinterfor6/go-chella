@@ -12,7 +12,6 @@ class GroupIndexDisplay extends React.Component {
     };
 
     this.currentActId = null;
-
     this.handleNavigation = this.handleNavigation.bind(this);
   }
 
@@ -72,7 +71,7 @@ class GroupIndexDisplay extends React.Component {
         onAnimationEnd={(e) => e.currentTarget.classList.remove('fadeIn')}
         onClick={this.handleNavigation}
       >
-        <div className="in-focus-header fadeIn" onAnimationEnd={(e) => e.currentTarget.classList.remove('fadeIn')}>
+        <div className="in-focus-header fadeIn default-header-text" onAnimationEnd={(e) => e.currentTarget.classList.remove('fadeIn')}>
           Browse through your groups and click to show details!
           Or, check out the discover page and
           create your own to get started!
@@ -83,7 +82,6 @@ class GroupIndexDisplay extends React.Component {
         </div>
       </div>
     );
-
     if (this.state.activeGroup) {
       display = (
         <div 

@@ -102,7 +102,7 @@ class GroupShow extends React.Component {
       if (ownerUser) {
         owner = (
           <div className="owner-display">
-            <h2>Created by: {ownerUser.username}</h2>
+            <h2>Group Host: {ownerUser.username}</h2>
           </div>
         )
       };
@@ -148,27 +148,24 @@ class GroupShow extends React.Component {
 
     return(
       <div className='group-show-container'> 
-        <div className="group-show-main">
-          <div className="group-show-header">
-            <h1>{this.state.group.name}</h1>
-            <br />
-            <a 
-              className='invite-link-display hvr-underline-from-left'
-              onClick={() => this.props.openModal('invite')}
-            >
-              Get invite link
-            </a>
-            <br/>
-          {permButtons}
-          </div>
+
+        <h1>{this.state.group.name}</h1>
+        <div className="group-show-header">
           {owner}
-          {memberList}
-          {acts}
+          <a
+            className='invite-link-display hvr-underline-from-left'
+            onClick={() => this.props.openModal('invite')}
+          >
+            Get invite link
+          </a>
+          {permButtons}
         </div>
 
-        <aside className="map-container">
-          <Map />
-        </aside>
+        <div className="group-show-main">
+            {memberList}
+            {acts}
+            <Map />
+        </div>
       </div>
     );
   }

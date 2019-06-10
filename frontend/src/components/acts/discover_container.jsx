@@ -85,20 +85,13 @@ class DiscoverPage extends React.Component {
       ))
     )
 
-    // let stagesDropdown = (
-    //   stages.sort().map((stage, id) => (
-    //     <option key={id} value={stage}>{stage}</option>
-    //   ))
-    // )
-
     let filter = (
       <div className="filter-menu">
-        <label>Choose a Date:
-          <select style={{ marginLeft: 5, height: 23, width: "92px" }} value={this.state.selectedDate} onChange={this.handleDate}>
-            <option value="All Dates">All Dates</option>
-            {datesDropdown}
-          </select>
-        </label>
+        <h2>Choose a Date:</h2>
+        <select style={{ marginLeft: 5, height: 23, width: "92px" }} value={this.state.selectedDate} onChange={this.handleDate}>
+          <option value="All Dates">All Dates</option>
+          {datesDropdown}
+        </select>
       </div>
     );
     
