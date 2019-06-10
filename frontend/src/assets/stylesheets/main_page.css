@@ -216,9 +216,9 @@ body {
     height: 100vh;
     width: 100vw;
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: 108.66px 1fr;
+
     overflow-y: hidden;
     overflow-x: hidden;
   }
