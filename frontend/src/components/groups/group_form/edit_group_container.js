@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchGroup, updateGroup } from '../../../actions/group_actions';
 import { closeModal } from '../../../actions/modal_actions';
 import '../../../assets/stylesheets/modal.css'
@@ -15,8 +16,8 @@ class GroupForm extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ group: this.props.group[Object.keys(this.state.group)[0]] }); 
-    this.setState({ name: this.props.group[Object.keys(this.state.group)[0]].name }); 
+    this.setState({ group: this.props.group }); 
+    this.setState({ name: this.props.group.name }); 
   }
 
   componentWillUnmount() {
@@ -68,8 +69,9 @@ class GroupForm extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  let group = state.groups[ownProps.location.pathname.split('/')[2]];
   return {
-    group: state.groups,
+    group,
     formType: 'Edit Group',
   };
 };
@@ -82,7 +84,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(GroupForm);
+)(GroupForm));
