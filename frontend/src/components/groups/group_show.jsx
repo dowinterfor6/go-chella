@@ -42,10 +42,6 @@ class GroupShow extends React.Component {
       });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-
-  }
-
   parseDate(date) {
     let newDate;
     let newTime;
@@ -63,7 +59,8 @@ class GroupShow extends React.Component {
       let newGroup = Object.assign({}, this.state.group);
       let newActs = newGroup.acts.filter((act) => act !== id);
       newGroup.acts = newActs;
-      this.props.updateGroup(newGroup).then(this.props.history.push('/dashboard'));
+      this.props.updateGroup(newGroup)
+        .then(this.setState({ group: newGroup }));
     }
   }
 
