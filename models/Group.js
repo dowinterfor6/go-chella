@@ -20,7 +20,7 @@ const GroupSchema = new Schema({
 
     acts: {
         type: Array,
-        default: []
+        default: ['5cdb12786876a632c679b567']
     }
 });
 

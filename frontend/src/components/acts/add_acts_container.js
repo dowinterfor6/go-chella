@@ -46,9 +46,16 @@ class AddActsForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let daGroup = this.state.group;
+        let daGroup;
+        if(typeof this.state.group === 'object') {
+            daGroup = this.state.group;
+        } else {
+            daGroup = this.state[this.state.group];
+        }
         daGroup.acts.push(this.state.act._id);
-        this.props.updateGroup(daGroup).then(this.props.closeModal);
+        this.props.updateGroup(daGroup);
+        alert('Act Successfully Added!');
+        this.props.closeModal();
     }
 
     render() {
