@@ -104,7 +104,7 @@ class GroupShow extends React.Component {
     if (this.state.group.members) {
       memberList = (
         <div className="group-member-list-container">
-          <h2 style={{fontSize: "48px", color: "white", textDecoration: "underline"}}>Your Crew:</h2>
+          <h2 style={{fontSize: "48px", textDecoration: "underline"}}>Your Crew:</h2>
           <ul className="group-member-list">
             {this.state.group.members.map((key, idx) => {
               if(this.state[key]) {
