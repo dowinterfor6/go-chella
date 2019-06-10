@@ -65,7 +65,7 @@ class AddActsForm extends React.Component {
         };
 
         if(!this.state.group) {
-            this.state.group = this.props.groups[Object.keys(this.state)[4]];
+            this.setState({ group: this.props.groups[Object.keys(this.state)[4]] });
         }
 
         console.log(this.state.group);
