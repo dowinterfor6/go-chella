@@ -34,6 +34,7 @@ class AddActsForm extends React.Component {
                         })
                 })
             })
+        this.setState({ group: this.props.groups[Object.keys(this.state)[4]] })
         this.setState({ loading: false });
     }
 
@@ -45,7 +46,7 @@ class AddActsForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let daGroup = this.state[this.state.group];
+        let daGroup = this.state.group;
         daGroup.acts.push(this.state.act._id);
         this.props.updateGroup(daGroup).then(this.props.closeModal);
     }
@@ -56,6 +57,11 @@ class AddActsForm extends React.Component {
             return <Loading />
         };
 
+        if(!this.state.group) {
+            this.state.group = this.props.groups[Object.keys(this.state)[4]];
+        }
+
+        console.log(this.state.group);
         let groups = (
             Object.keys(this.state).slice(4).sort().map((key, idx) => (
                 <option key={idx} value={key}>{this.state[key].name}</option>
