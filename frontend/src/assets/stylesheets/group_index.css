@@ -351,8 +351,10 @@
   .main-index-content h1 {
     height: 100%;
     font-size: 20px;
-    text-align: center;
     margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
 
   .group-index-container {
