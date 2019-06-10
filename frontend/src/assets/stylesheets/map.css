@@ -10,8 +10,6 @@
   }
 
 .map-display-container {
-  height: 100%;
-  /* display: inline-flex; */
   flex-direction: column;
-  justify-content: space-evenly;
+  display: none;
 }

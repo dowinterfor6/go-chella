@@ -52,10 +52,15 @@ class AddActsForm extends React.Component {
         } else {
             daGroup = this.state[this.state.group];
         }
-        daGroup.acts.push(this.state.act._id);
-        this.props.updateGroup(daGroup);
-        alert('Act Successfully Added!');
-        this.props.closeModal();
+
+        if(daGroup.acts.includes(this.state.act._id)) {
+            alert('Whoops! Looks like you are already seeing that act!');
+        } else {
+            daGroup.acts.push(this.state.act._id);
+            this.props.updateGroup(daGroup);
+            alert('Act Successfully Added!');
+            this.props.closeModal();
+        }
     }
 
     render() {
@@ -64,11 +69,6 @@ class AddActsForm extends React.Component {
             return <Loading />
         };
 
-        if(!this.state.group) {
-            this.setState({ group: this.props.groups[Object.keys(this.state)[4]] });
-        }
-
-        console.log(this.state.group);
         let groups = (
             Object.keys(this.state).slice(4).sort().map((key, idx) => (
                 <option key={idx} value={key}>{this.state[key].name}</option>
