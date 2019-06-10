@@ -34,10 +34,9 @@ class GroupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const group = Object.assign({}, this.state);
+    const group = Object.assign({}, this.state.group);
     group.name = this.state.name;
-    console.log(group);
-    this.props.updateGroup(group).then(this.props.closeModal);
+    this.props.updateGroup(group).then(this.props.closeModal).then(this.props.history.push('/dashboard'));
   };
 
   render() {
