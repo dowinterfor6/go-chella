@@ -7,12 +7,16 @@ import '../../../assets/stylesheets/modal.css'
 class GroupForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.group;
+    this.state = {
+      group: this.props.group,
+      name: ''
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    this.setState({ group: this.props.group }); 
+    this.setState({ group: this.props.group[Object.keys(this.state.group)[0]] }); 
+    this.setState({ name: this.props.group[Object.keys(this.state.group)[0]].name }); 
   }
 
   componentWillUnmount() {
@@ -20,18 +24,27 @@ class GroupForm extends React.Component {
   }
 
   update(field) {
-    return (e) => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return (e) => {
+      this.setState({
+        [field]: e.currentTarget.value
+      });
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const group = Object.assign({}, this.state);
+    group.name = this.state.name;
+    console.log(group);
     this.props.updateGroup(group).then(this.props.closeModal);
   };
 
   render() {
+
+    if(!this.state.group) {
+      return null;
+    }
+    
     return (
       <div className="delete-form-modal"
         onClick={(e) => e.stopPropagation()}
@@ -56,7 +69,7 @@ class GroupForm extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    group: state.groups.data,
+    group: state.groups,
     formType: 'Edit Group',
   };
 };
