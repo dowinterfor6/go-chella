@@ -381,6 +381,8 @@
   }
 
   .group-index-viewer {
-    padding-top: 25px;
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 15px 0;
   }
 }

@@ -130,8 +130,9 @@
   /* Dashboard */
 
   .nav-logo-after-login {
-    margin: 20px 0 20px 0;
+    margin: 10px 0;
     height: fit-content;
+    padding: 10px 20px;
   }
 
   .nav-logo-after-login h1 {
@@ -142,5 +143,9 @@
   .nav-logo-after-login img {
     width: 100%;
     height: auto;
+  }
+
+  .nav-bar-items-after-login {
+    justify-content: space-between;
   }
 }
