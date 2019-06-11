@@ -5,6 +5,7 @@
   letter-spacing: 5px;
   font-size: 48px;
   user-select: none;
+  text-align: center;
 }
 
 .nav-bar-container ul li {

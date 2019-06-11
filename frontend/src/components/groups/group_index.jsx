@@ -122,7 +122,6 @@ class GroupIndex extends React.Component {
     ))) {
       this.setState({ groups: nextProps.groups, loading: false })
     };
-    console.log(nextProps);
   }
 
   handleDisplay(e) {
