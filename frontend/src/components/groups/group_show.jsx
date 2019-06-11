@@ -170,9 +170,11 @@ class GroupShow extends React.Component {
         </div>
       );
     } else {
-      <button onClick={this.leaveGroup}>
-        Leave Group
-      </button>
+      permButtons = (
+        <button onClick={this.leaveGroup}>
+          Leave Group
+        </button>
+      );
     }
 
     return(
