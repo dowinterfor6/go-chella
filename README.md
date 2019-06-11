@@ -1,22 +1,24 @@
 # Go-chella (formerly Bro-chella)
 A social planning application for the Coachella event. 
 
-[Live Demo!](https://brochella.herokuapp.com)
+[Live Demo!](https://go-chella.herokuapp.com)
 
 ## Background and Overview
 Go-chella is an application that allows users to create groups based on acts from Coachella. Within a group,users can join through invites and plan the details of their activities, such as whereabouts and location meetup. Lastly, users can also discover related acts either through their group discover page.
+![splash](https://github.com/dowinterfor6/go-chella/blob/master/docs/gifs/splash.gif)
 
 Users are greeted with a login modal upon attempted sign in:
-![login](https://github.com/dowinterfor6/brochella/blob/master/docs/gifs/signup-error.gif)
+![login](https://github.com/dowinterfor6/go-chella/blob/master/docs/gifs/session-forms.gif)
 
-The dashboard is the first thing that shows up after signing in, showing a list of all the groups the user is in:
-![dashboard](https://github.com/dowinterfor6/brochella/blob/master/docs/gifs/dashboard-animation.gif)
+A loading screen is shown while the database is being accessed, then the dashboard loads, showing a list of all the groups the user is in:
+![loading](https://github.com/dowinterfor6/go-chella/blob/master/docs/gifs/login-and-loading.gif)
+![dashboard](https://github.com/dowinterfor6/go-chella/blob/master/docs/gifs/carousel.gif)
 
 Groups are displayed alongside a map that shows the location of the events that the group will be attending:
-![show](https://github.com/dowinterfor6/brochella/blob/master/docs/images/show.png)
+![show](https://github.com/dowinterfor6/go-chella/blob/master/docs/images/group-show.png)
 
 A temporary discover page that shows all the available acts and basic details: 
-![discover](https://github.com/dowinterfor6/brochella/blob/master/docs/images/discover.png)
+![discover](https://github.com/dowinterfor6/go-chella/blob/master/docs/images/acts-discover.png)
 
 ## Building Go-chella involved:
 - Building and implementing a thorough database schema with backend routes to store users, event-groups, and acts
