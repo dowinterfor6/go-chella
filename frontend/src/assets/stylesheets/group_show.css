@@ -100,6 +100,13 @@
   line-height: 1.5;
 }
 
+.group-acts-list li p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+}
+
 .group-member-list {
   font-size: 22px;
   font-weight: 800;

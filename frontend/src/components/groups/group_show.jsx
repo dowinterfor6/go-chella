@@ -145,7 +145,8 @@ class GroupShow extends React.Component {
                       <strong><Link style={{textDecoration: "underline"}} to={`/acts/${act}`}>{this.state[act].name}:</Link></strong> on &nbsp;
                       {this.parseDate(this.state[act].date).date.split('-')[1] + '/' + this.parseDate(this.state[act].date).date.split('-')[2]}
                       &nbsp; at {this.parseDate(this.state[act].date).time}
-                      &nbsp; on the {this.state[act].stage}. <button className="remove-act" onClick={() => this.removeAct(act)}>Remove Act</button>
+                      &nbsp; on the {this.state[act].stage}. 
+                      &nbsp; <button className="remove-act" onClick={() => this.removeAct(act)}>Remove Act</button>
                     </p>
                   </li>
                 )
@@ -178,7 +179,7 @@ class GroupShow extends React.Component {
       <div>
         <div className='group-show-container'> 
 
-          <h1>{this.state.group.name}</h1>
+          <h1 style={{ fontSize: "56px" }}>{this.state.group.name}</h1>
           <div className="group-show-header">
             {owner}
             <a
