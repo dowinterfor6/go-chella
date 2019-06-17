@@ -5,10 +5,30 @@ const server = require('../app');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const should = chai.should();
+const request = require('superagent');
 
 chai.use(chaiHttp);
 
 describe('Groups', () => {
+
+    describe('User login', () => {
+        it('should return 200 and token for valid credentials', done => {
+            const user = {
+                "username": "demo_user",
+                "password": "password"
+            }
+
+            chai.request(server)
+                .post(`/api/users/login`)
+                .send(user)
+                .then(res => {
+                    res.should.have.status(200);
+                    res.body.should.have.property('token');
+                done();
+                })
+        })
+    })
+    
     describe('/GET group', () => {
         it('it should get all of a users groups', done => {
             chai.request(server)
