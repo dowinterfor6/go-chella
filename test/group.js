@@ -43,7 +43,7 @@ describe('Groups', () => {
                 });
         });
 
-        it('it should get all of a users groups', done => {
+        it('should get all of a users groups', done => {
             setTimeout(done(), 30000);
             request
                 .get(`/api/users/5cdafba39f82fb344e8a45e0/groups`)
@@ -59,7 +59,7 @@ describe('Groups', () => {
         let auth = {};
         before(loginUser(auth));
 
-        it('it should not create a group with no name', done => {
+        it('should not create a group with no name', done => {
             setTimeout(done(), 30000);
             let group = {
                 name: ''
