@@ -12,6 +12,7 @@
   text-align: center;
   font-size: 50px;
   position: absolute;
+  padding-right: 20px;
   top: 50%;
   left: 50%;
   margin-right: -50%;
@@ -40,6 +41,9 @@
           transform: translateX(-50%);
 }
 /* ---------------------- */
+.main-landing .get-started {
+  padding: 200px 0;
+}
 
 .main-landing section {
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDnjU59BpeZA72vhC9i-Bba7AoHU418Vaa6-IZLbcupXmcZfBMw');

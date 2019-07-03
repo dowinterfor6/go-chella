@@ -39,7 +39,7 @@
 .nav-bar-items-before-login {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .nav-bar-items-before-login li {
