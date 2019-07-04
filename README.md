@@ -20,24 +20,6 @@ Groups are displayed alongside a map that shows the location of the events that 
 A temporary discover page that shows all the available acts and basic details: 
 ![discover](https://github.com/dowinterfor6/go-chella/blob/master/docs/images/acts-discover.png)
 
-## Building Go-chella involved:
-- Building and implementing a thorough database schema with backend routes to store users, event-groups, and acts
-- Full CRUD functionality, allowing users to create, update, and delete groups with their friends
-- Allow users to interact with a planning module when on the group show page
-- View map location of area-site
-
-## Functionality & MVPs
-- Splash page of some bros(probably ronilAndFriends)
-- User Auth: sign up and login, complete with demo user
-- Dashboard of groups that a user has created or joined, including a preview of upcoming acts for that group
-- Group show page, containing a map of the surrounding area, members of that group, and acts that that group has subscribed to attend
-- Acts discovery and search
-- Render Google Maps API on the group show page
-
-### Bonus Features - Upcoming!
-- Chat within the group show page
-- Allow users to pin their current location during the event
-
 ### Technologies & Technical Challenges 
 - Backend: Node, Express, MongoDB 
 - Frontend: React, Redux
