@@ -57,6 +57,9 @@ a {
 	text-decoration: none;
 	user-select: none;
 	cursor: pointer;
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
 }
 
 #root {
@@ -64,7 +67,7 @@ a {
 	position: absolute;
 }
 
-p, a, label {
+p, label {
 	font-family: 'Merriweather', serif;
 }
 

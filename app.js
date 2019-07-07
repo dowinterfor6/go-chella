@@ -49,4 +49,4 @@ app.use("/api/groups", groups);
 app.use('/api/acts', acts);
 
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+module.exports = app.listen(port, () => console.log(`Server is running on port ${port}`));

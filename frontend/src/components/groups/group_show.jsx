@@ -180,7 +180,7 @@ class GroupShow extends React.Component {
     return(
       <div>
         <div className='group-show-container'> 
-
+          <div className="group-show-background"></div>
           <h1 style={{ fontSize: "56px" }}>{this.state.group.name}</h1>
           <div className="group-show-header">
             {owner}
