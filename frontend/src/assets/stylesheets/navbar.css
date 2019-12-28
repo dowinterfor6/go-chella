@@ -1,0 +1,102 @@
+.nav-bar-container h1 {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 48px;
+  user-select: none;
+  text-align: center;
+}
+
+.nav-bar-container ul li {
+  padding-bottom: 10px;
+}
+
+.nav-bar-container ul li:hover {
+  cursor: pointer;
+}
+
+.nav-logo-before-login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 100px;
+  width: 100vw;
+  margin: 50px auto;
+  margin-bottom: 75px;
+  padding: 10px 10%;
+  box-sizing: border-box;
+  /* border-top: 1px solid black;
+  border-bottom: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar-items-before-login {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-bar-items-before-login li {
+  margin: 0 10px;
+}
+.nav-logo-after-login {
+  height: 100px;
+  width: 100vw;
+  margin: 50px auto;
+  margin-bottom: 75px;
+  padding: 10px 10%;
+  box-sizing: border-box;
+  /* border-top: 1px solid black;
+  border-bottom: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-bar-items-after-login {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.group-index-name {
+  user-select: none;
+}
+
+/* HOVER.CSS */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  /* background: #2098D1; */
+  background-color: black;
+  height: 2px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}

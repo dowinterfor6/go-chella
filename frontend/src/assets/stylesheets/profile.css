@@ -1,0 +1,12 @@
+.profile-container {
+  height: calc(100vh - 225px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-container img {
+  height: 90%;
+  width: auto;
+}

@@ -1,0 +1,176 @@
+.modal-background {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.session-form-modal {
+  height: 450px;
+  width: 475px;
+  box-sizing: border-box;
+  padding: 50px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.session-form-modal form {
+  height: 300px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.session-form-modal label {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.session-form-modal label input {
+  height: 30px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding: 0 5px;
+  border: 1px solid black;
+}
+
+.session-form-modal label input:hover {
+  border: 1px solid rgb(45, 68, 170);
+}
+
+.session-form-modal label input:focus {
+  outline: none;
+  border: 1px solid rgb(136, 163, 219);
+}
+
+.session-form-modal button {
+  height: 35px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 2.5px;
+  border: 1px solid rgb(160, 160, 160);
+}
+
+.session-form-modal button:hover {
+  background-color: rgb(207, 207, 207);
+  border: 1px solid rgb(114, 114, 114);
+}
+
+.label-message-container {
+  display: flex;
+  align-items: center;
+}
+
+.error-message {
+  font-style: italic;
+  font-size: 12px;
+  color: red;
+}
+
+.error label input {
+  border: 1px solid red;
+}
+
+.error label input:hover,
+.error label input:focus {
+  border: 1px solid red;
+}
+
+.session-form-modal form a {
+  height: 2em;
+  width: fit-content;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  animation-duration: 0.25s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  animation-duration: 0.25s;
+}
+
+@keyframes shake {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-2.5px, 0, 0);
+    transform: translate3d(-2.5px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(2.5px, 0, 0);
+    transform: translate3d(2.5px, 0, 0);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  animation-duration: 0.25s;
+}

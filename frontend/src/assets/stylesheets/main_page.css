@@ -1,0 +1,199 @@
+/* -------Parallax-------- */
+
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+  height: 900px;
+}
+
+.parallax-container h1 {
+  font-weight: 600;
+  text-decoration: overline;
+  text-align: center;
+  font-size: 50px;
+  position: absolute;
+  padding-right: 20px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.parallax-container .parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.parallax-container .parallax img {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 200%;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+/* ---------------------- */
+.main-landing .get-started {
+  padding: 200px 0;
+}
+
+.main-landing section {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDnjU59BpeZA72vhC9i-Bba7AoHU418Vaa6-IZLbcupXmcZfBMw');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 200px 0px 200px 50px;
+}
+
+.main-landing section h2, .main-landing section p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  line-height: 2em;
+  padding: 0px 180px 0px 180px;
+}
+
+.background-cover,
+.background-vertical-cover {
+  position: absolute;
+  top: 175px;
+  left: 0;
+  height: 600px;
+  width: 100vw;
+  z-index: -5;
+  box-sizing: border-box;
+}
+
+.background-cover {
+    background: linear-gradient(
+    to right, 
+    rgba(255,255,255,1) 10%,
+    rgba(255,255,255,0.2) 50%, 
+    rgba(255,255,255,1) 90%
+  );
+}
+
+.background-vertical-cover {
+    background: linear-gradient(
+    to bottom, 
+    rgba(255,255,255,1) 5%,
+    rgba(255,255,255,0.2) 50%, 
+    rgba(255,255,255,1) 95%
+  );
+}
+
+.background-splash {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+ 
+body {
+  background-image: url("https://i.imgur.com/OTQGQJe.png");
+  background-position: bottom;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.why-brochella > img {
+  height: 350px;
+  width: 350px;
+  border-radius: 100%;
+}
+
+.why-brochella > .p {
+  text-align: left!important;
+  padding: 70px 130px 50px 50px!important;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  line-height: 2em;
+  padding: 0px 180px 0px 180px;
+}
+
+.why-brochella > .p > h3 {
+  font-size: 38px;
+  font-weight: 600;
+  text-decoration: overline;
+}
+
+.why-brochella {
+  display: flex;
+  /* margin: 20px; */
+  padding: 15px;
+}
+
+
+.what-brochella > img {
+  height: 350px;
+  width: 350px;
+  border-radius: 100%;
+  margin-right: 150px;
+}
+
+.what-brochella > .p {
+  text-align: left!important;
+  padding: 20px 80px 50px 20px!important;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  line-height: 2em;
+  padding: 0px 180px 0px 180px;
+}
+
+.what-brochella > .p > h3 {
+  font-size: 38px;
+  font-weight: 600;
+  text-decoration: overline;
+}
+
+.what-brochella {
+  display: flex;
+  /* margin: 40px; */
+  width: 100%;
+  margin-right: 50px;
+}
+
+.friends-photo {
+  background: url(https://previews.123rf.com/images/rawpixel/rawpixel1507/rawpixel150707569/42792776-friends-summer-beach-party-festival-concept.jpg);
+  height: 350px;
+  min-width: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -17px;
+  border-radius: 100%;
+}
+
+.more-friends {
+  background: url(https://st2.depositphotos.com/1037987/9823/i/950/depositphotos_98233774-stock-photo-friends-at-music-festival-campsite.jpg);
+  height: 350px;
+  min-width: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -97px -1px;
+  border-radius: 100%;
+  margin-right: 150px;
+}
+
+#root {
+  min-height: 100%;
+  width: 100vw;
+  position: absolute;
+  background: rgba(255,255,255, 0.3);
+}

@@ -1,0 +1,91 @@
+.acts-show-container {
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    margin-left: 12%;
+    margin-right: 10%;
+}
+
+.acts-show-container > h2 {
+    position: absolute;
+    text-align: center;
+}
+
+span {
+    align-self: center;
+    margin: 15px;
+    position: relative;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.return-footer {
+    display: flex;
+    position: absolute;
+    bottom: 100px;
+}
+
+.return-footer > p {
+    font-family: 'Raleway', sans-serif;
+}
+
+.discover-link {
+    margin-left: 8px;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: underline;
+}
+
+.acts-show-container > img {
+    margin-top: 50px;
+}
+
+.acts-desc  {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.add-act {
+    height: 35px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgb(160, 160, 160);
+    position: absolute;
+    left: 25px;
+}
+
+.add-act-modal {
+    width: 500px;
+    height: 450px;
+    box-sizing: border-box;
+    padding: 50px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid rgb(160, 160, 160);
+}
+
+.filter-menu {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-menu > select {
+    margin-left: 5px;
+}
+
+.filter-menu > label {
+    margin-left: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
