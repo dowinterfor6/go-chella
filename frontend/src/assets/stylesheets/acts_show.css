@@ -46,10 +46,10 @@ strong {
     font-weight: 600;
 }
 
-.discover-link {
+.return-footer a {
     font-family: 'Raleway', sans-serif;
     cursor: pointer;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .acts-show-container > img {

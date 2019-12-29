@@ -50,7 +50,7 @@ class ActIndexItem extends React.Component {
                 <div className="return-footer">
                     <p>Not a fan of {this.state.act.name}?</p>
                     <br />
-                    <Link className="discover-link" to="/discover"> Head back to the directory instead.</Link>
+                    <Link className="hvr-underline-from-left" to="/discover"> Head back to the directory instead.</Link>
                 </div>
             </div>
         )
