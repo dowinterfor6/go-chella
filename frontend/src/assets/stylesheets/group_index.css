@@ -98,7 +98,7 @@
 
 .group-index-viewer {
   width: 900px;
-  padding-top: 25px;
+  padding: 20px 0px 10px 0px;
   box-sizing: border-box;
   margin: 0 auto;
   display: flex;
@@ -121,22 +121,25 @@
 
 /* Handle */
 .group-index-viewer::-webkit-scrollbar-thumb {
-  background: #A773C3;
+  background: rgba(0, 0.5, 0, 0.5);
   border-radius: 5px;
+  height: 10px;
 } 
 
 .group-index-viewer::-webkit-scrollbar-thumb:hover {
-  background: #854777;
+  background: rgba(37, 13, 72, 0.5);
 }
 
 .group-index-item {
-  min-height: 50px;
+  min-height: 80px;
   min-width: 162px;
   max-width: 162px;
-  margin: 5px;
+  margin: 6px;
   margin-top: 0;
-  padding: 18px;
+  padding: 20px;
   box-sizing: border-box;
+  box-shadow: #555 0 0 20px 0;
+  border-radius: 3px;
   cursor: pointer;
   background-color: #dec9e9;
   font-family: 'Raleway', sans-serif;
@@ -160,6 +163,7 @@
   height: 450px;
   width: 900px;
   box-sizing: border-box;
+  border-radius: 3px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
