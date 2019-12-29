@@ -138,7 +138,7 @@ class GroupIndex extends React.Component {
     };
 
     let groups = [];
-    groups = Object.keys(this.state.groups).map((groupId) => {
+    groups = Object.keys(this.state.groups).reverse().map((groupId) => {
       return (
         <li
           key={groupId}
