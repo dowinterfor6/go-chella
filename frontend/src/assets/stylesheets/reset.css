@@ -119,6 +119,7 @@ button:focus {
 
 select {
 	cursor: pointer;
+	margin: 10px 0 10px 0;
 }
 
 select:focus {
