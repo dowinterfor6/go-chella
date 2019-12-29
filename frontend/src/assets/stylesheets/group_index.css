@@ -188,6 +188,7 @@
   opacity: 0.8;
   text-align: center;
   display: flex;
+  justify-content: center;
   align-items: center;
   user-select: none;
 }
