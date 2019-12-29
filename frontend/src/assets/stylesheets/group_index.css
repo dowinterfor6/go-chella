@@ -178,42 +178,37 @@
 }
 
 .in-focus-header {
-  width: 100%;
   height: -webkit-fill-available;
-  box-sizing: border-box;
-  padding: 30px;
-  font-size: 25px;
-  font-family: 'Raleway', sans-serif;
-  background: rgba(255,255,255,0.75);
+  width: 100%;
+  padding-top: 5px;
+  background: rgba(255,255,255,0.6);
   opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   user-select: none;
 }
 
-.in-focus-acts {
-  height: 100%;
-  width: 100%;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .act-list-container {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 32px;
-  font-weight: 700;
-  color: #f9cfdf;
-  -webkit-text-stroke: 0.75px rgb(0, 0, 0);
+  color: #612011;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.act-list-container > li {
+  font-size: 25px;
+}
+
+.act-list-container > li:first-child {
+  margin-top: 10px;
 }
 
 /* CUSTOM LOADING SCREEN BEER */
