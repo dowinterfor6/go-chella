@@ -22,11 +22,17 @@
 
 .discovery-header {
   height: 80px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.filter-menu > select {
+  margin-left: 10px;
+  height: 28px;
+  width: 92px;
+  font-size: 13px;
 }
 
 .act-list {

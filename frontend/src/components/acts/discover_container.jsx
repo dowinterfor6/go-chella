@@ -87,8 +87,8 @@ class DiscoverPage extends React.Component {
 
     let filter = (
       <div className="filter-menu">
-        <h2>Choose a Date:</h2>
-        <select style={{ marginLeft: 5, height: 23, width: "92px" }} value={this.state.selectedDate} onChange={this.handleDate}>
+        <h3>Choose a Date:</h3>
+        <select value={this.state.selectedDate} onChange={this.handleDate}>
           <option value="All Dates">All Dates</option>
           {datesDropdown}
         </select>
@@ -131,7 +131,9 @@ class DiscoverPage extends React.Component {
                 this.props.openModal(this.props.formType)
               }
               }>
+                <p>
                 Create a Group
+                </p>
               </button>
             </div>
             
