@@ -1,5 +1,5 @@
 .acts-show-container {
-    padding: 10px;
+    padding: 32px;
     margin-left: 12%;
     margin-right: 10%;
     background: rgba(255, 255, 255, 0.5);
@@ -35,27 +35,11 @@
     font-family: 'Raleway', sans-serif;
 }
 
-
-span {
-    align-self: center;
-    margin: 15px;
-    position: relative;
-}
-
-strong {
-    font-weight: 600;
-}
-
 .return-footer a {
     font-family: 'Raleway', sans-serif;
     cursor: pointer;
     /* text-decoration: underline; */
 }
-
-.acts-show-container > img {
-    margin-top: 50px;
-}
-
 
 .add-act-modal {
     width: 500px;

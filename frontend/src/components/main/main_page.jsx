@@ -57,7 +57,7 @@ class MainPage extends React.Component {
           <div className="parallax">
             <img src={hands} alt="hands" />
           </div>
-          <h1 style={{ color: "white", lineHeight: 1.5 }}>WE HANDLE THE STRESS, SO YOUR EVENT IS A SUCCESS.</h1>
+          <h1 style={{lineHeight: 1.5 }}>WE HANDLE THE STRESS, SO YOUR EVENT IS A SUCCESS.</h1>
         </div>
 
         <section className="what-brochella">

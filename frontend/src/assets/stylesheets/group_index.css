@@ -127,7 +127,7 @@
 } 
 
 .group-index-viewer::-webkit-scrollbar-thumb:hover {
-  background: rgba(37, 13, 72, 0.5);
+  background: rgba(0, 0.5, 0, 0.6);
 }
 
 .group-index-item {

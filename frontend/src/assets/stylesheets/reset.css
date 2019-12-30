@@ -125,3 +125,13 @@ select {
 select:focus {
 	outline: none;
 }
+
+span {
+	align-self: center;
+	margin: 15px;
+	position: relative;
+}
+
+strong {
+	font-weight: 600;
+}
