@@ -104,7 +104,7 @@ class GroupShow extends React.Component {
     if (this.state.group.members) {
       memberList = (
         <div className="group-member-list-container">
-          <h2 style={{fontSize: "48px", textDecoration: "underline"}}>Your Crew:</h2>
+          <h2>Your Crew</h2>
           <ul className="group-member-list">
             {this.state.group.members.map((key, idx) => {
               if(this.state[key]) {
@@ -135,14 +135,14 @@ class GroupShow extends React.Component {
     if (this.state.group.acts && this.state.group.acts.length > 0) {
       acts = (
         <div className="group-acts-container">
-          <h2 style={{fontSize: "48px", textDecoration: "underline"}}>Who You're Seeing:</h2>
+          <h2>Who You're Seeing</h2>
           <ul className="group-acts-list">
             {this.state.group.acts.map((act, idx) => {
               if(this.state[act]) {
                 return (
                   <li key={idx}>
                     <p>
-                      <strong><Link style={{textDecoration: "underline"}} to={`/acts/${act}`}>{this.state[act].name}:</Link></strong> on &nbsp;
+                      <Link style={{ textDecoration: "underline" }} to={`/acts/${act}`}>{this.state[act].name}</Link> on &nbsp;
                       {this.parseDate(this.state[act].date).date.split('-')[1] + '/' + this.parseDate(this.state[act].date).date.split('-')[2]}
                       &nbsp; at {this.parseDate(this.state[act].date).time}
                       &nbsp; on the {this.state[act].stage}. 
@@ -181,7 +181,7 @@ class GroupShow extends React.Component {
       <div>
         <div className='group-show-container'> 
           <div className="group-show-background"></div>
-          <h1 style={{ fontSize: "56px" }}>{this.state.group.name}</h1>
+          <h1>{this.state.group.name}</h1>
           <div className="group-show-header">
             {owner}
             <a

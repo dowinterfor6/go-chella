@@ -37,20 +37,20 @@ class ActIndexItem extends React.Component {
 
         return (
             <div className="acts-show-container">
-                <h2><strong>{this.state.act.name}</strong></h2>
-                <img src={this.state.act.url} alt="act" height="470" width="800"/>
-                <span>
-                    <div className="acts-desc">
+                <h1>{this.state.act.name}</h1>
+                <button onClick={() => this.props.openModal('Add Act')}>Add Act</button>
+                <div className="acts-desc">
+                    <img src={this.state.act.url} alt="act" height="470" width="800"/>
+                    <p>
                         You can see {this.state.act.name} perform LIVE at Go-Chella on {(this.parseDate(this.state.act.date).date).split('-')[1] 
                         + '/' + (this.parseDate(this.state.act.date).date).split('-')[2]}.
                         Show starts at {this.parseDate(this.state.act.date).time} on the {this.state.act.stage} Stage.
-                    </div>
-                <button className="add-act" onClick={() => this.props.openModal('Add Act')}>Add Act</button>
-                </span>
+                    </p>
+                </div>
                 <div className="return-footer">
                     <p>Not a fan of {this.state.act.name}?</p>
                     <br />
-                    <Link className="discover-link" to="/discover"> Head back to the directory instead.</Link>
+                    <Link className="hvr-underline-from-left" to="/discover"> Head back to the directory instead.</Link>
                 </div>
             </div>
         )

@@ -16,7 +16,13 @@
 .group-show-container h1 {
   text-align: center;
   margin-bottom: 10px;
+  font-size: 50px;
 }
+
+.group-member-list-container > h2, 
+  .group-acts-container > h2 {
+    text-decoration: underline;
+  }
 
 .group-show-header {
   display: flex;
@@ -30,7 +36,7 @@
 .group-show-nav-container {
   width: 200px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .invite-link-display {
@@ -101,22 +107,22 @@
 }
 
 .group-acts-list {
-  font-size: 18px;
+  /* font-size: 18px; */
   font-weight: 600;
   margin-top: 4px;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.group-acts-list li p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px 0;
+.group-acts-list li {
+  margin: 3px 0;
 }
 
 .group-member-list {
-  font-size: 22px;
+  /* font-size: 22px; */
   font-weight: 800;
   line-height: 1.5;
-  margin-top: 4px;
+  margin: 3px 0;
 }

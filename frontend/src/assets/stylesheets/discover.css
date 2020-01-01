@@ -22,11 +22,34 @@
 
 .discovery-header {
   height: 80px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.filter-menu {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-menu > select {
+    margin-left: 5px;
+}
+
+.filter-menu > label {
+    margin-left: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+.filter-menu > select {
+  margin-left: 10px;
+  height: 28px;
+  width: 92px;
+  font-size: 13px;
 }
 
 .act-list {

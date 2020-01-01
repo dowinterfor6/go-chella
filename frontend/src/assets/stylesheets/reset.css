@@ -102,6 +102,7 @@ button {
 	border: 1px solid rgb(121, 121, 121);
 	border-radius: 15px;
 	cursor: pointer;
+	font-size: 12px;
 }
 
 button:hover {
@@ -118,8 +119,19 @@ button:focus {
 
 select {
 	cursor: pointer;
+	margin: 10px 0 10px 0;
 }
 
 select:focus {
 	outline: none;
+}
+
+span {
+	align-self: center;
+	margin: 15px;
+	position: relative;
+}
+
+strong {
+	font-weight: 600;
 }

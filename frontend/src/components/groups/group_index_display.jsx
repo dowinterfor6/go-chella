@@ -91,8 +91,8 @@ class GroupIndexDisplay extends React.Component {
         >
           <div className="in-focus-header fadeIn" onAnimationEnd={(e) => e.currentTarget.classList.remove('fadeIn')}>
             {this.state.activeGroup.name}
-          </div>
-          <div className="in-focus-acts">
+          {/* </div> */}
+          {/* <div className="in-focus-acts"> */}
             <ul className="act-list-container" onAnimationEnd={(e) => e.currentTarget.classList.remove('fadeIn')}>
               {Object.keys(this.state.acts).sort().map((key) => (
                 <li
